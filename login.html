@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lost Pets</title>
+</head>
+<body>
+    <section>
+        <form action="">
+            <p>Login</p>
+            <label for="name">Username: </label>
+            <input type="text" id="name" name="username" required
+            oninvalid="this.setCustomValidity('Please enter your username')"
+            oninput="setCustomValidity('')">
+            <label for="pass">Password: </label>
+            <input type="password" id="pass" name="password" required
+            minlength="8" maxlength="20"
+            oninvalid="this.setCustomValidity('Please enter your password')"
+            oninput="setCustomValidity('')">
+            <input type="submit" value="Login">
+            <a href="lp_forgotpass.html">Forgot your password?</a>
+            <a href="lp_register">Don't have an account?</a>
+        </form>
+    </section>
+    
+</body>
+</html>
