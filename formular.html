@@ -6,15 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Lost Pets</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+
+        .formular_form {
+            display: inline-block;
+            padding: 5%;
+            margin: auto;
+            border: 2px solid black;
+        }
+
+        /*Add defaults*/
+        #popup {
+            top: -50%;
+            /*Put it on the very top*/
+            transition: all .5s ease-in-out;
+            /*make it smooth*/
+        }
+
+        /*Now show it*/
+        #popup.show {
+            visibility: visible;
+            z-index: 200;
+            opacity: 1;
+            top: 50%;
+            /*slide it down smoothly*/
+        }
+
+        #popup.show~#overlay {
+            opacity: 1;
+            visibility: visible;
+            z-index: 100;
+        }
+    </style>
 </head>
 
 <body>
-    <form action="" id="form_id">
+    <form action="" id="form_id" class="formular_form">
         <label for="image">Upload image: </label>
-        <input type="file" name="image" accept="image/*" required>
+        <input type="file" name="image" accept="image/*"><br>
 
-        <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=27.326087951660156%2C47.05538798873247%2C27.82047271728516%2C47.232158424218795&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/#map=12/47.1438/27.5733">View Larger Map</a></small>
+        <label for="location">Pet last seen at:</label>
+        <button>location</button><br>
         
+
+
         <label for="nume">Pet name: </label>
         <input type="text" name="nume"><br>
 
@@ -40,9 +79,11 @@
         <label for="reward_no">No</label>
         <input type="radio" name="reward" value="reward_no"><br>
 
-        <input type="email">
+        <label for="email">Email: </label>
+        <input type="email" name="email"><br>
 
-        <input type="phone">
+        <label for="phone">Phone: </label>
+        <input type="tel" name="phone"><br>
 
         <input type="submit" value="I lost my pet!">
 
