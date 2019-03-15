@@ -17,40 +17,38 @@
 
         <div id="navbar">
 
-            <img src="img/logo_orange.png" alt="Logo-ul companiei" id="logo-small">
+            <img alt="Logo-ul companiei" id="logo-small" src="img/logo_orange.png">
             <div class="right-header">
-                <div class="user-img"><img src="img/user-img.jpg"></div>
-                <p><strong>Alina Radu</strong></p>
-                <button class="dropdown-button"><i class="arrow down"></i></button>
 
-                <a class="active" href="javascript:void(0)">Home</a>
+                <a href="javascript:void(0)">Home</a>
                 <a href="javascript:void(0)">Contact</a>
                 <a href="javascript:void(0)">News</a>
+                <div id="user-panel">
+                    <img class="user-img" alt="Imaginea Utilizatorului">
+                    <p><strong>Alina Radu</strong></p>
+                    <div class="dropdown">
+                        <button type="button" class="dropdown-button"><i class="arrow down"></i></button>
+                        <div class="dropdown-content">
+                            <a href="#">Logout</a><br>
+                            <a href="#">Link 2</a><br>
+                            <a href="#">Link 3</a>
+                        </div>
+                    </div>
 
+
+                </div>
 
 
             </div>
 
         </div>
     </div>
+    </div>
     <div class="content">
+        <img src="img/illu.png">
 
     </div>
 
-    <script>
-        window.onscroll = function () { myFunction() };
-
-        var navbar = document.getElementById("navbar");
-        var sticky = navbar.offsetTop;
-
-        function myFunction() {
-            if (window.pageYOffset >= sticky) {
-                navbar.classList.add("sticky")
-            } else {
-                navbar.classList.remove("sticky");
-            }
-        }
-    </script>
 
 </body>
 
