@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Lost Pets</title>
 </head>
+
 <body>
     <form action="" id="form_id">
         <label for="image">Upload image: </label>
@@ -13,26 +15,40 @@
 
         <input type="location">
 
-        <input type="text">nume
+        <label for="nume">Pet name: </label>
+        <input type="text" name="nume">
 
-        <input type="radio">specie
+        <label for="dog">Dog</label>
+        <input type="radio" name="species" value="dog">
+        <label for="cat">Cat</label>
+        <input type="radio" name="species" value="cat">
+        <label for="bird">Bird</label>
+        <input type="radio" name="species" value="bird">
+        <label for="reptile">Reptile</label>
+        <input type="radio" name="species" value="reptile">
 
-        <input type="text"> rasa
+        <label for="breed">Breed: </label>
+        <input type="text" name="breed">
 
-        <input type="text"> detalii
+        <label for="details"></label>
+        <input type="text" nume="details">
+        <textarea name="details" form_id="form_id"></textarea>
 
-        <textarea name="comment" form_id="form_id" ></textarea>
-
-        <input type="radio"> recompensa
+        <label for="reward">Reward: </label>
+        <label for="reward_yes">Yes</label>
+        <input type="radio" name="reward" value="reward_yes">
+        <label for="reward_no">No</label>
+        <input type="radio" name="reward" value="reward_no">
 
         <input type="email">
 
         <input type="phone">
-        
+
         <input type="submit" value="I lost my pet!">
 
     </form>
 
-    
+
 </body>
+
 </html>
