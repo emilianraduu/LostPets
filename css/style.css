@@ -1,0 +1,35 @@
+
+body {
+    margin: 0;
+}
+header {
+    height: 60%;
+    position: absolute;
+    display:flex;
+    width: 100%;
+    padding-top: 5px;
+    background-image: linear-gradient(to top left, rgba(86, 201, 255, 0.705) ,rgba(192, 237, 255, 0.274));
+}
+
+
+header .logo-img
+{
+    width: 100px;
+    height: 50px;
+    justify-items: center;
+    position: absolute;
+}
+header .right-header {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+}
+header .nav-bar-btn {
+    background-color: 0;
+}
+header .right-header .user-nav {
+    position: absolute;
+}
+.arrow {
+    border-radius: 100%;
+}
