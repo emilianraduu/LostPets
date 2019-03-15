@@ -7,37 +7,90 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Lost Pets</title>
     <style>
-        
+        body {
+            font-family: Arial, Arial, Helvetica, sans-serif;
+        }
+
+        .register_form {
+            border: 2px solid black;
+            border-radius: 20px;
+            position: relative;
+            display: inline-block;
+            text-align: center;
+            width: 400px;
+            height: 600px;
+            margin: auto;
+        }
+
+        .register_register {
+            position: absolute;
+            top: 8%;
+            left: 38%;
+            font-size:140%
+        }
+
+        .register_credentials {
+            position: absolute;
+            top: 23%;
+            left: 28%;
+            width: 40%;
+
+        }
+
+        .register_submit {
+            position: absolute;
+            top: 80%;
+            left: 36%;
+            color: white;
+            border-radius: 50px;
+            background: #00838F;
+            background-size: 600%;
+            width: 100px;
+            height: 30px;
+            font-size: 90%;
+        }
+
+        .register_links {
+            position: absolute;
+            top: 90%;
+            left: 25%;
+        }
     </style>
 </head>
+
 <body>
     <section>
         <form class="register_form" action="">
             <p class="register_register">Register</p>
             <div class="register_credentials">
-                    <label for="fname">First name: </label>
-                    <input type="text" id="fname" name="firstname" required
-                        oninvalid="this.setCustomValidity('Please enter your first name')" oninput="setCustomValidity('')">
-        
-                    <label for="lname">Last name: </label>
-                    <input type="text" id="lname" name="lastname" required
-                        oninvalid="this.setCustomValidity('Please enter your last name')" oninput="setCustomValidity('')">
-        
-                    <label for="mail">E-mail: </label>
-                    <input type="email" id="mail" name="mail" required
-                        oninvalid="this.setCustomValidity('Please enter an e-mail')" oninput="setCustomValidity('')">
-        
-                    <label for="pass">Password: </label>
-                    <input type="password" id="pass" name="pass" required minlength="8" maxlength="20"
-                        oninvalid="this.setCustomValidity('Please enter a password')" oninput="setCustomValidity('')">
-        
-                    <label for="phone">Telefon: </label>
-                    <input type="tel" id="phone" name="phone">
-        
-                    <label for="birth">Data nasterii: </label>
-                    <input type="date" id="birth" name="birth" max="2006-01-01" min="1940-01-01">
+                <label for="fname">First name: </label>
+                <input type="text" id="fname" name="firstname" required
+                    oninvalid="this.setCustomValidity('Please enter your first name')"
+                    oninput="setCustomValidity('')"><br><br>
+
+                <label for="lname">Last name: </label>
+                <input type="text" id="lname" name="lastname" required
+                    oninvalid="this.setCustomValidity('Please enter your last name')"
+                    oninput="setCustomValidity('')"><br><br>
+
+                <label for="mail">E-mail: </label>
+                <input type="email" id="mail" name="mail" required
+                    oninvalid="this.setCustomValidity('Please enter an e-mail')"
+                    oninput="setCustomValidity('')"><br><br>
+
+                <label for="pass">Password: </label>
+                <input type="password" id="pass" name="pass" required minlength="8" maxlength="20"
+                    oninvalid="this.setCustomValidity('Please enter a password')"
+                    oninput="setCustomValidity('')"><br><br>
+
+                <label for="phone">Phone number: </label>
+                <input type="tel" id="phone" name="phone"><br><br>
+
+                <label for="birth">Date of birth: </label>
+                <input type="date" id="birth" name="birth" max="2006-01-01" min="1940-01-01"><br><br>
             </div>
-            <input class="register_submit" type="submit" value="Register">
+            <input class="register_submit" type="submit" value="Register"><br>
+            <a class="register_links" href="login.html">Already have an account?</a>
         </form>
     </section>
 
