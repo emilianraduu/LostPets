@@ -7,44 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="login.css">
     <title>Lost Pets</title>
-    <style>
-        .form {
-            display: inline-block;
-            position: fixed;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            width: 400px;
-            height: 400px;
-            margin: auto;
-            border: 2px solid black;
-        }
-
-        .form .credentials {
-            position: absolute;
-            top: 50%;
-            left: 25%;
-        }
-
-        .form .links {
-            position: absolute;
-            top: 70%;
-            left: 25%;
-        }
-
-        .form .submit {
-            position: absolute;
-            top: 60%;
-            left: 25%;
-
-        }
-        .form .login {
-            position:absolute;
-            top: 40%;
-            left: 25%;
-        }
-    </style>
 </head>
 
 <body>
@@ -55,7 +17,7 @@
                 <label for="name">Username: </label>
                 <input type="text" id="name" name="username" required autocomplete autofocus
                     oninvalid="this.setCustomValidity('Please enter your username')"
-                    oninput="setCustomValidity('')"><br>
+                    oninput="setCustomValidity('')"><br><br>
                 <label for="pass">Password: </label>
                 <input type="password" id="pass" name="password" required minlength="8" maxlength="20"
                     oninvalid="this.setCustomValidity('Please enter your password')" oninput="setCustomValidity('')">
