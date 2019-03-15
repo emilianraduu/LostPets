@@ -13,11 +13,12 @@
         <label for="image">Upload image: </label>
         <input type="file" name="image" accept="image/*" required>
 
-        <input type="location">
-
+        <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=27.326087951660156%2C47.05538798873247%2C27.82047271728516%2C47.232158424218795&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/#map=12/47.1438/27.5733">View Larger Map</a></small>
+        
         <label for="nume">Pet name: </label>
-        <input type="text" name="nume">
+        <input type="text" name="nume"><br>
 
+        <label for="species">Species:</label>
         <label for="dog">Dog</label>
         <input type="radio" name="species" value="dog">
         <label for="cat">Cat</label>
@@ -25,20 +26,19 @@
         <label for="bird">Bird</label>
         <input type="radio" name="species" value="bird">
         <label for="reptile">Reptile</label>
-        <input type="radio" name="species" value="reptile">
+        <input type="radio" name="species" value="reptile"> <br>
 
         <label for="breed">Breed: </label>
-        <input type="text" name="breed">
+        <input type="text" name="breed"> <br>
 
-        <label for="details"></label>
-        <input type="text" nume="details">
-        <textarea name="details" form_id="form_id"></textarea>
+        <label for="details">Details: </label>
+        <textarea name="details" form_id="form_id" placeholder="Enter details..." maxlength="150"></textarea><br>
 
         <label for="reward">Reward: </label>
         <label for="reward_yes">Yes</label>
         <input type="radio" name="reward" value="reward_yes">
         <label for="reward_no">No</label>
-        <input type="radio" name="reward" value="reward_no">
+        <input type="radio" name="reward" value="reward_no"><br>
 
         <input type="email">
 
