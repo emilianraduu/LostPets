@@ -1,38 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Lost Pets</title>
 </head>
-<style>
-.info {
-    background-color:#FFBF00;
-    border-radius: 25px;
-    padding:20px;
-    padding-right: 100px;
-    color:black;
-    text-transform: uppercase;
-    display: inline-block;
-    border:1px solid purple;;
-}
-</style>
+
 <body>
-    <div class="img">
-        <img src="./img/dog.png" alt="dog"
-        width=150px>
-    </div>
-    <div class="info">
-        <p>Last seen: Nicolina</p>
-        <p>Nume: BigBoy</p>
-        <p>Specie: Caine</p>
-        <p>Rasa: Labrador</p>
-        <p>Detalii: blana pufoasa, zgarda rosie</p>
-        <p>Recompensa: Da</p>
-        <p>E-mail: bla@bla.com</p>
-        <p>Telefon: 0755555555</p>
-    </div>
-    
+    <form action="" id="form_id">
+        <label for="image">Upload image: </label>
+        <input type="file" name="image" accept="image/*" required>
+
+        <input type="location">
+
+        <label for="nume">Pet name: </label>
+        <input type="text" name="nume">
+
+        <label for="dog">Dog</label>
+        <input type="radio" name="species" value="dog">
+        <label for="cat">Cat</label>
+        <input type="radio" name="species" value="cat">
+        <label for="bird">Bird</label>
+        <input type="radio" name="species" value="bird">
+        <label for="reptile">Reptile</label>
+        <input type="radio" name="species" value="reptile">
+
+        <label for="breed">Breed: </label>
+        <input type="text" name="breed">
+
+        <label for="details"></label>
+        <input type="text" nume="details">
+        <textarea name="details" form_id="form_id"></textarea>
+
+        <label for="reward">Reward: </label>
+        <label for="reward_yes">Yes</label>
+        <input type="radio" name="reward" value="reward_yes">
+        <label for="reward_no">No</label>
+        <input type="radio" name="reward" value="reward_no">
+
+        <input type="email">
+
+        <input type="phone">
+
+        <input type="submit" value="I lost my pet!">
+
+    </form>
+
+
 </body>
+
 </html>
