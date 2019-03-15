@@ -2,7 +2,7 @@ body {
     margin: 0;
     font-size: 28px;
     font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(-180deg,rgba(159, 216, 224, 0.082),rgba(241, 241, 241, 0.377));
+    background: linear-gradient(-180deg, rgba(159, 216, 224, 0.082), rgba(241, 241, 241, 0.377));
 }
 
 .header {
@@ -11,52 +11,33 @@ body {
     width: 100%;
     display: flex;
     position: relative;
-
 }
 
-
-.header #navbar {
+#navbar {
     position: absolute;
     width: 90%;
     margin-top: 20px;
     text-align: center;
-    height: 48px;
     margin-left: 4%;
+
 }
 
 #navbar #logo-small {
-    width: 150px;
+    width: 15%;
     position: relative;
-    height: 80px;
+    height: 15%;
+    max-width: 150px;
+    max-height: 80px;
     text-align: center;
     justify-content: center;
     float: left;
+    transition: all .5s linear;
     top: 5px;
 }
-
 
 #navbar a:hover {
     background-color: #FFBF00;
     color: #006064;
-}
-
-
-
-
-
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
-
-.sticky+.content {
-    padding-top: 60px;
-}
-
-.right-header {
-    float: right;
-    display: flex;
 }
 
 #navbar p {
@@ -64,6 +45,12 @@ body {
     color: #006064;
     top: 1px;
     position: relative;
+}
+
+.right-header {
+    float: right;
+    display: flex;
+    transition: all .5s linear;
 }
 
 .right-header a {
@@ -75,8 +62,16 @@ body {
     text-decoration: none;
     font-size: 17px;
 }
+.menuBtn {
+    border: none;
+    background: none;
+    float: right;
+}
+.menuBtn:focus{
+    background: #ff9e02;
+}
 
-.right-header .dropdown-button {
+.dropdown-button {
     border: none;
     margin-left: 5px;
     text-decoration: none;
@@ -90,7 +85,6 @@ body {
 
 .dropdown-button:hover, #dropdown-button:focus {
     background: #ff9e02;
-   
 }
 
 .dropdown-button:focus {
@@ -98,16 +92,11 @@ body {
     outline-offset: -1px;
 }
 
-.dropdown-button:active {
-    transform: scale(0.99);
-}
-
-.up {
-    transform: rotate(-135deg);
-    -webkit-transform: rotate(-135deg);
-}
-
 i {
+    display: inline-block;
+    padding: 3px;
+}
+.arrow {
     border: solid #006064;
     border-width: 0 3px 3px 0;
     display: inline-block;
@@ -117,6 +106,11 @@ i {
 .down {
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
+}
+
+.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
 }
 
 #user-panel .user-img {
@@ -141,22 +135,6 @@ i {
     display: inline-block;
 }
 
-.menu {
-    height: 0px;
-    width: 300px;
-    background-color: black;
-    margin: 0;
-    position: absolute;
-    display: block;
-    top: 0;
-    transition: all .5s linear;
-    text-align: center;
-}
-
-.is--open {
-    height: 100px;
-}
-
 .dropdown {
     background-color: rgba(255, 255, 255, 0);
     display: flex;
@@ -166,9 +144,8 @@ i {
 .dropdown-content {
     display: none;
     position: absolute;
-    top:0px;
-    
-    right:2px;
+    top: 0px;
+    right: 2px;
     padding: 18px;
     padding-top: 50px;
     text-align: center;
@@ -184,7 +161,7 @@ i {
     padding: 12px 16px 13px 12px;
     margin: 10px;
     text-decoration: none;
-    width:100%;
+    width: 100%;
 }
 
 .dropdown-content a:hover {
@@ -199,23 +176,49 @@ i {
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
 }
+
 .dropdown:hover .dropdown-button {
     background-color: #ff9e02;
 }
 
 .content {
     margin: 13% 0 13% 0;
-    position:absolute;
+    position: absolute;
     width: 100%;
-    
     display: block;
 }
-.content h2{
 
+.content h2 {}
+
+.menu {
+    height: 0px;
+    width: 300px;
+    background-color: black;
+    margin: 0;
+    position: absolute;
+    display: block;
+    top: 0;
+    transition: all .5s linear;
+    text-align: center;
+}
+
+.is--open {
+    height: 100px;
+}
+.mobile-header{
+    display:none;
 }
 /* background: url("../img/illu.png") rgba(0, 0, 0, 0); */
-@media only screen and (max-width: 800px){
+
+@media only screen and (max-width: 850px) {
     .right-header {
-       display:none;
+        display: none;
+    }
+    .mobile-header {
+        display: block;
+    }
+    #navbar #logo-small {
+        width:15%;
+        height: 15%;
     }
 }
