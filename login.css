@@ -11,35 +11,40 @@ body {
     border: 2px solid black;
 }
 
-.login_form .login_credentials {
+.login_form .login_login {
     position: absolute;
-    top: 50%;
-    left: 25%;
+    top: 15%;
+    left: 40%;
+    font-size: 200%;
 }
 
-.login_form .login_links {
+.login_form .login_credentials {
     position: absolute;
-    top: 80%;
-    left: 25%;
-    font-size: 70%;
+    top: 42%;
+    left: 33%;
+    width:30%;
 }
 
 .login_form .login_submit {
     position: absolute;
     top: 69%;
-    left: 42%;
+    left: 40%;
     color: white;
     border-radius: 50px;
     background: #00838F;
-    background-size: 600%;
     width: 80px;
     height: 30px;
     font-size: 90%;
 }
+.login_submit:hover {
+    cursor: pointer;
+    color: black;
+    background: #FFBF00;
+}
 
-.login_form .login_login {
+.login_form .login_links {
     position: absolute;
-    top: 15%;
-    left: 42%;
-    font-size: 200%;
+    top: 80%;
+    left: 35%;
+    font-size: 70%;
 }
