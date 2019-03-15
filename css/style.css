@@ -62,12 +62,12 @@ body {
     text-decoration: none;
     font-size: 17px;
 }
-.menuBtn {
+#menuBtn {
     border: none;
     background: none;
     float: right;
 }
-.menuBtn:focus{
+#menuBtn:focus{
     background: #ff9e02;
 }
 
@@ -191,19 +191,19 @@ i {
 .content h2 {}
 
 .menu {
-    height: 0px;
+    height: 100%;
     width: 300px;
     background-color: black;
     margin: 0;
     position: absolute;
-    display: block;
     top: 0;
+    right: -300px;
     transition: all .5s linear;
     text-align: center;
 }
 
 .is--open {
-    height: 100px;
+    right: 0px;
 }
 .mobile-header{
     display:none;
