@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lost Pets</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <section>
+        <form class="register_form" action="">
+            <p class="register_register">Register</p>
+            <div class="register_credentials">
+                    <label for="fname">First name: </label>
+                    <input type="text" id="fname" name="firstname" required
+                        oninvalid="this.setCustomValidity('Please enter your first name')" oninput="setCustomValidity('')">
+        
+                    <label for="lname">Last name: </label>
+                    <input type="text" id="lname" name="lastname" required
+                        oninvalid="this.setCustomValidity('Please enter your last name')" oninput="setCustomValidity('')">
+        
+                    <label for="mail">E-mail: </label>
+                    <input type="email" id="mail" name="mail" required
+                        oninvalid="this.setCustomValidity('Please enter an e-mail')" oninput="setCustomValidity('')">
+        
+                    <label for="pass">Password: </label>
+                    <input type="password" id="pass" name="pass" required minlength="8" maxlength="20"
+                        oninvalid="this.setCustomValidity('Please enter a password')" oninput="setCustomValidity('')">
+        
+                    <label for="phone">Telefon: </label>
+                    <input type="tel" id="phone" name="phone">
+        
+                    <label for="birth">Data nasterii: </label>
+                    <input type="date" id="birth" name="birth" max="2006-01-01" min="1940-01-01">
+            </div>
+            <input class="register_submit" type="submit" value="Register">
+        </form>
+    </section>
+
+</body>
+
+</html>

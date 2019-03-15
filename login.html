@@ -11,9 +11,9 @@
 
 <body>
     <section>
-        <form class="form" action="">
-            <p class="login">Login</p>
-            <div class="credentials">
+        <form class="login_form" action="">
+            <p class="login_login">Login</p>
+            <div class="login_credentials">
                 <label for="name">Username: </label>
                 <input type="text" id="name" name="username" required autocomplete autofocus
                     oninvalid="this.setCustomValidity('Please enter your username')"
@@ -22,10 +22,10 @@
                 <input type="password" id="pass" name="password" required minlength="8" maxlength="20"
                     oninvalid="this.setCustomValidity('Please enter your password')" oninput="setCustomValidity('')">
             </div>
-            <input class="submit" type="submit" value="Login">
-            <div class="links">
+            <input class="login_submit" type="submit" value="Login">
+            <div class="login_links">
                 <a href="forgotpass.html">Forgot your password?</a><br>
-                <a href="register">Don't have an account?</a>
+                <a href="register.html">Don't have an account?</a>
             </div>
         </form>
     </section>
