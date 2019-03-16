@@ -72,6 +72,7 @@ nav {
 }
 .orange-container{
     margin-top: 2em;
+    display:flex;
     background-color: #ffbf00;
     transform: skewY(-2deg);
     border-top-left-radius: 15px;
