@@ -7,71 +7,115 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Lost Pets</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"></head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
 
 <body>
-
-    <div class="header">
-
-        <div id="navbar">
-
-            <a href="/index.html"> <img alt="Logo-ul companiei" draggable="false" id="logo-small"
-                    src="img/logo_orange.png"></a>
-            <div class="mobile-header">
-                <button id="menuBtn"><i class="fa-2x fa-bars"></i></button>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href=""><img src="img/logo-blue.png" alt="logo site"></a>
             </div>
-
-            <div class="right-header">
-
-                <a href="">Home</a>
-                <a href="">Contact</a>
-                <a href="">News</a>
-
-                <div id="user-panel">
-                    <img class="user-img" alt="Imaginea Utilizatorului" src="img/user-img.jpg">
-                    <p>Alina Radu</p>
-                    <div class="dropdown">
-                        <button type="button" class="dropdown-button"><i class="arrow down"></i></button>
-                        <div class="dropdown-content">
-                            <a href="#">Logout</a>
-                            <a href="#">Link 2</a>
-                            <a href="#">Link 3</a>
+            <div class="navigation">
+                <div class="non-mobile">
+                    <li>
+                        <div class="selection"><a href="#"> <i class="fa fa-home" aria-hidden="true"></i>Home</a></div>
+                    </li>
+                    <li>
+                        <div class="selection"><a href="#"><i class="fa fa-search" aria-hidden="true"></i>I lost my
+                                pet!</a>
                         </div>
-                    </div>
+                    </li>
+                    <li>
+                        <div class="selection"><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>Map</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div id="selection-off"> <a href="#"><i class="fa fa-times fa-2x" aria-hidden="true"></i></a>
+                        </div>
+                    </li>
+
+                </div>
+                <div class="mobile">
+                    <li>
+                        <div id="selection"> <a href="#"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></a>
+                        </div>
+                    </li>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
 
 
+        <img src="img/illu.png">
+        <h2>
+            If you wanna take part in helping us..
+        </h2>
+        <button class="log-reg">Sign up</button>
+        <div class="orange-container">
+            <div class="paragraphs">
+                <li>
+                    <i class="fa fa-address-card fa-2x"></i>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the
+                        industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+                        type
+                        and scrambled it to make a type specimen book.
+                    </p>
+                </li>
+                <hr>
+                <li>
+                    <i class="fa fa-american-sign-language-interpreting fa-2x"></i>
+                    <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining
+                        essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets
+                        containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
+                        PageMaker including versions of Lorem Ipsum.</p>
+                </li>
+                <hr>
+                <li>
+                    <i class="fa fa-apple-alt fa-2x"></i>
+                    <p>It is a long established fact that a reader will be distracted by the readable content of a page
+                        when
+                        looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+                        distribution of letters, as opposed to using 'Content here, content here', making it look like
+                        readable English. </p>
+                </li>
+            </div>
+        </div>
+
+
+
+    </div>
+    <footer>
+        <div class="paragraphs">
+            <li>
+                <div class="footer_contact">
+                    <p>E-mail: lostpets@gmail.com </p>
+                    <p>Phone: 0712345678</p><br>
                 </div>
 
 
-            </div>
+            </li>
+            <hr>
+            <li>
 
+                <i class="fab fa-facebook-f"></i><a href="facebook.com">Facebook</a>
+                <i class="fab fa-facebook-f"></i><a href="instagram.com">Instagram</a>
+                <i class="fab fa-facebook-f"></i><a href="youtube.com">Youtube</a>
+                <i class="fab fa-facebook-f"></i><a href="reddit.com">Reddit</a>
+                <i class="fab fa-facebook-f"></i><a href="twitter.com">Twitter</a>
+            </li>
+            <hr>
+            <li>
+
+                <a href="faqs.html">FAQS</a>
+                <a href="">Terms and conditions</a>
+            </li>
         </div>
-        
-    </div>
 
-    <aside class="menu">
-            <h2>Meniu</h2>
-        </aside></div>
-    
-    <div class="content">
-            
-            
-    </div>
-    <script>
-        let menuBtn = document.getElementById('menuBtn');
-        let menu = document.querySelector('.menu');
-
-        menuBtn.addEventListener('click', () => {
-            menu.classList.add('is--open');
-        });
-
-        document.addEventListener('keyup', (e) => {
-            if (e.key === 'Escape' || e.keyCode === 27) {
-                menu.classList.remove('is--open');
-            }
-        })
-    </script>
-
+    </footer>
 </body>
 
 </html>
