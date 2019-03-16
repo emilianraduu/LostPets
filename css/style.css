@@ -17,7 +17,7 @@ nav {
 }
 
 .logo img {
-    width: 50px;
+    width: 70px;
 }
 
 .navigation {
@@ -51,12 +51,8 @@ nav {
     color: #00979c;
 }
 
-
 #selection:hover .fa {
     color: #00979c;
-}
-#selection-off {
-    display: none;
 }
 
 .container {
@@ -64,16 +60,30 @@ nav {
     display: block;
     margin-bottom: 5em;
 }
-
-.container img {
-    margin: auto auto;
-    width: 30%;
-    height: 30%;
+#selection-off{
+    display:none;
 }
-.orange-container{
+
+.motto {
+    display: flex;
+    justify-content: center;
+    padding: 0 6em;
+}
+
+.motto img {
+    margin: auto auto;
+    width: 40%;
+    height: 40%;
+}
+
+.motto p {
+    margin: auto auto;
+}
+
+.orange-container {
     margin-top: 2em;
     margin-bottom: 2em;
-    display:flex;
+    display: flex;
     background-color: #ffbf00;
     transform: skewY(-1deg);
     border-top-left-radius: 15px;
@@ -81,18 +91,23 @@ nav {
     border-bottom-right-radius: 15px;
     width: 100%;
     padding-top: 1em;
+    padding-bottom: 1em;
     color: white;
 }
-.no-container {
-    background-color: white;
-}
+
 .orange-container .paragraphs {
     transform: skewY(+1deg);
 }
-.cyan-container{
+
+.no-container {
+    background-color: white;
+}
+
+.cyan-container {
     margin-top: 4em;
     margin-bottom: 4em;
-    display:flex;
+    padding-bottom: 1em;
+    display: flex;
     background-color: #00979c;
     transform: skewY(+1deg);
     border-top-right-radius: 15px;
@@ -102,12 +117,12 @@ nav {
     padding-top: 1em;
     color: white;
 }
-.cyan-container .paragraphs{
+
+.cyan-container .paragraphs {
     transform: skewY(-1deg);
-    
 }
-  
-hr { 
+
+hr {
     display: block;
     overflow: hidden;
     border: rgba(236, 236, 236, 0.664);
@@ -127,6 +142,7 @@ button {
     letter-spacing: .1rem;
     font-size: .85rem;
 }
+
 button:hover, :focus {
     background-color: #00979c;
 }
@@ -142,30 +158,40 @@ button:hover, :focus {
     list-style-type: none;
     max-width: 250px;
     min-width: 150px;
-    
     margin: 0px 20px;
 }
+
 footer {
-    background: black;
+    display: flex;
+    background-color: black;
+    border-top-right-radius: -15px;
+    justify-content: center;
+    width: 100%;
+    padding-top: 3em;
     color: white;
-    text-align: center;
-    margin-top: 0;
 }
 
 footer a {
     display: block;
 }
+
 footer .fa {
     color: white;
     margin-right: 10px;
 }
-footer hr { 
+
+footer hr {
     display: block;
     overflow: hidden;
     border: 1px #ffffff;
     border-style: inset;
     border-width: 1px;
 }
+
+.footer li {
+    text-align: left;
+}
+
 @media only screen and (max-width: 600px) {
     .container img {
         margin: auto auto;
@@ -175,11 +201,13 @@ footer hr {
     .container {
         margin: 0;
     }
-    
     .paragraphs {
         display: block;
-        padding:  0 50px;
-        
+        padding: 0 50px;
+    }
+    .motto {
+        display: block;
+        padding: 0 2em;
     }
     .paragraphs li {
         margin-top: 30px;
@@ -196,16 +224,11 @@ footer hr {
         width: 70%;
         position: absolute;
         right: 0;
-        top:0;
+        top: 0;
         height: 100%;
         display: none;
         background-color: hsl(182, 77%, 59%);
     }
-
-    .show {
-        display:block;
-    }
-    
     .navigation .mobile {
         display: block;
     }
