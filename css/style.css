@@ -104,6 +104,7 @@ nav {
 .motto p {
     margin: auto auto;
     text-align: right;
+    margin-left: 3em;
 }
 
 .orange-container {
@@ -160,14 +161,15 @@ nav {
 }
 
 .cyan-container iframe {
-    margin: 0;
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: 500px;
     margin-top: 2em;
 }
 
 .cyan-container .paragraphs {
     transform: skewY(-1deg);
+    padding: 0;
+    padding-top: 1em;
     text-align: center;
     justify-content: center;
     display: flex;
@@ -176,9 +178,8 @@ nav {
 hr {
     display: block;
     overflow: hidden;
-    border: rgba(236, 236, 236, 0.664);
-    border-style: inset;
-    border-width: 1px;
+    border: solid rgb(255, 255, 255);
+    border-width: 2px;
 }
 
 button {
@@ -215,9 +216,10 @@ button:hover,
 }
 
 footer {
-    display: flex;
     background-color: black;
-    border-top-right-radius: -15px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding-bottom: 0;
     justify-content: center;
     width: 100%;
     color: white;
@@ -225,10 +227,7 @@ footer {
 
 footer .paragraphs {
     padding: auto 0;
-}
-
-footer a {
-    display: block;
+    margin-bottom: 0;
 }
 
 footer .fa {
@@ -238,6 +237,41 @@ footer .fa {
 
 .footer li {
     text-align: left;
+    display: block;
+}
+
+.footer_contact {
+    font-size: 12px;
+    text-align: center;
+    color: white;
+}
+
+.footer_contact a {
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+}
+
+.footer_contact p {
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.cont {
+    margin: 1em 0em;
+}
+
+.cont i {
+    margin-right: 3px;
+    color: white;
+}
+
+.cont .fa {
+    color: white;
+}
+
+.link {
+    display: inline-block;
 }
 
 .account {
@@ -270,6 +304,10 @@ footer .fa {
     .container {
         margin: 0;
     }
+    .motto p {
+        text-align: center;
+        margin-left: 0em;
+    }
     .paragraphs {
         display: block;
         padding: 0 20px;
@@ -282,6 +320,9 @@ footer .fa {
         margin-top: 30px;
         text-align: center;
         max-width: 430px;
+    }
+    .cyan-container iframe {
+        width: 400px;
     }
     .navigation {
         display: flex;
@@ -300,12 +341,21 @@ footer .fa {
     .navigation .mobile {
         display: block;
     }
+    footer li {
+        display: block !important;
+    }
 }
 
 @media only screen and (max-width: 1000px) {
     .paragraphs {
         display: block;
         padding: 0 20px;
+    }
+    footer {
+        display: flex;
+    }
+    footer li {
+        display: inline-block;
     }
     .motto {
         display: flex;
