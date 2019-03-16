@@ -49,6 +49,7 @@ nav {
 
 #selection:hover a {
     color: #00979c;
+    cursor: pointer;
 }
 
 #selection:hover .fa {
@@ -167,10 +168,12 @@ footer {
     border-top-right-radius: -15px;
     justify-content: center;
     width: 100%;
-    padding-top: 3em;
+
     color: white;
 }
-
+footer .paragraphs {
+    padding: auto 0;
+}
 footer a {
     display: block;
 }
@@ -178,14 +181,6 @@ footer a {
 footer .fa {
     color: white;
     margin-right: 10px;
-}
-
-footer hr {
-    display: block;
-    overflow: hidden;
-    border: 1px #ffffff;
-    border-style: inset;
-    border-width: 1px;
 }
 
 .footer li {
@@ -213,7 +208,6 @@ footer hr {
         margin-top: 30px;
         text-align: center;
         max-width: 430px;
-        list-style-type: none;
     }
     .navigation {
         display: flex;
@@ -232,4 +226,20 @@ footer hr {
     .navigation .mobile {
         display: block;
     }
+}
+@media only screen and (max-width: 900px) {
+    .paragraphs {
+        display: block;
+        padding: 3em 0;
+    }
+    .paragraphs li {
+        margin-top: 30px;
+        text-align: center;
+        max-width: 700px;
+    }
+    .no-container{
+        display: flex;
+        justify-content:center;
+    }
+    
 }
