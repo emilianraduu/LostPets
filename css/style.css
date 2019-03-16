@@ -325,6 +325,43 @@ footer .fa {
     border-radius: 100%;
 }
 
+body {
+    font-family: Arial, Arial, Helvetica, sans-serif;
+}
+
+.register_form {
+    border-radius: 20px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: 400px;
+    height: 600px;
+    margin: auto;
+}
+
+.register_register {
+    position: absolute;
+    top: 8%;
+    left: 38%;
+    font-size:140%
+}
+
+.register_credentials {
+    position: absolute;
+    top: 23%;
+    left: 28%;
+    width: 40%;
+
+}
+
+
+.register_links {
+    position: absolute;
+    top: 90%;
+    left: 30%;
+    font-size: 80%;
+}
+
 @media only screen and (max-width: 600px) {
     .container img {
         margin: auto auto;
@@ -401,3 +438,4 @@ footer .fa {
         justify-content: center;
     }
 }
+
