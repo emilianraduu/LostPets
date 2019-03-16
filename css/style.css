@@ -61,8 +61,6 @@ nav {
 .container {
     text-align: center;
     display: block;
-    
-    margin: 5em;
 }
 
 .container img {
@@ -72,10 +70,12 @@ nav {
 }
 .orange-container{
     margin-top: 2em;
+    margin-bottom: 2em;
     display:flex;
     background-color: #ffbf00;
     transform: skewY(-2deg);
     border-top-left-radius: 15px;
+    justify-content: center;
     border-bottom-right-radius: 15px;
     width: 100%;
     padding-top: 1em;
@@ -128,6 +128,9 @@ footer hr {
         margin: auto auto;
         width: 60%;
         height: 60%;
+    }
+    .container {
+        margin: 0;
     }
     
     .paragraphs {
