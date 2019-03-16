@@ -256,7 +256,7 @@ footer {
 }
 
 footer .paragraphs {
-    padding: auto 0;
+    padding: 3em 0;
     margin-bottom: 0;
 }
 
@@ -309,7 +309,7 @@ footer .fa {
     color: #006064;
     padding: 0;
     margin: 0;
-    transition: all 0;
+    transition: none;
 }
 
 .account:hover {
