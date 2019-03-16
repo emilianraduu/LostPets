@@ -75,7 +75,7 @@ nav {
     margin-bottom: 2em;
     display:flex;
     background-color: #ffbf00;
-    transform: skewY(-2deg);
+    transform: skewY(-1deg);
     border-top-left-radius: 15px;
     justify-content: center;
     border-bottom-right-radius: 15px;
@@ -83,13 +83,52 @@ nav {
     padding-top: 1em;
     color: white;
 }
+.no-container {
+    background-color: white;
+}
+.orange-container .paragraphs {
+    transform: skewY(+1deg);
+}
+.cyan-container{
+    margin-top: 4em;
+    margin-bottom: 4em;
+    display:flex;
+    background-color: #00979c;
+    transform: skewY(+1deg);
+    border-top-right-radius: 15px;
+    justify-content: center;
+    border-bottom-left-radius: 15px;
+    width: 100%;
+    padding-top: 1em;
+    color: white;
+}
+.cyan-container .paragraphs{
+    transform: skewY(-1deg);
+    
+}
   
 hr { 
     display: block;
     overflow: hidden;
-    border: 1px white;
+    border: rgba(236, 236, 236, 0.664);
     border-style: inset;
     border-width: 1px;
+}
+
+button {
+    margin: auto;
+    padding: 1em 2em;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: #ffbf00;
+    border: none;
+    border-radius: 3px;
+    transition: .3s all ease;
+    letter-spacing: .1rem;
+    font-size: .85rem;
+}
+button:hover, :focus {
+    background-color: #00979c;
 }
 
 .paragraphs {
@@ -102,6 +141,7 @@ hr {
 .paragraphs li {
     list-style-type: none;
     max-width: 250px;
+    min-width: 150px;
     
     margin: 0px 20px;
 }
