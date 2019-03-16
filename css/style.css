@@ -103,6 +103,7 @@ nav {
 
 .motto p {
     margin: auto auto;
+    text-align: right;
 }
 
 .orange-container {
@@ -126,6 +127,21 @@ nav {
 
 .no-container {
     background-color: white;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.no-container li {
+    display: inline-block;
+    width: 20%;
+    height: 20%;
+    min-width: 200px;
+    max-width: 300px;
+    min-height: 200px;
+    max-height: 300px;
+    margin: 5px;
 }
 
 .cyan-container {
@@ -143,8 +159,18 @@ nav {
     color: white;
 }
 
+.cyan-container iframe {
+    margin: 0;
+    width: 400px;
+    height: 400px;
+    margin-top: 2em;
+}
+
 .cyan-container .paragraphs {
     transform: skewY(-1deg);
+    text-align: center;
+    justify-content: center;
+    display: flex;
 }
 
 hr {
@@ -176,6 +202,7 @@ button:hover,
 .paragraphs {
     display: flex;
     padding: 5em;
+    font-size: 15px;
     margin-bottom: 2em;
     justify-content: center;
 }
