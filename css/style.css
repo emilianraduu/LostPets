@@ -354,33 +354,6 @@ body {
 
 }
 
-.register_submit {
-    position: absolute;
-    top: 80%;
-    left: 36%;
-    color: white;
-    background: #00838F;
-    background-size: 600%;
-    width: 100px;
-    height: 30px;
-    font-size: 90%;
-    margin: auto;
-    padding: 1em 2em;
-    text-transform: uppercase;
-    color: #ffffff;
-    background-color: #ffbf00;
-    border: none;
-    border-radius: 3px;
-    transition: .3s all ease;
-    letter-spacing: .1rem;
-    font-size: .85rem;
-}
-
-.register_submit:hover {
-    cursor: pointer;
-    color: black;
-    background: #FFBF00;
-}
 
 .register_links {
     position: absolute;
