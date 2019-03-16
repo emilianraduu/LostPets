@@ -95,6 +95,7 @@ hr {
 .paragraphs {
     display: flex;
     padding: 5em;
+    margin-bottom: 2em;
     justify-content: center;
 }
 
