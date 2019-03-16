@@ -4,6 +4,108 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.primary {
+    position: relative;
+    color: white;
+    height: 300px;
+    width: 450px;
+}
+
+.primary #img-primary {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.primary .top-btns {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin: 8px;
+    background: rgba(0, 0, 0, 0.411);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.primary .bottom-btns {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    margin: 8px;
+    background: rgba(0, 0, 0, 0.411);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.bottom-btns p,
+i {
+    margin: 0;
+    display: inline-block;
+}
+
+.top-btns p,
+i {
+    display: inline-block;
+}
+
+.top-btns p {
+    margin: 0;
+}
+
+.primary .user-things {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    margin: 8px;
+    background: rgba(0, 0, 0, 0.411);
+    padding: 10px;
+    padding-top: 0px;
+    border-radius: 10px;
+}
+
+.user-things p,
+img {
+    margin: 0;
+    display: inline-block;
+}
+
+.user-things img {
+    position: relative;
+    top: 5px;
+}
+
+.primary #photo-card {
+    border-radius: 100%;
+}
+
+.primary .down-p {}
+
+#photo-card {
+    width: 30px;
+    height: 30px;
+}
+
+.primary #img-primary:hover {
+    filter: contrast(50%);
+}
+
+.primary:hover .download-btn {
+    display: block;
+}
+
+.primary:hover .top-btns {
+    display: block;
+}
+
+.primary:hover .user-things {
+    display: block;
+}
+
+.primary .download-btn,
+.primary .top-btns,
+.primary .user-things {
+    display: block;
+}
+
 .login_login {
     top: 15%;
     font-size: 30px;
@@ -142,19 +244,24 @@ nav {
     background-color: white;
     display: flex;
     flex-flow: row;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
-.no-container li {
+.mention {
+    display: block !important;
+    text-align: center;
+}
+
+.no-container .card {
     display: inline-block;
-    width: 20%;
-    height: 20%;
-    min-width: 200px;
-    max-width: 300px;
-    min-height: 200px;
+    width: 450px;
+    height: 300px;
+    min-width: 350px;
+    min-height: 250px;
+    max-width: 450px;
     max-height: 300px;
-    margin: 5px;
+    margin: 10px 10px;
 }
 
 .cyan-container {
@@ -260,6 +367,13 @@ footer .paragraphs {
     margin-bottom: 0;
 }
 
+.paragraphss {
+    display: flex;
+    font-size: 15px;
+    margin-bottom: 2em;
+    justify-content: center;
+}
+
 footer .fa {
     color: white;
     margin-right: 10px;
@@ -343,7 +457,7 @@ body {
     position: absolute;
     top: 8%;
     left: 38%;
-    font-size:140%
+    font-size: 140%
 }
 
 .register_credentials {
@@ -351,9 +465,7 @@ body {
     top: 23%;
     left: 28%;
     width: 40%;
-
 }
-
 
 .register_links {
     position: absolute;
@@ -389,7 +501,7 @@ body {
         max-width: 430px;
     }
     .cyan-container iframe {
-        width: 400px;
+        width: 300px;
     }
     .navigation {
         display: flex;
@@ -424,6 +536,9 @@ body {
     footer li {
         display: inline-block;
     }
+    .no-container .card {
+        display: flex;
+    }
     .motto {
         display: flex;
         padding: 0 2em;
@@ -438,4 +553,3 @@ body {
         justify-content: center;
     }
 }
-
