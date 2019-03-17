@@ -4,108 +4,6 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.primary {
-    position: relative;
-    color: white;
-    height: 300px;
-    width: 450px;
-}
-
-.primary #img-primary {
-    width: 100%;
-    border-radius: 15px;
-}
-
-.primary .top-btns {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    margin: 8px;
-    background: rgba(0, 0, 0, 0.411);
-    padding: 10px;
-    border-radius: 10px;
-}
-
-.primary .bottom-btns {
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-    margin: 8px;
-    background: rgba(0, 0, 0, 0.411);
-    padding: 10px;
-    border-radius: 10px;
-}
-
-.bottom-btns p,
-i {
-    margin: 0;
-    display: inline-block;
-}
-
-.top-btns p,
-i {
-    display: inline-block;
-}
-
-.top-btns p {
-    margin: 0;
-}
-
-.primary .user-things {
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    margin: 8px;
-    background: rgba(0, 0, 0, 0.411);
-    padding: 10px;
-    padding-top: 0px;
-    border-radius: 10px;
-}
-
-.user-things p,
-img {
-    margin: 0;
-    display: inline-block;
-}
-
-.user-things img {
-    position: relative;
-    top: 5px;
-}
-
-.primary #photo-card {
-    border-radius: 100%;
-}
-
-.primary .down-p {}
-
-#photo-card {
-    width: 30px;
-    height: 30px;
-}
-
-.primary #img-primary:hover {
-    filter: contrast(50%);
-}
-
-.primary:hover .download-btn {
-    display: block;
-}
-
-.primary:hover .top-btns {
-    display: block;
-}
-
-.primary:hover .user-things {
-    display: block;
-}
-
-.primary .download-btn,
-.primary .top-btns,
-.primary .user-things {
-    display: block;
-}
-
 .login_login {
     top: 15%;
     font-size: 30px;
@@ -118,11 +16,8 @@ img {
     font-size: 70%;
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
+
+/* Logo-ul */
 
 .logo {
     text-align: left;
@@ -141,6 +36,15 @@ nav {
 
 .logo img {
     width: 70px;
+}
+
+
+/* Bara de navigare */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .navigation {
@@ -193,15 +97,24 @@ nav {
     color: #ffbf00;
 }
 
+
+/* Container default */
+
 .container {
     text-align: center;
     display: block;
     margin-bottom: 5em;
 }
 
+
+/* Butonul de menu pentru mobile */
+
 #selection-off {
     display: none;
 }
+
+
+/* Motto-ul paginii */
 
 .motto {
     display: flex;
@@ -220,6 +133,9 @@ nav {
     text-align: right;
     margin-left: 3em;
 }
+
+
+/* Container portocaliu */
 
 .orange-container {
     margin-top: 2em;
@@ -240,6 +156,9 @@ nav {
     transform: skewY(+1deg);
 }
 
+
+/* Container simply */
+
 .no-container {
     background-color: white;
     display: flex;
@@ -253,16 +172,8 @@ nav {
     text-align: center;
 }
 
-.no-container .card {
-    display: inline-block;
-    width: 450px;
-    height: 300px;
-    min-width: 350px;
-    min-height: 250px;
-    max-width: 450px;
-    max-height: 300px;
-    margin: 10px 10px;
-}
+
+/* Container-ul albastru */
 
 .cyan-container {
     margin-top: 4em;
@@ -294,12 +205,18 @@ nav {
     display: flex;
 }
 
+
+/* Bara verticala/orizontala */
+
 hr {
     display: block;
     overflow: hidden;
     border: solid rgb(255, 255, 255);
     border-width: 2px;
 }
+
+
+/* Buton default si input submit */
 
 button {
     margin: auto;
@@ -337,6 +254,9 @@ button:hover,
     background-color: #00979c;
 }
 
+
+/* Paragrafele din containere */
+
 .paragraphs {
     display: flex;
     padding: 5em;
@@ -352,6 +272,19 @@ button:hover,
     margin: 0px 20px;
 }
 
+
+/* Inca nu stiu cum sa fac altfel aici */
+
+.paragraphss {
+    display: flex;
+    font-size: 15px;
+    margin-bottom: 2em;
+    justify-content: center;
+}
+
+
+/* Footer-ul */
+
 footer {
     background-color: black;
     border-top-right-radius: 10px;
@@ -365,13 +298,6 @@ footer {
 footer .paragraphs {
     padding: 3em 0;
     margin-bottom: 0;
-}
-
-.paragraphss {
-    display: flex;
-    font-size: 15px;
-    margin-bottom: 2em;
-    justify-content: center;
 }
 
 footer .fa {
@@ -401,6 +327,9 @@ footer .fa {
     padding: 0;
 }
 
+
+/* Link-urile de contact din footer */
+
 .cont {
     margin: 1em 0em;
 }
@@ -418,6 +347,9 @@ footer .fa {
     display: inline-block;
 }
 
+
+/* Butonul de navigatie pt cont */
+
 .account {
     background: none;
     color: #006064;
@@ -432,16 +364,123 @@ footer .fa {
 
 #profile {
     width: 20px;
+    height: auto;
+    margin-right: 10px;
+    border-radius: 13px;
+}
+
+
+/* Card-urile pentru animale */
+
+.no-container .card {
+    display: inline-block;
+    min-width: 250px;
+    min-height: 300px;
+    max-width: 300px;
+    max-height: 500px;
+    margin: 10px 10px;
+}
+
+.primary {
     position: relative;
-    top: 5px;
+    color: white;
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+    border: 5px #006064 solid;
+}
+
+.primary img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    overflow: hidden;
+}
+
+.primary .top-btns {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin: 8px;
+    background: rgba(0, 0, 0, 0.411);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.primary .bottom-btns {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    margin: 8px;
+    background: rgba(0, 0, 0, 0.411);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.bottom-btns p,
+i {
+    margin: 0;
+    display: inline-block;
+}
+
+.top-btns p,
+i {
+    display: inline-block;
+}
+
+.top-btns p {
+    margin: 0;
+}
+
+.primary .user-things {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    margin: 8px;
+    background: rgba(0, 0, 0, 0.411);
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.user-things p,
+img {
+    margin: 0;
+    display: block;
+}
+
+.primary .photo-card {
+    border-radius: 100%;
+    width: 20px;
     height: 20px;
-    margin-right: 8px;
+}
+
+.photo-card img {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #00979c;
     border-radius: 100%;
 }
 
-body {
-    font-family: Arial, Arial, Helvetica, sans-serif;
+.user-things p {
+    box-sizing: border-box;
+    padding: 3px;
+    padding-left: 10px;
 }
+
+.primary:hover,
+:focus {
+    filter: contrast(80%);
+    border-color: #ffbf00;
+}
+
+
+/* Pentru register - trebuie modificat */
 
 .register_form {
     border-radius: 20px;
@@ -473,6 +512,9 @@ body {
     left: 30%;
     font-size: 80%;
 }
+
+
+/* Pentru telefoane mobile */
 
 @media only screen and (max-width: 600px) {
     .container img {
@@ -524,6 +566,9 @@ body {
         display: block !important;
     }
 }
+
+
+/* Pentru tablete / display 4:3 */
 
 @media only screen and (max-width: 1000px) {
     .paragraphs {
