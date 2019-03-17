@@ -195,8 +195,10 @@ i {
     display: block;
 }
 
-#map {
+.cyan-container iframe {
     height: 500px;
+    position: relative;
+    left: -50% !important;
     width: 500px;
     border: 3px #ffbf00 solid;
     margin: 2em auto !important;
@@ -584,6 +586,9 @@ img {
     .paragraphs {
         display: block;
         padding: 0 20px;
+    }
+    .cyan-container iframe {
+        left: 0!important;
     }
     footer {
         display: flex;
