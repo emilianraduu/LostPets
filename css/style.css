@@ -141,6 +141,16 @@ nav {
     color: white;
 }
 
+.login_links {
+    padding-top: 2em;
+}
+
+.orange-container a {
+    text-decoration: none;
+    font-size: 13px;
+    color: white;
+}
+
 .cyan {
     margin-top: 4em;
     margin-bottom: 4em;
@@ -275,7 +285,7 @@ button,
 button:hover,
 .button:hover,
  :focus {
-    background-color: #00979c;
+    background-color: #e2b01a;
 }
 
 input:focus {
@@ -558,12 +568,55 @@ img {
     margin: 1em;
 }
 
-.skewUp {
-    transform: skewY(-1deg);
+.register_form {
+    border: 2px solid black;
+    border-radius: 20px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: 400px;
+    height: 600px;
+    margin: auto;
 }
 
-.skewDown {
-    transform: skewY(+1deg);
+.register_register {
+    position: absolute;
+    top: 8%;
+    left: 38%;
+    font-size: 140%
+}
+
+.register_credentials {
+    position: absolute;
+    top: 23%;
+    left: 28%;
+    width: 40%;
+}
+
+.register_submit {
+    position: absolute;
+    top: 80%;
+    left: 36%;
+    color: white;
+    border-radius: 50px;
+    background: #00838F;
+    background-size: 600%;
+    width: 100px;
+    height: 30px;
+    font-size: 90%;
+}
+
+.register_submit:hover {
+    cursor: pointer;
+    color: black;
+    background: #FFBF00;
+}
+
+.register_links {
+    position: absolute;
+    top: 90%;
+    left: 30%;
+    font-size: 80%;
 }
 
 

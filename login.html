@@ -5,31 +5,139 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="login.css">
     <title>Lost Pets</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 
 <body>
-    <section>
-        <form class="login_form" action="">
-            <p class="login_login">Login</p>
-            <div class="login_credentials">
-                <label for="name">Email: </label>
-                <input type="email" id="mail" name="mail" required autocomplete autofocus
-                    oninvalid="this.setCustomValidity('Please enter your email')"
-                    oninput="setCustomValidity('')"><br><br>
-                <label for="pass">Password: </label>
-                <input type="password" id="pass" name="password" required minlength="8" maxlength="20"
-                    oninvalid="this.setCustomValidity('Please enter your password')" oninput="setCustomValidity('')">
-            </div>
-            <input class="login_submit" type="submit" value="Login">
-            <div class="login_links">
-                <a href="forgotpass.html">Forgot your password?</a><br>
-                <a href="register.html">Don't have an account?</a>
-            </div>
-        </form>
-    </section>
+    <header>
+        <nav>
+            <a href="./index.html">
+                <div class="logo">
 
+                </div>
+            </a>
+            <div class="navigation">
+                <div class="non-mobile">
+                    <li>
+                        <div class="selection">
+                            <a href="#"> <i class="fa fa-home" aria-hidden="true"></i>Home</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="selection"><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>Find</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="selection"><a href="#"><i class="fa fa-user" aria-hidden="true"></i>Account</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div id="selection-off"> <a href="#"><i class="fa fa-times fa-2x" aria-hidden="true"></i></a>
+                        </div>
+                    </li>
+
+                </div>
+                <div class="mobile">
+                    <li>
+                        <div id="selection"> <a href="#"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></a>
+                        </div>
+                    </li>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2> Login </h2>
+
+        <div class="orange-container ">
+
+            <ul class="paragraphs">
+
+                <li>
+                    <section>
+                        <form action="">
+                            <div class="login_credentials">
+                                <label for="mail">Email: </label>
+                                <input type="email" id="mail" name="mail" required autocomplete autofocus oninvalid="this.setCustomValidity('Please enter your email')" oninput="setCustomValidity('')"><br><br>
+                                <label for="pass">Password: </label>
+                                <input type="password" id="pass" name="password" required minlength="8" maxlength="20" oninvalid="this.setCustomValidity('Please enter your password')" oninput="setCustomValidity('')">
+                            </div>
+                            <input class="invbut down" type="submit" value="Login">
+                            <div class="login_links">
+                                <a href="forgotpass.html">Forgot your password?</a><br>
+                                <a href="register.html">Don't have an account?</a>
+                            </div>
+                        </form>
+                    </section>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <div class="paragraphs">
+            <li>
+                <div class="footer_contact">
+                    <p>Ne puteti gasi la adresa de mail:</p>
+                    <div class="cont">
+                        <i class="fas fa-envelope"></i> <a href="mailto:contact@lostpets.com" target="_top">contact@lostpets.com</a>
+
+                    </div>
+                    <p>sau la numarul de telefon</p>
+                    <div class="cont">
+                        <i class="fas fa-phone"></i> <a href="tel:0712345678">0712 345 678</a></div>
+
+                </div>
+
+
+            </li>
+
+            <li>
+                <div class="footer_contact">
+                    <div class="cont">
+                        <i class="fab fa-facebook-f"></i><a href="facebook.com">Facebook</a>
+                    </div>
+                    <div class="cont">
+                        <i class="fab fa-instagram"></i><a href="instagram.com">Instagram</a>
+                    </div>
+                    <div class="cont">
+                        <i class="fab fa-youtube"></i><a href="youtube.com">Youtube</a>
+                    </div>
+                    <div class="cont">
+                        <i class="fab fa-reddit"></i><a href="reddit.com">Reddit</a>
+                    </div>
+                    <div class="cont">
+                        <i class="fab fa-twitter"></i><a href="twitter.com">Twitter</a>
+                    </div>
+
+
+
+                </div>
+            </li>
+
+            <li>
+                <div class="footer_contact">
+                    <div class="cont">
+                        <i class="fas fa-info"></i><a href="faqs.html">FAQS</a>
+                    </div>
+                    <div class="cont">
+                        <i class="fas fa-book"></i> <a href="">Terms and conditions</a>
+                    </div>
+
+
+
+
+                </div>
+
+
+            </li>
+        </div>
+
+    </footer>
 </body>
 
 </html>
