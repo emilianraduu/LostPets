@@ -4,18 +4,6 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.login_login {
-    top: 15%;
-    font-size: 30px;
-}
-
-.login_form .login_links {
-    position: absolute;
-    top: 80%;
-    left: 35%;
-    font-size: 70%;
-}
-
 
 /* Logo-ul */
 
@@ -141,15 +129,49 @@ nav {
     margin-top: 2em;
     margin-bottom: 2em;
     display: flex;
+    position: relative;
     background-color: #ffbf00;
     transform: skewY(-1deg);
-    border-top-left-radius: 15px;
+    border-top-left-radius: 60px;
     justify-content: center;
-    border-bottom-right-radius: 15px;
+    border-bottom-right-radius: 60px;
     width: 100%;
     padding-top: 1em;
     padding-bottom: 1em;
     color: white;
+}
+
+.cyan {
+    margin-top: 4em;
+    margin-bottom: 4em;
+    background-color: #00979c;
+}
+
+.cyan-container {
+    margin-top: 4em;
+    margin-bottom: 4em;
+    padding-bottom: 1em;
+    display: flex;
+    background-color: #00979c;
+    transform: skewY(+1deg);
+    border-top-right-radius: 60px;
+    justify-content: center;
+    border-bottom-left-radius: 60px;
+    width: 100%;
+    padding-top: 1em;
+    color: white;
+}
+
+.skewUp {
+    border-bottom-left-radius: 60px;
+    border-top-right-radius: 60px;
+    transform: skewY(+1deg);
+}
+
+.skewDown {
+    transform: skewY(-1deg);
+    border-top-left-radius: 60px;
+    border-bottom-right-radius: 60px;
 }
 
 .orange-container .paragraphs {
@@ -174,21 +196,6 @@ nav {
 
 
 /* Container-ul albastru */
-
-.cyan-container {
-    margin-top: 4em;
-    margin-bottom: 4em;
-    padding-bottom: 1em;
-    display: flex;
-    background-color: #00979c;
-    transform: skewY(+1deg);
-    border-top-right-radius: 15px;
-    justify-content: center;
-    border-bottom-left-radius: 15px;
-    width: 100%;
-    padding-top: 1em;
-    color: white;
-}
 
 .cyan-container iframe,
 i {
@@ -228,40 +235,53 @@ hr {
 
 /* Buton default si input submit */
 
-button {
+button,
+.button {
     margin: auto;
     padding: 1em 2em;
     text-transform: uppercase;
     color: #ffffff;
     background-color: #ffbf00;
     border: none;
-    border-radius: 3px;
+    border-radius: 50px 0;
+    cursor: pointer;
     transition: .3s all ease;
     letter-spacing: .1rem;
     font-size: .85rem;
 }
 
-.submit {
+.invbut {
     margin: auto;
     padding: 1em 2em;
     text-transform: uppercase;
     color: #ffffff;
-    background-color: #ffbf00;
     border: none;
-    border-radius: 3px;
+    border-radius: 50px 0;
+    cursor: pointer;
     transition: .3s all ease;
     letter-spacing: .1rem;
     font-size: .85rem;
-}
-
-.submit:hover,
-:focus {
     background-color: #00979c;
+}
+
+.down {
+    margin-top: 2em;
+}
+
+.invbut:hover {
+    background-color: #006064;
 }
 
 button:hover,
+.button:hover,
  :focus {
     background-color: #00979c;
+}
+
+input:focus {
+    border: #006064 2px solid;
+    background-color: #ffffff;
+    filter: contrast(100%);
 }
 
 
@@ -526,6 +546,27 @@ img {
 }
 
 
+/* Pt login */
+
+.login_credentials {
+    display: block;
+}
+
+.login_credentials input {
+    width: 100%;
+    height: 30px;
+    margin: 1em;
+}
+
+.skewUp {
+    transform: skewY(-1deg);
+}
+
+.skewDown {
+    transform: skewY(+1deg);
+}
+
+
 /* Pentru telefoane mobile */
 
 @media only screen and (max-width: 600px) {
@@ -543,6 +584,7 @@ img {
     }
     .paragraphs {
         display: block;
+        position: relative;
         padding: 0 20px;
     }
     .motto {
@@ -589,6 +631,7 @@ img {
     }
     .cyan-container iframe {
         left: 0!important;
+        width: 400px;
     }
     footer {
         display: flex;
