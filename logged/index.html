@@ -11,6 +11,7 @@
 </head>
 
 <body>
+
     <header>
         <nav>
             <a href="">
@@ -19,7 +20,11 @@
                 </div>
             </a>
             <div class="navigation">
-                <div class="non-mobile">
+                <ul class="non-mobile">
+                    <li>
+                        <div id="selection-off"> <a href="#"><i id="rmBtn" class="fa fa-times fa-2x" aria-hidden="true"></i></a>
+                        </div>
+                    </li>
                     <li>
                         <div class="selection">
                             <a href="#"> <i class="fa fa-home" aria-hidden="true"></i>Home</a>
@@ -36,23 +41,39 @@
                     </li>
                     <li>
                         <div class="selection">
-                            <a href="#"><img src="../img/user-img1.jpg" alt="profile photo" id="profile"></i>emi</a>
-                            <button class="account"><i class="fas fa-caret-down"></i></button></div>
-                    </li>
-                    <li>
-                        <div id="selection-off"> <a href="#"><i class="fa fa-times fa-2x" aria-hidden="true"></i></a>
-                        </div>
+
+                            <a href="#">
+                                <div class="prof-img">
+                                    <img src="../img/user-img1.jpg" alt="">
+                                </div>Emi</a>
+                            <button class="account"><i  class="fas fa-caret-down"></i></button></div>
                     </li>
 
-                </div>
-                <div class="mobile">
+
+                </ul>
+
+                <ul class="mobile">
                     <li>
-                        <div id="selection"> <a href="#"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></a>
+
+                        <div id="selection"> <a href="#"><i id="menuBtn" class="fa fa-bars fa-2x" aria-hidden="true"></i></a>
                         </div>
                     </li>
-                </div>
+                </ul>
             </div>
         </nav>
+        <script>
+            let menuBtn = document.getElementById('menuBtn');
+            let menu = document.querySelector('.non-mobile');
+            let rmmenu = document.getElementById('rmBtn');
+
+            menuBtn.addEventListener('click', () => {
+                menu.classList.add('is--open');
+            });
+
+            rmBtn.addEventListener('click', () => {
+                menu.classList.remove('is--open');
+            });
+        </script>
     </header>
     <div class="container">
         <div class="motto"><img src="../img/illu.png" alt="ilustratie" draggable="false">
@@ -216,6 +237,7 @@
         </ul>
         </div>
     </footer>
+
 </body>
 
 </html>

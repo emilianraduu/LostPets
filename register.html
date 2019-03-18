@@ -13,38 +13,51 @@
 <body>
     <header>
         <nav>
-            <a href="./index.html">
+            <a href="">
                 <div class="logo">
+
                 </div>
             </a>
             <div class="navigation">
                 <ul class="non-mobile">
+                    <li>
+                        <div id="selection-off"> <a href="#"><i id="rmBtn" class="fa fa-times fa-2x" aria-hidden="true"></i></a>
+                        </div>
+                    </li>
                     <li>
                         <div class="selection">
                             <a href="#"> <i class="fa fa-home" aria-hidden="true"></i>Home</a>
                         </div>
                     </li>
                     <li>
-                        <div class="selection"><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>Find</a>
+                        <div class="selection"><a href="#"><i class="fa fa-search" aria-hidden="true"></i>Account</a>
                         </div>
                     </li>
-                    <li>
-                        <div class="selection"><a href="./login.html"><i class="fa fa-user" aria-hidden="true"></i>Account</a>
-                        </div>
-                    </li>
-                    <li>
-                        <div id="selection-off"> <a href="#"><i class="fa fa-times fa-2x" aria-hidden="true"></i></a>
-                        </div>
-                    </li>
+
                 </ul>
+
                 <ul class="mobile">
                     <li>
-                        <div id="selection"> <a href="#"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></a>
+
+                        <div id="selection"> <a href="#"><i id="menuBtn" class="fa fa-bars fa-2x" aria-hidden="true"></i></a>
                         </div>
                     </li>
                 </ul>
             </div>
         </nav>
+        <script>
+            let menuBtn = document.getElementById('menuBtn');
+            let menu = document.querySelector('.non-mobile');
+            let rmmenu = document.getElementById('rmBtn');
+
+            menuBtn.addEventListener('click', () => {
+                menu.classList.add('is--open');
+            });
+
+            rmBtn.addEventListener('click', () => {
+                menu.classList.remove('is--open');
+            });
+        </script>
     </header>
 
     <div class="container">
