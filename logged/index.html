@@ -14,7 +14,7 @@
 
     <header>
         <nav>
-            <a href="">
+            <a href="./index.html">
                 <div class="logo">
 
                 </div>
@@ -27,11 +27,11 @@
                     </li>
                     <li>
                         <div class="selection">
-                            <a href="#"> <i class="fa fa-home" aria-hidden="true"></i>Home</a>
+                            <a href="./index.html"> <i class="fa fa-home" aria-hidden="true"></i>Home</a>
                         </div>
                     </li>
                     <li>
-                        <div class="selection"><a href="#"><i class="fa fa-search" aria-hidden="true"></i>I lost my
+                        <div class="selection"><a href="./announcements.html"><i class="fa fa-search" aria-hidden="true"></i>I lost my
                                 pet!</a>
                         </div>
                     </li>
@@ -42,11 +42,18 @@
                     <li>
                         <div class="selection">
 
-                            <a href="#">
+                            <a href="">
                                 <div class="prof-img">
                                     <img src="../img/user-img1.jpg" alt="">
                                 </div>Emi</a>
-                            <button class="account"><i  class="fas fa-caret-down"></i></button></div>
+                            <button class="account" id="ubtn"><i  class="fas fa-caret-down"></i></button></div>
+                        <div class="user-stuff">
+                            <div class="selection"><a href="./announcements.html"><i class="fa fa-search" aria-hidden="true"></i>I lost my
+                                pet!</a></div>
+
+                            <div class="selection"><a href="./announcements.html"><i class="fa fa-search" aria-hidden="true"></i>I lost my
+                                    pet!</a></div>
+                        </div>
                     </li>
 
 
@@ -64,7 +71,10 @@
         <script>
             let menuBtn = document.getElementById('menuBtn');
             let menu = document.querySelector('.non-mobile');
+            let umenu = document.querySelector('.user-stuff');
             let rmmenu = document.getElementById('rmBtn');
+            let ubtn = document.getElementById('ubtn');
+            var pressed = 0;
 
             menuBtn.addEventListener('click', () => {
                 menu.classList.add('is--open');
@@ -72,6 +82,26 @@
 
             rmBtn.addEventListener('click', () => {
                 menu.classList.remove('is--open');
+                umenu.classList.remove('is--open');
+                umenu.classList.remove('display');
+                ubtn.classList.add('flip2');
+            });
+            ubtn.addEventListener('click', () => {
+                pressed = pressed + 1;
+
+                if (pressed % 2 == 0) {
+                    umenu.classList.add('is--open');
+                    ubtn.classList.add('flip');
+                    ubtn.classList.remove('flip2');
+                    umenu.classList.add('display');
+                }
+                if (pressed % 2 == 1) {
+                    umenu.classList.remove('is--open');
+                    ubtn.classList.remove('flip');
+                    ubtn.classList.add('flip2');
+                    umenu.classList.remove('display');
+
+                }
             });
         </script>
     </header>

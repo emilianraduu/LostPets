@@ -11,6 +11,7 @@ body {
     text-align: left;
     padding: 40px;
     margin: 15px;
+    transition: all .5s ease-in-out;
     background: url(../img/logo-blue.png);
     background-repeat: no-repeat;
     background-size: contain;
@@ -20,6 +21,7 @@ body {
     background: url(../img/logo-orange.png);
     background-repeat: no-repeat;
     background-size: contain;
+    transform: scale(0.97, 0.97);
 }
 
 .logo img {
@@ -58,7 +60,7 @@ nav {
     padding: 0 5px;
 }
 
-.prof-img {
+.selection .prof-img {
     display: inline-block;
     width: 20px;
     border-radius: 100%;
@@ -66,6 +68,7 @@ nav {
     height: 20px;
     position: relative;
     margin-right: 5px;
+    transition: all .5s ease-in-out;
     top: 5px;
 }
 
@@ -77,12 +80,18 @@ nav {
     border-radius: 100%;
 }
 
+.prof-img:hover {
+    filter: contrast(80%);
+    border-color: #ffbf00;
+}
+
 .navigation .mobile {
     display: none;
 }
 
 .selection {
     color: #006064;
+    transition: all .5s ease-in-out;
 }
 
 .selection:hover {
@@ -90,11 +99,13 @@ nav {
 }
 
 .selection:hover a {
+    transition: all .5s ease-in-out;
     cursor: pointer;
     color: #ffbf00;
 }
 
 .selection:hover .fa {
+    transition: all .5s ease-in-out;
     cursor: pointer;
     color: #ffbf00;
 }
@@ -127,15 +138,18 @@ nav {
     display: flex;
     justify-content: center;
     padding: 0 6em;
+    transition: all .5s ease-in-out;
 }
 
 .motto img {
     margin: auto auto;
     width: 40%;
     height: 40%;
+    transition: all .5s ease-in-out;
 }
 
 .motto p {
+    transition: all .5s ease-in-out;
     margin: auto auto;
     text-align: right;
     margin-left: 3em;
@@ -417,7 +431,8 @@ footer .fa {
     color: #006064;
     padding: 0;
     margin: 0;
-    transition: none;
+    margin-right: 10px;
+    transition: all .5s ease-in-out;
 }
 
 .account:hover {
@@ -439,6 +454,7 @@ footer .fa {
 .primary {
     position: relative;
     color: white;
+    transition: all .5s ease-in-out;
     width: 300px;
     height: 500px;
     border-top-left-radius: 35px;
@@ -453,6 +469,31 @@ footer .fa {
     border-top-left-radius: 30px;
     border-bottom-right-radius: 30px;
     overflow: hidden;
+}
+
+.user-stuff {
+    display: block;
+    position: absolute;
+    transition: all .5s ease-in-out;
+    margin-top: 10px;
+    right: -300px;
+    margin-right: 10px;
+    background: #006064;
+    border-radius: 20px;
+    padding: 2em;
+}
+
+.user-stuff .selection a,
+.fa {
+    color: white;
+}
+
+.flip {
+    transform: rotate(180deg);
+}
+
+.flip2 {
+    transform: rotate(0deg);
 }
 
 .primary .top-btns {
@@ -503,6 +544,10 @@ i {
     flex-wrap: wrap;
 }
 
+.is--open {
+    right: 0!important;
+}
+
 .user-things p,
 img {
     margin: 0;
@@ -530,7 +575,8 @@ img {
 
 .primary:hover,
 :focus {
-    filter: contrast(80%);
+    transform: scale(0.99, 0.99);
+    filter: contrast(90%);
     border-color: #ffbf00;
 }
 
@@ -550,6 +596,10 @@ img {
 .login_links {
     position: relative;
     padding-top: 2em;
+}
+
+.display {
+    display: block;
 }
 
 
@@ -587,15 +637,24 @@ img {
         max-width: 430px;
     }
     .cyan-container iframe {
-        width: 300px;
+        width: 300px !important;
     }
     .navigation {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
     }
+    .user-stuff {
+        position: relative;
+        right: -100%;
+        display: block;
+        margin-top: 0px;
+        padding: 0em;
+        background: none;
+        width: 100%;
+    }
     .navigation .non-mobile {
-        width: 50%;
+        width: 60%;
         right: -100%;
         top: 0;
         height: 100%;
@@ -608,9 +667,6 @@ img {
         position: fixed;
         z-index: 1;
         background-color: #00979c;
-    }
-    .is--open {
-        right: 0!important;
     }
     .selection a {
         font-size: 20px;
@@ -638,6 +694,7 @@ img {
         display: block;
         text-align: right;
         padding: 1em;
+        padding-top: 2.5em;
         background-color: #006064;
     }
     .navigation ul {
