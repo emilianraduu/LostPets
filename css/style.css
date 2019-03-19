@@ -6,17 +6,20 @@ body {
 
 
 /* Logo-ul */
-textarea{
+
+textarea {
     min-width: 400px;
     min-height: 400px;
-    width:400px;
-    height:400px;
+    width: 400px;
+    height: 400px;
     max-width: 500px;
     max-height: 500px;
 }
+
 .logo-link:focus {
     background: none;
 }
+
 .logo {
     text-align: left;
     padding: 40px;
@@ -27,7 +30,8 @@ textarea{
     background-size: contain;
 }
 
-.logo:hover, .logo:focus {
+.logo:hover,
+.logo:focus {
     background: url(../img/logo-orange.png);
     background-repeat: no-repeat;
     background-size: contain;
@@ -90,7 +94,7 @@ nav {
     border-radius: 100%;
 }
 
-.prof-img:hover {
+.selection:hover .prof-img {
     filter: contrast(80%);
     border-color: #ffbf00;
 }
@@ -142,6 +146,19 @@ nav {
     display: none;
 }
 
+.animal-full-card {
+    border-radius: 50px;
+    width: 50%;
+    margin: auto auto;
+    height: auto;
+}
+
+.animal-full-card h2,
+p {
+    padding-left: 1em;
+    display: block;
+}
+
 
 /* Motto-ul paginii */
 
@@ -163,7 +180,11 @@ nav {
     transition: all .5s ease-in-out;
     margin: auto auto;
     text-align: right;
-    margin-left: 3em;
+    margin-left: 0em;
+}
+
+.motto h2 {
+    margin: auto auto;
 }
 
 
@@ -240,6 +261,7 @@ nav {
 .no-container {
     background-color: white;
     display: flex;
+    padding: 1em;
     flex-flow: row;
     flex-wrap: wrap;
     justify-content: center;
@@ -462,6 +484,17 @@ footer .fa {
     margin: 10px 10px;
 }
 
+.no-container p,
+.card {
+    display: flex;
+}
+
+.right {
+    text-align: left;
+    margin-left: 1em;
+    width: 70%;
+}
+
 .primary {
     position: relative;
     color: white;
@@ -490,12 +523,20 @@ footer .fa {
     margin-right: 10px;
     background: #006064;
     border-radius: 20px;
-    padding: 2em;
+    padding: 1em;
 }
 
 .user-stuff .selection a,
-.fa {
-    color: white;
+.user-stuff .selection .fa {
+    color: #ffffff;
+}
+
+.user-stuff .selection:hover a {
+    color: #ffbf00;
+}
+
+.user-stuff .selection:hover .fa {
+    color: #ffbf00;
 }
 
 .flip {
@@ -612,6 +653,23 @@ img {
     display: block;
 }
 
+.round-notif {
+    width: 5px;
+    position: absolute;
+    right: 0;
+    height: 5px;
+    border-radius: 100%;
+    background: #ffbf00;
+    border: .5px solid #006064;
+}
+
+.small {
+    width: 10px!important;
+    height: 10px!important;
+    position: relative;
+    margin-bottom: 3px;
+}
+
 
 /* Pentru telefoane mobile */
 
@@ -624,9 +682,18 @@ img {
     .container {
         margin: 0;
     }
+    .small {
+        margin-bottom: 0;
+        width: 20px!important;
+        height: 20px!important;
+    }
     .motto p {
         text-align: center;
         margin-left: 0em;
+    }
+    .selection:hover .prof-img {
+        filter: contrast(80%);
+        border-color: #00979c;
     }
     .navigation .mobile {
         display: block;
@@ -636,6 +703,9 @@ img {
         display: block;
         position: relative;
         padding: 0 20px;
+    }
+    .fa-caret-down:hover {
+        color: white;
     }
     .motto {
         display: block !important;
