@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Lost Pets</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 
 <body>
@@ -21,7 +22,8 @@
             <div class="navigation">
                 <ul class="non-mobile">
                     <li>
-                        <div id="selection-off"> <a href="#"><i id="rmBtn" class="fa fa-times fa-2x" aria-hidden="true"></i></a>
+                        <div id="selection-off"> <a href="#"><i id="rmBtn" class="fa fa-times fa-2x"
+                                    aria-hidden="true"></i></a>
                         </div>
                     </li>
                     <li>
@@ -39,7 +41,8 @@
                 <ul class="mobile">
                     <li>
 
-                        <div id="selection"> <a href="#"><i id="menuBtn" class="fa fa-bars fa-2x" aria-hidden="true"></i></a>
+                        <div id="selection"> <a href="#"><i id="menuBtn" class="fa fa-bars fa-2x"
+                                    aria-hidden="true"></i></a>
                         </div>
                     </li>
                 </ul>
@@ -70,19 +73,27 @@
                         <form action="">
                             <div class="login_credentials">
                                 <label for="fname">First name: </label>
-                                <input type="text" id="fname" name="firstname" required oninvalid="this.setCustomValidity('Please enter your first name')" oninput="setCustomValidity('')"><br><br>
+                                <input type="text" id="fname" name="firstname" required
+                                    oninvalid="this.setCustomValidity('Please enter your first name')"
+                                    oninput="setCustomValidity('')"><br><br>
 
                                 <label for="lname">Last name: </label>
-                                <input type="text" id="lname" name="lastname" required oninvalid="this.setCustomValidity('Please enter your last name')" oninput="setCustomValidity('')"><br><br>
+                                <input type="text" id="lname" name="lastname" required
+                                    oninvalid="this.setCustomValidity('Please enter your last name')"
+                                    oninput="setCustomValidity('')"><br><br>
 
                                 <label for="mail">E-mail: </label>
-                                <input type="email" id="mail" name="mail" required oninvalid="this.setCustomValidity('Please enter an e-mail')" oninput="setCustomValidity('')"><br><br>
+                                <input type="email" id="mail" name="mail" required
+                                    oninvalid="this.setCustomValidity('Please enter an e-mail')"
+                                    oninput="setCustomValidity('')"><br><br>
 
                                 <label for="pass">Password: </label>
-                                <input type="password" id="pass" name="pass" required minlength="8" maxlength="20" oninvalid="this.setCustomValidity('Please enter a password')" oninput="setCustomValidity('')"><br><br>
+                                <input type="password" id="pass" name="pass" required minlength="8" maxlength="20"
+                                    oninvalid="this.setCustomValidity('Please enter a password')"
+                                    oninput="setCustomValidity('')"><br><br>
 
                                 <label for="phone">Phone number: </label>
-                                <input type="tel" id="phone" name="phone"><br><br>
+                                <input type="number" id="phone" name="phone" placeholder="0712345678" min="0000000000" max="9999999999" step="1111111111"><br><br>
 
                                 <label for="birth">Date of birth: </label>
                                 <input type="date" id="birth" name="birth" max="2006-01-01" min="1940-01-01"><br><br>
@@ -94,6 +105,10 @@
                 </li>
             </ul>
         </div>
+        <script>
+            if ($('[type="date"]').prop('type') != 'date') {
+                $('[type="date"]').datepicker();
+            }</script>
     </div>
 
     <footer>
@@ -102,7 +117,8 @@
                 <div class="footer_contact ">
                     <p>Ne puteti gasi la adresa de mail:</p>
                     <div class="cont ">
-                        <i class="fas fa-envelope "></i> <a href="mailto:contact@lostpets.com " target="_top ">contact@lostpets.com</a>
+                        <i class="fas fa-envelope "></i> <a href="mailto:contact@lostpets.com "
+                            target="_top ">contact@lostpets.com</a>
 
                     </div>
                     <p>sau la numarul de telefon</p>

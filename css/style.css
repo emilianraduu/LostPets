@@ -6,7 +6,17 @@ body {
 
 
 /* Logo-ul */
-
+textarea{
+    min-width: 400px;
+    min-height: 400px;
+    width:400px;
+    height:400px;
+    max-width: 500px;
+    max-height: 500px;
+}
+.logo-link:focus {
+    background: none;
+}
 .logo {
     text-align: left;
     padding: 40px;
@@ -17,7 +27,7 @@ body {
     background-size: contain;
 }
 
-.logo:hover {
+.logo:hover, .logo:focus {
     background: url(../img/logo-orange.png);
     background-repeat: no-repeat;
     background-size: contain;
@@ -588,7 +598,7 @@ img {
 }
 
 .login_credentials input {
-    width: 100%;
+    width: 80%;
     height: 30px;
     margin: 1em;
 }
