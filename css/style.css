@@ -523,7 +523,21 @@ footer .fa {
     margin-right: 10px;
     background: #006064;
     border-radius: 20px;
+    width: 150px;
     padding: 1em;
+    z-index: 1;
+}
+
+.notif-stuff {
+    display: none;
+    position: absolute;
+    transition: all .5s ease-in-out;
+    margin-top: 10px;
+    background: #006064;
+    border-radius: 20px;
+    padding: 1em;
+    margin-right: 60px;
+    z-index: 1;
 }
 
 .user-stuff .selection a,
@@ -536,6 +550,19 @@ footer .fa {
 }
 
 .user-stuff .selection:hover .fa {
+    color: #ffbf00;
+}
+
+.notif-stuff .selection a,
+.notif-stuff .selection .fa {
+    color: #ffffff;
+}
+
+.notif-stuff .selection:hover a {
+    color: #ffbf00;
+}
+
+.notif-stuff .selection:hover .fa {
     color: #ffbf00;
 }
 
@@ -728,6 +755,18 @@ img {
         position: relative;
         display: block;
         right: -100%;
+        border-radius: 0;
+        margin-top: 0px;
+        padding: 0em;
+        background: none;
+        width: 100%;
+    }
+    #notifbtn {
+        display: none;
+    }
+    .notif-stuff {
+        position: relative;
+        display: block;
         border-radius: 0;
         margin-top: 0px;
         padding: 0em;

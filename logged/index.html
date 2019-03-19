@@ -31,12 +31,19 @@
                         </div>
                     </li>
                     <li>
-                        <div class="selection"><a href="./announcements.html"><i class="fa fa-search" aria-hidden="true"></i>I lost my
+                        <div class="selection"><a href="./formular.html"><i class="fa fa-search" aria-hidden="true"></i>I lost my
                                 pet!</a>
                         </div>
                     </li>
                     <li>
-                        <div class="selection"><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>Find</a>
+                        <div class="selection"><a href="./find.html"><i class="fa fa-map-marker" aria-hidden="true"></i>Find</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="selection" id="notifbtn"><a href="#"><i class="fa fa-bell" aria-hidden="true"></i>Notifications</a>
+                        </div>
+                        <div class="notif-stuff">
+                            <div class="selection"><a href="../profile.html"><i class="fa fa-users" aria-hidden="true"></i>A puppy was lost!</a></div>
                         </div>
                     </li>
                     <li>
@@ -55,9 +62,6 @@
                             </div>
                             <div class="selection"><a href="../profile.html"><i class="fa fa-users" aria-hidden="true"></i>Profile</a></div>
                             <div class="selection"><a href="../index.html"><i class="fa fa-sign-out-alt" aria-hidden="true"></i>Logout</a></div>
-
-
-
                         </div>
                     </li>
 
@@ -77,9 +81,12 @@
             let menuBtn = document.getElementById('menuBtn');
             let menu = document.querySelector('.non-mobile');
             let umenu = document.querySelector('.user-stuff');
+            let notifbtn = document.getElementById('notifbtn');
+            let nmenu = document.querySelector('.notif-stuff');
             let rmmenu = document.getElementById('rmBtn');
             let ubtn = document.getElementById('ubtn');
             var pressed = 1;
+            var pressed2 = 1;
 
             menuBtn.addEventListener('click', () => {
                 menu.classList.add('is--open');
@@ -99,11 +106,32 @@
                     ubtn.classList.add('flip');
                     ubtn.classList.remove('flip2');
                     umenu.classList.add('display');
+                    nmenu.classList.remove('is--open');
+                    nmenu.classList.remove('display');
                 }
                 if (pressed % 2 == 1) {
                     umenu.classList.remove('is--open');
                     ubtn.classList.remove('flip');
                     ubtn.classList.add('flip2');
+                    umenu.classList.remove('display');
+                    nmenu.classList.remove('is--open');
+                    nmenu.classList.remove('display');
+
+                }
+            });
+            notifbtn.addEventListener('click', () => {
+                pressed2 = pressed2 + 1;
+
+                if (pressed2 % 2 == 0) {
+                    nmenu.classList.add('is--open');
+                    umenu.classList.remove('is--open');
+                    umenu.classList.remove('display');
+                    nmenu.classList.add('display');
+                }
+                if (pressed2 % 2 == 1) {
+                    nmenu.classList.remove('is--open');
+                    nmenu.classList.remove('display');
+                    umenu.classList.remove('is--open');
                     umenu.classList.remove('display');
 
                 }
@@ -112,7 +140,7 @@
     </header>
 
     <div class="no-container">
-        <a href="./animals/dog.html">
+        <a href="./dog.html">
             <div class="card">
                 <div class="primary">
 
