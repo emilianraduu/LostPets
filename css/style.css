@@ -7,15 +7,6 @@ body {
 
 /* Logo-ul */
 
-textarea {
-    min-width: 150px;
-    min-height: 50px;
-    width: 150px;
-    height: 50px;
-    max-width: 250px;
-    max-height: 100px;
-}
-
 .logo-link:focus {
     background: none;
 }
@@ -204,6 +195,20 @@ p {
     padding-top: 1em;
     padding-bottom: 1em;
     color: white;
+}
+
+.orange-container label,
+input {
+    width: 100%;
+}
+
+.orange-container textarea {
+    width: 100%;
+    max-width: 300px;
+    max-height: 500px;
+    min-width: 100px;
+    min-height: 100px;
+    height: 100px;
 }
 
 .orange-container a {
@@ -671,7 +676,6 @@ img {
     width: 80%;
     height: 30px;
     margin: 1em;
-    
 }
 
 .login_links {
@@ -701,15 +705,15 @@ img {
 }
 
 .formular_container {
-    display:block;
-    text-align:center;
+    display: block;
+    text-align: center;
 }
 
 .formular_credentials {
     display: inline-block;
-    text-align:left;
+    text-align: left;
     margin-left: 25%;
-    margin-right:25%;
+    margin-right: 25%;
     width: 50%;
 }
 
