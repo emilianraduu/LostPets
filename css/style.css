@@ -856,6 +856,9 @@ img {
         left: 0!important;
         width: 400px;
     }
+    .orange-container {
+        padding: 4em 0;
+    }
     footer {
         display: flex;
     }
