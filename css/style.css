@@ -256,11 +256,10 @@ input {
     border-bottom-right-radius: 60px;
 }
 
-.orange-container .paragraphs label,input{
-    margin-left:10px;
-    
+.orange-container .paragraphs label,
+input {
+    margin-left: 10px;
 }
-
 
 
 /* Container simply */
@@ -717,9 +716,10 @@ img {
     width: 50%;
 }
 
+
 /* Pentru telefoane mobile */
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 660px) {
     .container img {
         margin: auto auto;
         width: 60%;
