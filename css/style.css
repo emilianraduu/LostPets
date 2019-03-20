@@ -256,9 +256,11 @@ input {
     border-bottom-right-radius: 60px;
 }
 
-.orange-container .paragraphs {
-    transform: skewY(+1deg);
+.orange-container .paragraphs label,input{
+    margin-left:10px;
+    
 }
+
 
 
 /* Container simply */
@@ -714,7 +716,6 @@ img {
     margin-right: 25%;
     width: 50%;
 }
-
 
 /* Pentru telefoane mobile */
 
