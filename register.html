@@ -84,7 +84,7 @@
                                 <input type="password" id="pass" name="pass" required minlength="8" maxlength="20" oninvalid="this.setCustomValidity('Please enter a password')" oninput="setCustomValidity('')"><br><br>
 
                                 <label for="phone">Phone number: </label>
-                                <input type="number" id="phone" name="phone" placeholder="0712345678" min="0000000000" max="9999999999" step="1111111111"><br><br>
+                                <input type="number" id="phone" name="phone" min="0000000000" max="9999999999" step="1111111111"><br><br>
 
                                 <label for="birth">Date of birth: </label>
                                 <input type="date" id="birth" name="birth" max="2006-01-01" min="1940-01-01"><br><br>
@@ -96,11 +96,6 @@
                 </li>
             </ul>
         </div>
-        <script>
-            if ($('[type="date"]').prop('type') != 'date') {
-                $('[type="date"]').datepicker();
-            }
-        </script>
     </div>
 
     <footer>
@@ -112,7 +107,7 @@
                         <i class="fas fa-envelope "></i> <a href="mailto:contact@lostpets.com " target="_top ">contact@lostpets.com</a>
 
                     </div>
-                    <p>sau la numarul de telefon</p>
+                    <p>sau la numarul de telefon:</p>
                     <div class="cont ">
                         <i class="fas fa-phone "></i> <a href="tel:0712345678 ">0712 345 678</a></div>
 
