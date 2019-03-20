@@ -57,7 +57,7 @@
                         <div class="user-stuff">
                             <div class="selection">
                                 <a href="./index.html">
-                                    <div class="prof-img small"><img src="../img/dog.png" aria-hidden="true"></div>Update</a>
+                                    <div class="prof-img small"><img src="../img/dog.png" alt="dog-img" aria-hidden="true"></div>Update</a>
                             </div>
                             <div class="selection"><a href="../profile.html"><i class="fa fa-users" aria-hidden="true"></i>Profile</a></div>
                             <div class="selection"><a href="../index.html"><i class="fa fa-sign-out-alt" aria-hidden="true"></i>Logout</a></div>
@@ -141,45 +141,45 @@
     <div class="container">
         <div class="orange-container">
             <div class="paragraphs">
-                <form action="" class="formular_credentials">
+                <form action="./find.html" class="formular_credentials">
                     <label for="image">Upload image: </label>
-                    <input type="file" name="image" accept="image/*"><br><br>
+                    <input type="file" id="image" accept="image/*"><br><br>
 
                     <label for="location">Pet last seen at:</label>
-                    <button class="invbut">location</button><br><br>
+                    <button class="invbut" id="location">location</button><br><br>
 
 
 
                     <label for="nume">Pet name: </label>
-                    <input type="text" name="nume" maxlength="20"><br><br>
+                    <input type="text" id="nume" maxlength="20"><br><br>
 
                     <label for="species">Species:</label><br>
                     <label for="dog">Dog</label>
-                    <input type="radio" name="species" value="dog">
+                    <input type="radio" id="species" value="dog">
                     <label for="cat">Cat</label>
-                    <input type="radio" name="species" value="cat">
+                    <input type="radio" id="species" value="cat">
                     <label for="bird">Bird</label>
-                    <input type="radio" name="species" value="bird">
+                    <input type="radio" id="species" value="bird">
                     <label for="reptile">Reptile</label>
-                    <input type="radio" name="species" value="reptile">
+                    <input type="radio" id="species" value="reptile">
 
                     <label for="breed">Breed: </label>
-                    <input type="text" name="breed" maxlength="20">
+                    <input type="text" id="breed" maxlength="20">
 
                     <label for="details">Details: </label>
-                    <textarea name="details" form_id="form_id" maxlength="150"></textarea><br><br>
+                    <textarea id="details" maxlength="150"></textarea><br><br>
 
                     <label for="reward">Reward: </label><br>
                     <label for="reward_yes">Yes</label>
-                    <input type="radio" name="reward" value="reward_yes"><br>
+                    <input type="radio" value="reward_yes"><br>
                     <label for="reward_no">No</label>
-                    <input type="radio" name="reward" value="reward_no"><br><br>
+                    <input type="radio" id="reward_no" value="reward_no"><br><br>
 
                     <label for="email">Email: </label>
-                    <input type="email" name="email"><br><br>
+                    <input type="email" id="email"><br><br>
 
                     <label for="phone">Phone: </label>
-                    <input type="tel" name="phone"><br><br>
+                    <input type="tel" id="phone"><br><br>
 
                     <input type="submit" class="invbut" value="I lost my pet!">
 
@@ -194,7 +194,7 @@
                 <div class="footer_contact ">
                     <p>Ne puteti gasi la adresa de mail:</p>
                     <div class="cont ">
-                        <i class="fas fa-envelope "></i> <a href="mailto:contact@lostpets.com " target="_top ">contact@lostpets.com</a>
+                        <i class="fas fa-envelope "></i> <a href="mailto:contact@lostpets.com ">contact@lostpets.com</a>
 
                     </div>
                     <p>sau la numarul de telefon:</p>
@@ -233,7 +233,6 @@
                 </div>
             </li>
         </ul>
-        </div>
     </footer>
 </body>
 
