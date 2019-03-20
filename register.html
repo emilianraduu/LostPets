@@ -68,43 +68,41 @@
         <div class="cyan-container">
             <ul class="paragraphs">
                 <li>
-                    <section>
-                        <form action="">
-                            <div class="login_credentials">
-                                <label for="fname">First name: </label>
-                                <input type="text" id="fname" name="firstname" required oninvalid="this.setCustomValidity('Please enter your first name')" oninput="setCustomValidity('')"><br><br>
+                    <form action="./logged/index.html">
+                        <div class="login_credentials">
+                            <label for="fname">First name: </label>
+                            <input type="text" id="fname" name="firstname" required oninvalid="this.setCustomValidity('Please enter your first name')" oninput="setCustomValidity('')"><br><br>
 
-                                <label for="lname">Last name: </label>
-                                <input type="text" id="lname" name="lastname" required oninvalid="this.setCustomValidity('Please enter your last name')" oninput="setCustomValidity('')"><br><br>
+                            <label for="lname">Last name: </label>
+                            <input type="text" id="lname" name="lastname" required oninvalid="this.setCustomValidity('Please enter your last name')" oninput="setCustomValidity('')"><br><br>
 
-                                <label for="mail">E-mail: </label>
-                                <input type="email" id="mail" name="mail" required oninvalid="this.setCustomValidity('Please enter an e-mail')" oninput="setCustomValidity('')"><br><br>
+                            <label for="mail">E-mail: </label>
+                            <input type="email" id="mail" name="mail" required oninvalid="this.setCustomValidity('Please enter an e-mail')" oninput="setCustomValidity('')"><br><br>
 
-                                <label for="pass">Password: </label>
-                                <input type="password" id="pass" name="pass" required minlength="8" maxlength="20" oninvalid="this.setCustomValidity('Please enter a password')" oninput="setCustomValidity('')"><br><br>
+                            <label for="pass">Password: </label>
+                            <input type="password" id="pass" name="pass" required minlength="8" maxlength="20" oninvalid="this.setCustomValidity('Please enter a password')" oninput="setCustomValidity('')"><br><br>
 
-                                <label for="phone">Phone number: </label>
-                                <input type="number" id="phone" name="phone" min="0000000000" max="9999999999" step="1111111111"><br><br>
+                            <label for="phone">Phone number: </label>
+                            <input type="number" id="phone" name="phone" min="0000000000" max="9999999999" step="1111111111"><br><br>
 
-                                <label for="birth">Date of birth: </label>
-                                <input type="date" id="birth" name="birth" max="2006-01-01" min="1940-01-01"><br><br>
-                            </div>
-                            <input class="button" type="submit" value="Register"><br>
-                            <div class="login_links"><a href="login.html">Already have an account?</a></div>
-                        </form>
-                    </section>
+                            <label for="birth">Date of birth: </label>
+                            <input type="date" id="birth" name="birth" max="2006-01-01" min="1940-01-01"><br><br>
+                        </div>
+                        <input class="button" type="submit" value="Register"><br>
+                        <div class="login_links"><a href="login.html">Already have an account?</a></div>
+                    </form>
                 </li>
             </ul>
         </div>
     </div>
 
     <footer>
-        <div class="paragraphs ">
+        <ul class="paragraphs ">
             <li>
                 <div class="footer_contact ">
                     <p>Ne puteti gasi la adresa de mail:</p>
                     <div class="cont ">
-                        <i class="fas fa-envelope "></i> <a href="mailto:contact@lostpets.com " target="_top ">contact@lostpets.com</a>
+                        <i class="fas fa-envelope "></i> <a href="mailto:contact@lostpets.com ">contact@lostpets.com</a>
 
                     </div>
                     <p>sau la numarul de telefon:</p>
@@ -147,15 +145,9 @@
                     <div class="cont ">
                         <i class="fas fa-book "></i> <a href=" ">Terms and conditions</a>
                     </div>
-
-
-
-
                 </div>
-
-
             </li>
-        </div>
+        </ul>
 
     </footer>
 </body>
