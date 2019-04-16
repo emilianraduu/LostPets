@@ -22,41 +22,37 @@ Anunțurile vor fi afisate în ordine cronologica, fiind figurate pe baza unor s
 
 6. Userul acceseaza site-ul pentru prima oara. Doreste sa isi creeze cont, apasa pe "Sign up" si este redirectionat pe pagina cu formularul de inregistrare. Userul completeaza toate datele necesare, iar la apasarea butonului "Register" un mail de confirmare al contului este trimis pe adresa utilizatorului. Acesta este rugat sa confirme contul inainte de a putea accesa continutul site-ului.
 
-### Compilare
+### APIs
 
-1. Compilare
+1. Firebase API
 
 ```
 $gcc simpleWeb.c -o simpleWeb.bin
 ```
 
-2. Rulare
+2. OpenStreetMaps API
 
 ```
 $./simpleWeb.bin
 ```
 
+### Autentificare persistenta
 
-3. Conectare (in browser)
+Se va realiza prin folosirea tool-ului Firebase Authentification.
 
+1. Inregistrarea se va face prin intermediul metodei 
 ```
-localhost:<Port>
+.createUserWithEmailAndPassword(email,password)
 ```
-
-## Verificarea functionarii
-
-Serverul accepta apelul de fisiere .html/.txt.
-Daca este introdusa o adresa dupa port
+2. Dupa inregistrare utilizatorul este logat automat.
+3. Salvarea sesiunii si modificarilor din cadrul sesiunii se va face folosind metoda 
 ```
-localhost:8001/index.html
+.onAuthStateChanged(firebaseUser => {})
 ```
-Serverul va furniza fisierul specificat (daca exista, in caz contrar va afisa eroarea 404), iar daca nu exista specificat nici un fisier serverul va furniza fisierul default stabilit in config.txt.
-
-Se mai pot testa urmatoarele fisiere:
+4. Logarea in cazul delogarii se va face folosind metoda
 ```
-/google.png | /page.html | /1.txt | /bg.jpg 
+.signInWithEmailAndPassword(email,password)
 ```
-Insa se mai pot adauga orice alte fisiere .html, .txt, .png, .jpg in folderul "site" (sau orice alt nume definit in config.txt la "Locatie:")
 
 ## Realizat cu
 
