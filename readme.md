@@ -8,7 +8,7 @@ Creați o aplicație Web care să vină în ajutorul recuperării animalelor pie
 
 Anunțurile vor fi afisate în ordine cronologica, fiind figurate pe baza unor servicii cartografice OpenStreetMap. Se vor genera statistici de interes -- disponibile in formatele HTML, CSV si PDF -- privind cazurile de animale pierdute, recuperarea acestora, zonele cele mai vulnerabile, recompense etc.
 
-##Arhitectura
+## Arhitectura
 
 ### Use cases
 
