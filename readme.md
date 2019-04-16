@@ -1,6 +1,6 @@
 # Lost Pets Architecture
 
-Proiect la materia Retele de Calculatoare ce consta intr-un server web implementat prin socketi ce rezolva cerintele clientilor in mod concurent.
+Proiect la materia Tehnologii Web ce consta intr-o aplicatie web pentru persoanele care si-au pierdut animalul de companie.
 
 ## Enunt proiect
 
@@ -21,6 +21,15 @@ Anunțurile vor fi afisate în ordine cronologica, fiind figurate pe baza unor s
 5. Userul acceseaza pagina de introducere a unui animal pe care l-a pierdut. Dupa ce introduce toate informatiile necesare este redirectionat pe o pagina noua creata pentru animalul introdus. Cativa alti useri updateaza locatia animalului, iar un altul il gaseste.
 
 6. Userul acceseaza site-ul pentru prima oara. Doreste sa isi creeze cont, apasa pe "Sign up" si este redirectionat pe pagina cu formularul de inregistrare. Userul completeaza toate datele necesare, iar la apasarea butonului "Register" un mail de confirmare al contului este trimis pe adresa utilizatorului. Acesta este rugat sa confirme contul inainte de a putea accesa continutul site-ului.
+
+Locatia diagramelor UseCase:
+```
+./docs/usecase
+```
+
+### Baza de date
+
+De tipul nosql.
 
 ### APIs
 
@@ -62,34 +71,4 @@ Se va realiza prin folosirea tool-ului Firebase Authentification.
 
 ## Autor
 
-* **Radu Emilian** - *Simple Web Server*
-
-
-
-Inainte de a compila trebuie facute configurari in fisierul config.txt. 
-Cel mai important aspect este modificarea adresei serverului (unde o sa se afle fisierele ce vor fi accesate de browser).
-In fisierul config.txt modificati linia 2:
-
-```
-Locatie: /Users/Emilian/Documents/site 
-```
-Dupa textul "Locatie: " introduceti adresa absoluta de pe sistemul dumneavoastra ca in exemplul de mai sus.
-Este foarte important ca la finalul adresei sa fie un spatiu!
-Programul nu va rula daca adresa nu este cea de pe sistemul pe care va rula serverul / daca nu este un spatiu la finalul liniei.
-
-Urmatoarea linie ce poate fi modificata este:
-```
-Port: 8001
-```
-
-Unde portul poate fi orice alta valoare. Poate fi lasat nemodificat, insa trebuie specificat in adresa din browser pentru a se putea accesa sub forma :
-```
-localhost:8001 | localhost:<Port>
-```
-
-Alte modificari:
-```
-Index index.html 
-```
-(un spatiu la sfarsitul liniei) daca se doreste ca pagina default pe care o furninzeaza serverul sa fie alta.
-Se va modifica "index.html" cu orice alt fisier cu extensia .txt sau .html
+* **Radu Emilian & Piuco Andrei** - LostPets
