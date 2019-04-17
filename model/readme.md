@@ -31,31 +31,11 @@ Locatia diagramelor UseCase:
 ### Baza de date
 
 Baza de date va functiona pe baza join-urilor si relatiilor intre doua entitati(tabele) normalizate, anume user si pet.
-Userii, la inregistrare, vor populariza tabela "user".
-Legatura dintre user si pet se va face in mai multe moduri in functie de rolul pe care il are un anumit user fata de un anunt.
+Legatura dintre user si pet se va face in mai multe moduri in functie de rolul pe care il are in legatura cu entitatea pet.
 Astfel userii pot fi:
-
-1. Owneri - persoana care a pierdut animalul si l-a postat prin intermediul formularului;
-persoana cu acest rol popularizeaza tabela "pet"
-
-2. Helperi - persoanele care dau update la anunt in cazul in care l-au vazut sau l-au gasit; acestia au puterea de a schimba locatia animalului
-
-Locatiile utilizatorilor vor fi stocate sub forma de coordonate "X:243 Y:36" iar tabela "nbhds" are rolul de a converti aceste coordonate in nume de cartiere. Astfel, coordonatele cuprinse intre X:243-263 si Y: 36-46 pot reprezenta cartierul "Nicolina".
-
-Userii vor putea adauga mai multe imagini in anunturi, astfel incat acestea vor fi concatenate in baza de date "cutecat2.jpg helpme.jpg imissher.jpg" prin spatiu, sau un alt caracter.
-
-Tabela "new_pets_in_area" este folosita pentru notificarile de tipul "New pets have been lost in your area" si se foloseste atat de id-urile userului si al petului cat si de locatiile acestora.
-
-Tabela "update_on_ad" este folosita pentru notificarile de tipul "Userul Y a raspuns la un anunt de al tau" si se foloseste de id-urile celor 2 useri si de id-ul petului pentru a identifica corect persoanele si animalul despre care este vorba.
-
-Tabela "owner" are rol de legatura intre "user" si "pet", si este folosita pentru notificarile de tipul "Pet Z has been found thanks to you".
-
-Tabela "is_admin" va contine id-ul celor ce indeplinesc functia de admin si un "yes" in dreptul lor.
-
-Pentru generarea statisticilor se vor folosi operatii de tipul select pe baza de date.
-
-
-
+1. Owneri - persoana care a pierdut animalul si l-a postat prin intermediul formularului
+2. Helperi - persoanele care dau update la anunt in cazul in care l-au vazut sau l-au gasit
+Locatiile utilizatorilor vor fi stocate
 Diagrama bazei de date se afla la adresa:
 ```
 ./docs/database
