@@ -183,3 +183,18 @@ Diagramele MVC se gasesc la locatia:
 ## Autori
 
 * **Radu Emilian & Piuco Andrei** - LostPets
+Piuco Andrei: 
+3/6 Use cases text + diagram;
+Use case diagram (main);
+Descrierea bazei de date in readme.md;
+Diagrama ER a bazei de date;
+Schema relationala a bazei de date;
+
+Radu Mihai-Emilian:
+3/6 Use cases text + diagram;
+Firebase API;
+OpenStreetMap API;
+Wireframe-ul;
+Fisierul readme.md;
+MVC;
+Autentificarea persistenta;
