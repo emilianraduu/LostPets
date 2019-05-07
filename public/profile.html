@@ -8,33 +8,9 @@
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <title>LostPets</title>
-    <body>
-  
 </head>
 
 <body>
-          <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
-      
-        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-        <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-app.js"></script>
-      
-        <!-- Add Firebase products that you want to use -->
-        <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-database.js"></script>
-
-<script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBPB0sfuUisqr0mROqQ33lZ56sFqrlwM8E",
-    authDomain: "lostpets-ed580.firebaseapp.com",
-    databaseURL: "https://lostpets-ed580.firebaseio.com",
-    projectId: "lostpets-ed580",
-    storageBucket: "lostpets-ed580.appspot.com",
-    messagingSenderId: "9793194738"
-  };
-  firebase.initializeApp(config);
-</script>
     <!-- Header -->
     <header>
         <div class="logo">
@@ -87,12 +63,24 @@
 
     </header>
 
+    <div class="profile-page">
+        <div class="left">
+            <img src="img/user-img2.jpg">
+            <h2>Emilian Radu</h2>
+            <div class="selection">
+                <a href="tel:0712345678 "><i class="fas fa-phone "></i>0712 345 678</a>
+            </div>
+            <div class="selection ">
+                <a href="mailto:contact@lostpets.com "> <i class="fas fa-envelope "></i>contact@lostpets.com</a>
 
+            </div>
+            <button> Settings </button>
 
-
-
-    <div class="container black flex">
-
+        </div>
+        <div class="right">
+            <h2>Lost</h2>
+            <div class="lost-pet">lostpet1</div>
+        </div>
     </div>
 
     <footer class="container black">

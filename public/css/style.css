@@ -370,7 +370,24 @@ button:hover {
     padding: 10px;
     border-radius: 10px;
 }
-
+.profile-page {
+    display:flex;
+    width:100%;
+}
+.profile-page .left {
+    display:left;
+    align-items: center;
+  justify-content: center;
+    background-color: grey;
+}
+.left img {
+    width: 100px;
+    height:100px;
+}
+.profile-page .right {
+    display:right;
+    right:0;
+}
 .bottom-btns p,
 i {
     margin: 0;
@@ -461,8 +478,11 @@ img {
         align-items: center;
     }
     #map {
-        width: 400px;
+        width: 300px;
         height: 500px;
+    }
+    .card {
+        margin: 5px 10px;
     }
     .motto {
         display: block;
