@@ -1,0 +1,34 @@
+[
+    {
+        "season": "3",
+        "episode": "3",
+        "details": {
+            "title": "Battle of the bastards",
+            "lenght": 61
+        }
+    },
+    {
+        "season": "3",
+        "episode": "3",
+        "details": {
+            "title": "Battle of the bastards",
+            "lenght": 61
+        }
+    },
+    {
+        "season": "8",
+        "episode": "5",
+        "details": {
+            "title": "COOL BATTLE",
+            "lenght": 91
+        }
+    },
+    {
+        "season": "1",
+        "episode": "9",
+        "details": {
+            "title": "battle",
+            "lenght": null
+        }
+    }
+]

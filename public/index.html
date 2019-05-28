@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <title>LostPets</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="./index.html">
+                <h2>LostPets</h2>
+            </a>
+        </div>
+        <div class="links">
+            <div class="selection hidden right" id="rmBtn">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </div>
+            <div class="selection">
+                <a href="./login.html">
+                    <i class="fa fa-home" aria-hidden="true"></i> Home
+                </a>
+            </div>
+            <div class="selection">
+                <a href="./login.html">
+                    <i class="fa fa-search" aria-hidden="true"></i> Account
+
+                </a>
+            </div>
+            <div class="selection">
+                <a href="./login.html">
+                    <div class="profile-img"></div>
+                    Emilian Radu
+
+                </a>
+
+            </div>
+
+
+        </div>
+        <div class="selection hidden" id="mobile">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </div>
+
+        <script>
+            let menuBtn = document.getElementById('mobile');
+            let rmBtn = document.getElementById('rmBtn');
+            let menu = document.querySelector('.links');
+
+            menuBtn.addEventListener('click', () => {
+                menu.classList.add('show');
+            });
+            rmBtn.addEventListener('click', () => {
+                menu.classList.remove('show');
+            });
+        </script>
+
+    </header>
+    <!-- Container fara culoare -->
+    <div class="container">
+        <div class="content">
+            <!-- Motto e folosit doar aici si e un div pt homepage -->
+            <div class="motto">
+                <img src="img/illu.png" alt="ilustratie" draggable="false">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
+                    book.
+                </p>
+            </div>
+            <h2>
+                Help us find them!
+            </h2>
+            <a href="#">
+                <button>Sign up</button>
+            </a>
+        </div>
+    </div>
+
+    <!-- Container de culoare portocalie -->
+
+    <div class="container orange skewUp">
+        <!-- Content-ul din container -->
+        <div class="content skewDown">
+            <ul>
+                <li>
+                    <i class="fa fa-address-card fa-2x"></i>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+                        specimen book.
+                    </p>
+                </li>
+
+                <li>
+                    <i class="fa fa-american-sign-language-interpreting fa-2x"></i>
+                    <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
+                        recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                </li>
+
+                <li>
+                    <i class="fa fa-apple-alt fa-2x"></i>
+                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to
+                        using 'Content here, content here', making it look like readable English. </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="container orange skewUp">
+        <div class="content skewDown">
+            <form action="./find.html" class="formular_credentials">
+                <label for="image">Upload image: </label>
+                <input type="file" id="image" accept="image/*">
+
+                <label for="location">Pet last seen at:</label>
+                <button class="invbut" id="location">location</button>
+
+
+
+                <label for="nume">Pet name: </label>
+                <input type="text" id="nume" maxlength="20">
+
+                <p>Species:</p>
+                <div class="multiple-choice">
+                    <label for="dog">Dog</label>
+                    <input type="radio" name="species" id="dog" value="dog">
+                    <label for="cat">Cat</label>
+                    <input type="radio" name="species" id="cat" value="cat">
+                    <label for="bird">Bird</label>
+                    <input type="radio" name="species" id="bird" value="bird">
+                    <label for="reptile">Reptile</label>
+                    <input type="radio" name="species" id="reptile" value="reptile">
+                </div>
+                <label for="breed">Breed: </label>
+                <input type="text" id="breed" maxlength="20">
+
+                <label for="details">Details: </label>
+                <textarea id="details" maxlength="150"></textarea>
+
+                <p>Reward: </p>
+                <div class="multiple-choice">
+                    <label for="reward_yes">Yes</label>
+                    <input type="radio" name="reward" id="reward_yes" value="reward_yes">
+                    <label for="reward_no">No</label>
+                    <input type="radio" name="reward" id="reward_no" value="reward_no">
+                </div>
+                <label for="email">Email: </label>
+                <input type="email" id="email">
+
+                <label for="phone">Phone: </label>
+                <input type="tel" id="phone">
+
+                <button class="invbut">I lost my pet!</button>
+
+            </form>
+        </div>
+    </div>
+
+
+    <div class="container orange skewUp">
+        <div class="content skewDown">
+            <form action="./logged/index.html">
+                <div>
+                    <label for="mail">Email: </label>
+                    <input type="email" id="mail" name="mail" required autofocus oninvalid="this.setCustomValidity('Please enter your email')" oninput="setCustomValidity('')">
+                    <label for="pass">Password: </label>
+                    <input type="password" id="pass" name="password" required minlength="8" maxlength="20" oninvalid="this.setCustomValidity('Please enter your password')" oninput="setCustomValidity('')">
+                </div>
+                <button class="invbut" type="submit" value="Login">Login</button>
+                <div class="selection white-links">
+                    <a href="forgot.html">Forgot your password?</a>
+                </div>
+
+                <div class="selection white-links">
+                    <a href="register.html">Don't have an account?</a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
+    <div class="container cyan skewDown">
+        <div class="content skewUp">
+            <form action="./logged/index.html">
+                <div>
+                    <label for="fname">First name: </label>
+                    <input type="text" id="fname" name="firstname" required oninvalid="this.setCustomValidity('Please enter your first name')" oninput="setCustomValidity('')">
+
+                    <label for="lname">Last name: </label>
+                    <input type="text" id="lname" name="lastname" required oninvalid="this.setCustomValidity('Please enter your last name')" oninput="setCustomValidity('')">
+                </div>
+                <label for="mail">E-mail: </label>
+                <input type="email" id="mail" name="mail" required oninvalid="this.setCustomValidity('Please enter an e-mail')" oninput="setCustomValidity('')">
+
+                <label for="pass">Password: </label>
+                <input type="password" id="pass" name="pass" required minlength="8" maxlength="20" oninvalid="this.setCustomValidity('Please enter a password')" oninput="setCustomValidity('')">
+
+                <label for="phone">Phone number: </label>
+                <input type="number" id="phone" name="phone" min="0000000000" max="9999999999" step="1111111111">
+
+                <label for="birth">Date of birth: </label>
+                <input type="date" id="birth" name="birth" max="2006-01-01" min="1940-01-01">
+                <button type="submit" value="Register">Register</button>
+                <div class="selection white-links">
+                    <a href="login.html">Already have an account?</a></div>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <a href="./animals/dog.html"></a>
+        <div class="card">
+            <div class="primary">
+                <img class="img-primary" src="./img/dog.png" alt="animal">
+                <div class="top-btns">
+                    <i class="fa fa-map-marker"></i>
+                    <p>Popricani, Iasi</p>
+                </div>
+                <div class="bottom-btns">
+                    <i class="fa fa-calendar"></i>
+                    <p>17/03/2019</p>
+                </div>
+                <div class="user-things">
+                    <div class="photo-card">
+                        <img src="./img/user-img1.jpg" alt="user img">
+                    </div>
+                    <p>Emilian</p>
+                </div>
+            </div>
+        </div>
+        </a>
+        <a href="./animals/dog.html">
+            <div class="card">
+                <div class="primary">
+
+                    <img class="img-primary" src="./img/cryingcat.jpg" alt="animal">
+                    <div class="top-btns">
+                        <i class="fa fa-map-marker"></i>
+                        <p>Ciurea, Iasi</p>
+                    </div>
+                    <div class="bottom-btns">
+                        <i class="fa fa-calendar"></i>
+                        <p>17/03/2019</p>
+                    </div>
+                    <div class="user-things">
+                        <div class="photo-card">
+                            <img src="./img/user-img2.jpg" alt="user img">
+                        </div>
+                        <p>Andrei</p>
+                    </div>
+                </div>
+
+            </div>
+        </a>
+        <a href="./animals/dog.html">
+            <div class="card">
+                <div class="primary">
+
+                    <img class="img-primary" src="./img/cat.png" alt="animal">
+                    <div class="top-btns">
+                        <i class="fa fa-map-marker"></i>
+                        <p>Alexandru, Iasi</p>
+                    </div>
+                    <div class="bottom-btns">
+                        <i class="fa fa-calendar"></i>
+                        <p>17/03/2019</p>
+                    </div>
+                    <div class="user-things">
+                        <div class="photo-card">
+                            <img src="./img/user-img3.jpg" alt="user img">
+                        </div>
+                        <p>Cristi</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+    </div>
+
+
+    <div class="container cyan skewDown">
+        <div class="content skewUp">
+            <i class="fa fa-map fa-2x "></i>
+            <h2>Here you can see how many people lost their pet in your region.</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
+                book.
+            </p>
+            <iframe id="map" src="https://www.openstreetmap.org/export/embed.html?bbox=27.319908142089847%2C47.0579608565377%2C27.814292907714847%2C47.23472275076704&amp;layer=mapnik "></iframe>
+        </div>
+    </div>
+
+    <footer class="container black">
+        <ul class="content">
+            <li>
+                <p>Ne puteti gasi la adresa de mail:</p>
+                <div class="selection ">
+                    <a href="mailto:contact@lostpets.com "> <i class="fas fa-envelope "></i>contact@lostpets.com</a>
+
+                </div>
+                <p>sau la numarul de telefon:</p>
+                <div class="selection">
+                    <a href="tel:0712345678 "><i class="fas fa-phone "></i>0712 345 678</a>
+                </div>
+            </li>
+            <li>
+                <div class="selection">
+                    <a href="facebook.com "><i class="fab fa-facebook-f "></i>Facebook</a>
+                </div>
+                <div class="selection">
+                    <a href="instagram.com "><i class="fab fa-instagram "></i>Instagram</a>
+                </div>
+                <div class="selection">
+                    <a href="youtube.com "><i class="fab fa-youtube "></i>Youtube</a>
+                </div>
+                <div class="selection">
+                    <a href="reddit.com "><i class="fab fa-reddit "></i>Reddit</a>
+                </div>
+                <div class="selection">
+                    <a href="twitter.com "><i class="fab fa-twitter "></i>Twitter</a>
+                </div>
+
+
+
+            </li>
+            <li>
+                <div class="selection">
+                    <a href="faqs.html "> <i class="fas fa-info "></i>FAQS</a>
+                </div>
+                <div class="selection">
+                    <a href=" "> <i class="fas fa-book "></i> Terms and conditions</a>
+                </div>
+            </li>
+        </ul>
+    </footer>
+</body>
+
+</html>

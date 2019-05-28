@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /
+
+RewriteRule ^api/key$ ./control/api/createKey.php [NC,L]
+RewriteRule ^api/.+$ ./control/api/api.verify.php [NC,L]
+
+ErrorDocument 403 /forbidden.html
+ErrorDocument 404 /notfound.html
+ErrorDocument 500 /servererror.html
