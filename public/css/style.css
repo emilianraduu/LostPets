@@ -70,7 +70,6 @@ header a {
     display: inline-block;
 }
 
-
 .selection {
     cursor: pointer;
 }
@@ -464,6 +463,21 @@ button:hover {
 }
 .right h2 {
     font-size: 50px;
+    width:100%;
+}
+.profile-page .left {
+    display:left;
+    align-items: center;
+  justify-content: center;
+    background-color: grey;
+}
+.left img {
+    width: 100px;
+    height:100px;
+}
+.profile-page .right {
+    display:right;
+    right:0;
 }
 .bottom-btns p,
 i {
