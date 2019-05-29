@@ -61,92 +61,59 @@
                 menu.classList.remove('show');
             });
         </script>
+
     </header>
-    <div class="profile-page">
-        <div class="left">
-            <img src="img/user-img2.jpg">
-            <h2>Emilian Radu</h2>
-            <div class="selection">
-                <a href="tel:0712345678 "><i class="fas fa-phone "></i>0712 345 678</a>
-            </div>
-            <div class="selection ">
-                <a href="mailto:contact@lostpets.com "> <i class="fas fa-envelope "></i>contact@lostpets.com</a>
-            </div>
-            <button>Settings</button>
-        </div>
+    
 
-        <div class="right">
-            <h2>Lost</h2>
-            <div class="lost-row">
+    <div class="container orange skewUp">
+        <div class="content skewDown">
+            <form action="./find.html" class="formular_credentials">
+                <label for="image">Upload image: </label>
+                <input type="file" id="image" accept="image/*">
 
-                <a href="lostpet1.html">
-                    <div class="lost-pet">
+                <label for="location">Pet last seen at:</label>
+                <button class="invbut" id="location">location</button>
 
-                    </div>
-                </a>
-                <a href="lostpet1.html">
-                    <div class="lost-pet">
 
-                    </div>
-                </a>
-                <a href="lostpet1.html">
-                    <div class="lost-pet">
 
-                    </div>
-                </a>
-                <a href="lostpet1.html">
-                    <div class="lost-pet">
+                <label for="nume">Pet name: </label>
+                <input type="text" id="nume" maxlength="20">
 
-                    </div>
-                </a>
-                <a href="lostpet1.html">
-                    <div class="lost-pet">
+                <p>Species:</p>
+                <div class="multiple-choice">
+                    <label for="dog">Dog</label>
+                    <input type="radio" name="species" id="dog" value="dog">
+                    <label for="cat">Cat</label>
+                    <input type="radio" name="species" id="cat" value="cat">
+                    <label for="bird">Bird</label>
+                    <input type="radio" name="species" id="bird" value="bird">
+                    <label for="reptile">Reptile</label>
+                    <input type="radio" name="species" id="reptile" value="reptile">
+                </div>
+                <label for="breed">Breed: </label>
+                <input type="text" id="breed" maxlength="20">
 
-                    </div>
-                </a>
-                <a href="lostpet1.html">
-                    <div class="lost-pet">
+                <label for="details">Details: </label>
+                <textarea id="details" maxlength="150"></textarea>
 
-                    </div>
-                </a>
-            </div>
-            <h2>Found</h2>
-            <div class="lost-row">
-                <a href="lostpet1.html">
-                    <div class="lost-pet">
+                <p>Reward: </p>
+                <div class="multiple-choice">
+                    <label for="reward_yes">Yes</label>
+                    <input type="radio" name="reward" id="reward_yes" value="reward_yes">
+                    <label for="reward_no">No</label>
+                    <input type="radio" name="reward" id="reward_no" value="reward_no">
+                </div>
+                <label for="email">Email: </label>
+                <input type="email" id="email">
 
-                    </div>
-                </a>
-                <a href="lostpet1.html">
-                    <div class="lost-pet">
+                <label for="phone">Phone: </label>
+                <input type="tel" id="phone">
 
-                    </div>
-                </a>
-                <a href="lostpet1.html">
-                    <div class="lost-pet">
+                <button class="invbut">I lost my pet!</button>
 
-                    </div>
-                </a>
-                <a href="lostpet1.html">
-                    <div class="lost-pet">
-
-                    </div>
-                </a>
-                <a href="lostpet1.html">
-                    <div class="lost-pet">
-
-                    </div>
-                </a>
-                <a href="lostpet1.html">
-                    <div class="lost-pet">
-
-                    </div>
-                </a>
-            </div>
-
+            </form>
         </div>
     </div>
-
 
     <footer class="container black">
         <ul class="content">
@@ -177,6 +144,9 @@
                 <div class="selection">
                     <a href="twitter.com "><i class="fab fa-twitter "></i>Twitter</a>
                 </div>
+
+
+
             </li>
             <li>
                 <div class="selection">
