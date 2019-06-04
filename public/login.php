@@ -17,7 +17,7 @@
 
     <div class="container orange skewUp">
         <div class="content skewDown">
-            <form action="./public/login_controller.php" method="post">
+            <form action="./control/login_controller.php" method="post">
                 <label for="email">Email: </label>
                 <input type="email" id="email" name="email" required autofocus oninvalid="this.setCustomValidity('Please enter your email')" oninput="setCustomValidity('')">
                 <label for="password">Password: </label>
@@ -26,11 +26,11 @@
                 <button class="invbut" type="submit">Login</button>
             </form>
             <div class="selection white-links">
-                <a href="forgot.html">Forgot your password?</a>
+                <a href="forgot">Forgot your password?</a>
             </div>
 
             <div class="selection white-links">
-                <a href="register.html">Don't have an account?</a>
+                <a href="register">Don't have an account?</a>
             </div>
 
 

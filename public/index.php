@@ -15,7 +15,7 @@
     <?php include 'header.php'; ?>
 
     <!-- Motto -->
-    <div class="container no-margin">
+    <div class="container">
         <div class="content">
             <div class="motto">
                 <img src="./public/img/illu.png" alt="ilustratie" draggable="false">

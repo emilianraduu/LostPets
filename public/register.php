@@ -15,32 +15,49 @@
     <?php include 'header.php' ?>
 
     <div class="container cyan skewDown">
-        <div class="content skewUp">
-            <form action="./logged/index.html">
-                <div>
-                    <label for="fname">First name: </label>
-                    <input type="text" id="fname" name="firstname" required oninvalid="this.setCustomValidity('Please enter your first name')" oninput="setCustomValidity('')">
+        <div class="content skewUp space">
+            <form action="./control/register-controller.php"  enctype="multipart/form-data" method="post" class="form">
+                <div class="info">
+                    <label for="hide_img"><img id="avatar" class="avatar_choose"></label>
+                    <input type="file" name="pic" id="hide_img" />
+                    <div class="under">
+                        <label for="fname">First name: </label>
+                        <input type="text" id="fname" name="fname" required oninvalid="this.setCustomValidity('Please enter your first name')" oninput="setCustomValidity('')">
 
-                    <label for="lname">Last name: </label>
-                    <input type="text" id="lname" name="lastname" required oninvalid="this.setCustomValidity('Please enter your last name')" oninput="setCustomValidity('')">
+                        <label for="lname">Last name: </label>
+                        <input type="text" id="lname" name="lname" required oninvalid="this.setCustomValidity('Please enter your last name')" oninput="setCustomValidity('')">
+                    </div>
                 </div>
-                <label for="mail">E-mail: </label>
-                <input type="email" id="mail" name="mail" required oninvalid="this.setCustomValidity('Please enter an e-mail')" oninput="setCustomValidity('')">
+                <label for="email">Email: </label>
+                <input type="email" id="email" name="email" required oninvalid="this.setCustomValidity('Please enter an e-mail')" oninput="setCustomValidity('')">
 
                 <label for="pass">Password: </label>
                 <input type="password" id="pass" name="pass" required minlength="8" maxlength="20" oninvalid="this.setCustomValidity('Please enter a password')" oninput="setCustomValidity('')">
 
-                <label for="phone">Phone number: </label>
-                <input type="number" id="phone" name="phone" min="0000000000" max="9999999999" step="1111111111">
+                <label for="phone">Phone: </label>
+                <input type="tel" id="phone" name="phone" required oninvalid="this.setCustomValidity('Please enter a phone number')" oninput="setCustomValidity('')">
 
-                <label for="birth">Date of birth: </label>
-                <input type="date" id="birth" name="birth" max="2006-01-01" min="1940-01-01">
-                <button type="submit" value="Register">Register</button>
+                
+                <button type="submit" name="subReg">Register</button>
                 <div class="selection white-links">
-                    <a href="login.html">Already have an account?</a></div>
+                    <a href="login">Already have an account?</a></div>
             </form>
+            <script>
+                document.getElementById('hide_img').onchange = function(evt) {
+                    var tgt = evt.target || window.event.srcElement,files = tgt.files;
+
+                    if (FileReader && files && files.length) {
+                        var fr = new FileReader();
+                        fr.onload = function() {
+                            document.getElementById('avatar').src = fr.result;
+                        }
+                        fr.readAsDataURL(files[0]);
+                    }
+                }
+            </script>
         </div>
     </div>
     <?php include 'footer.php' ?>
 </body>
+
 </html>
