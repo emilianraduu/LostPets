@@ -426,6 +426,7 @@ button:hover {
     overflow: hidden;
 }
 
+
 .primary .top-btns {
     position: absolute;
     top: 0px;
@@ -435,6 +436,8 @@ button:hover {
     padding: 10px;
     border-radius: 10px;
 }
+
+
 
 .primary .bottom-btns {
     position: absolute;
@@ -452,10 +455,12 @@ i {
     display: inline-block;
 }
 
+
 .top-btns p,
 i {
     display: inline-block;
 }
+
 
 .top-btns p {
     margin: 0;
@@ -473,7 +478,6 @@ i {
     justify-content: space-between;
     flex-wrap: wrap;
 }
-
 .card {
     display: inline-block;
     cursor: pointer;
