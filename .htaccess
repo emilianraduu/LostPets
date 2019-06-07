@@ -2,11 +2,11 @@ RewriteEngine On
 RewriteBase /
 
 RewriteRule ^api/key$ ./control/api/createKey.php [NC,L]
-RewriteRule ^$ ./home [NC,L]
+RewriteRule ^$ ./public/index.php [NC,L]
 RewriteRule ^login$ ./public/login.php [NC,L]
 RewriteRule ^profile$ ./public/profile.php [NC,L]
 RewriteRule ^formular$ ./public/formular.php [NC,L]
-RewriteRule ^home$ ./public/index.php [NC,L]
+RewriteRule ^home$ ./public/home.php [NC,L]
 RewriteRule ^register$ ./public/register.php [NC,L]
 RewriteRule ^lost$ ./public/lost.php [NC,L]
 RewriteRule ^api/.+$ ./control/api/api.verify.php [NC,L]

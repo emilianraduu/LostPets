@@ -201,9 +201,8 @@ footer .selection .fas {
     width: 10px;
     height: 10px;
     margin: 0 5px;
-    background: url("../img/user-img1.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: url("../img/default.jpg");
+    background-size: contain, cover;
     border-radius: 100%;
     border: solid #00979c 1px;
 }
@@ -241,7 +240,8 @@ form input {
     width: 100px;
     height: 100px;
     justify-self: center;
-    background-image: url("../img/user-img1.jpg");
+    background-size: cover;
+    background-image: url("../img/default.jpg");
     border-radius: 100%;
     margin-top: 30px;
     transition: 0.5s ease-in-out;
@@ -537,7 +537,7 @@ img {
     margin: 2em 4em;
     align-content: center;
     max-height: 350px;
-    max-width: 200px;
+    max-width: 250px;
     background-color: #E2DDDC;
     border-radius: 30px;
     justify-content: center;

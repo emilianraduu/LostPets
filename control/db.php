@@ -36,12 +36,40 @@ class Database
     $query->execute();
     $query->bind_result($id_user, $mail, $lname, $fname, $password, $avatar, $phone);
     $query->store_result();
-
     if ($query->fetch()) {
-      return new User($email, $password, $fname, $lname, $avatar, $phone);
-    } else return null;
+      $temp = new User($mail, $password, $fname, $lname, $avatar, $phone);
+      return $temp;
+    } else {
+      return null;
+    }
   }
 
+  function getUser($id){
+    $query = $this->getCon()->prepare("SELECT * FROM user WHERE id_user like ?");
+    $query->bind_param("s", $id);
+    $query->execute();
+    $query->bind_result($id_user, $mail, $lname, $fname, $password, $avatar, $phone);
+    $query->store_result();
+    if ($query->fetch()) {
+      $temp = new User($mail, $password, $fname, $lname, $avatar, $phone);
+      return $temp;
+    } else {
+      return null;
+    }
+  }
+
+  function getId($user){
+    $query = $this->getCon()->prepare("SELECT id_user FROM user WHERE mail like ?");
+    $query->bind_param("s", $user->getEmail());
+    $query->execute();
+    $query->bind_result($id_user);
+    $query->store_result();
+    if ($query->fetch()) {
+      return $id_user;
+    } else {
+      return null;
+    }
+  }
   function updateEmail($user, $newEmail)
   { }
 }

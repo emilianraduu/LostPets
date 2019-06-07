@@ -12,7 +12,9 @@
 
 <body>
     <!-- Header -->
-    <?php include 'header.php' ?>
+    <?php include 'header.php'; 
+    if(isset($_SESSION['SID']))
+    header('location: ..');?>
 
     <div class="container cyan skewDown">
         <div class="content skewUp space">
@@ -42,19 +44,7 @@
                 <div class="selection white-links">
                     <a href="login">Already have an account?</a></div>
             </form>
-            <script>
-                document.getElementById('hide_img').onchange = function(evt) {
-                    var tgt = evt.target || window.event.srcElement,files = tgt.files;
-
-                    if (FileReader && files && files.length) {
-                        var fr = new FileReader();
-                        fr.onload = function() {
-                            document.getElementById('avatar').src = fr.result;
-                        }
-                        fr.readAsDataURL(files[0]);
-                    }
-                }
-            </script>
+            <script src = "./public/js/img.js"></script>
         </div>
     </div>
     <?php include 'footer.php' ?>

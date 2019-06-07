@@ -13,15 +13,16 @@
 <body>
     <!-- Header -->
     <?php include 'header.php' ?>
+    
     <div class="profile-page">
         <div class="left">
-            <img src="./public/img/user-img1.jpg">
-            <h2>Emilian Radu</h2>
+            <img src="./public/img/avatars/<?php echo $user->getAvatar(); ?>">
+            <h2><?php echo $user->getLname() . " ". $user->getFname(); ?></h2>
             <div class="selection">
-                <a href="tel:0712345678 "><i class="fas fa-phone "></i>0712 345 678</a>
+                <a href="tel:<?php echo $user->getPhone(); ?> "><i class="fas fa-phone "></i>call me</a>
             </div>
             <div class="selection ">
-                <a href="mailto:contact@lostpets.com "> <i class="fas fa-envelope "></i>contact@lostpets.com</a>
+                <a href="mailto:<?php echo $user->getEmail(); ?> "> <i class="fas fa-envelope "></i>email me</a>
             </div>
             <button>Settings</button>
         </div>

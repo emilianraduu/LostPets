@@ -12,7 +12,9 @@
 
 <body>
     <!-- Header -->
-    <?php include 'header.php'; ?>
+    <?php include 'header.php'; 
+    if(isset($_SESSION['SID']))
+    header('location: ..');?>
 
 
     <div class="container orange skewUp">

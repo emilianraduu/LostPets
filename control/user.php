@@ -18,22 +18,28 @@ class User
         $this->phone = $phone;
     }
 
-    function getEmail(){
+    function getEmail()
+    {
         return $this->email;
     }
-    function getPassword(){
+    function getPassword()
+    {
         return $this->password;
     }
-    function getFname(){
+    function getFname()
+    {
         return $this->fname;
     }
-    function getLname(){
+    function getLname()
+    {
         return $this->lname;
     }
-    function getAvatar(){
+    function getAvatar()
+    {
         return $this->avatar;
     }
-    function getPhone(){
+    function getPhone()
+    {
         return $this->phone;
     }
 
