@@ -73,3 +73,4 @@ class Database
   function updateEmail($user, $newEmail)
   { }
 }
+?>

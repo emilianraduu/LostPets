@@ -8,10 +8,8 @@ class Pet
     private $breed;
     private $details;
     private $reward;
-    private $user_mail;
-    private $user_phone;
 
-    function __construct($gallery,$location,$name,$species,$breed,$details,$reward,$user_mail,$user_phone)
+    function __construct($gallery,$location,$name,$species,$breed,$details,$reward)
     {
         $this->gallery = $gallery;
         $this->location = $location;
@@ -20,8 +18,6 @@ class Pet
         $this->breed = $breed;
         $this->details = $details;
         $this->reward = $reward;
-        $this->user_mail = $user_mail;
-        $this->user_phone = $user_phone;
     }
 
     function getGallery()
@@ -52,14 +48,5 @@ class Pet
     {
         return $this->reward;
     }
-    function getUserMail()
-    {
-        return $this->user_mail;
-    }
-    function getUserPhone()
-    {
-        return $this->user_phone;
-    }
-    
 }
 ?>
