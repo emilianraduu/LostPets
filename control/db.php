@@ -57,8 +57,9 @@ class Database
     }
   }
 
-  function getUser($id){
-    $query = $this->getCon()->prepare("SELECT * FROM user WHERE id_user like ?");
+  function getUser($id)
+  {
+    $query = $this->getCon()->prepare("SELECT * FROM user WHERE id_user LIKE ?");
     $query->bind_param("s", $id);
     $query->execute();
     $query->bind_result($id_user, $mail, $lname, $fname, $password, $avatar, $phone);
@@ -71,8 +72,19 @@ class Database
     }
   }
 
-  function getId($user){
-    $query = $this->getCon()->prepare("SELECT id_user FROM user WHERE mail like ?");
+  function unactivated($id_user)
+  {
+    $query = $this->getCon()->prepare("INSERT INTO verify (id_user,	activate_code, activated) VALUES (?,?, DEFAULT)");
+    $temp = $this->generateRandomString();
+
+    $query->bind_param("is", $id_user, $temp);
+    echo "3";
+    $query->execute();
+  }
+
+  function getId($user)
+  {
+    $query = $this->getCon()->prepare("SELECT id_user FROM user WHERE mail LIKE ?");
     $query->bind_param("s", $user->getEmail());
     $query->execute();
     $query->bind_result($id_user);
@@ -85,5 +97,11 @@ class Database
   }
   function updateEmail($user, $newEmail)
   { }
+
+  function generateRandomString($length = 10) {
+    return substr(str_shuffle(str_repeat($x='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length/strlen($x)) )),1,$length);
+}
+
+
 }
 ?>
