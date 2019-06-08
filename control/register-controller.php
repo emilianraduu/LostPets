@@ -39,3 +39,4 @@ function uploadPhoto()
         return "default.jpg";
     }
 }
+?>
