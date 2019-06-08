@@ -29,6 +29,19 @@ class Database
     }
   }
 
+  function formular($pet)
+  {
+    $query = $this->getCon()->prepare("INSERT INTO pet (id_pet, gallery, location, name, species, breed, details, reward) VALUES(DEFAULT,?,?,?,?,?,?,?)");
+    $query->bind_param("sssssss", $pet->getGallery(), $pet->getLocation(),$pet->getName(),$pet->getSpecies(),$pet->getBreed(),$pet->getDetails(),$pet->getReward());
+    if ($query->execute()) {
+      $query->close();
+      return true;
+    } else {
+      $query->close();
+      return false;
+    }
+  }
+
   function login($email, $password)
   {
     $query = $this->getCon()->prepare("SELECT * FROM user WHERE mail = ? AND password = ?");
