@@ -16,11 +16,15 @@ if (isset($_POST['email'])) {
     $avatar = uploadPhoto();
 
     $user = new User($email, $password, $fname, $lname, $avatar, $phone);
-
-    if($db->register($user))
+    
+    if ($db->register($user)) {
+        $id = $db->getId($user);
+        echo gettype($id);
+        $db->unactivated($id);
         header("location: ../home");
-    else
+    } else {
         header("location: ../register/error");
+    }
 }
 
 function uploadPhoto()
