@@ -15,7 +15,7 @@
     <?php include 'header.php';
     require '../control/pet.php';
     if (!isset($_SESSION['SID']))
-        header('location: home'); 
+        header('location: home');
     else {
         $pets = $db->getAnimals($_SESSION['UID']);
     } ?>
@@ -38,17 +38,19 @@
         <div class="right">
             <h2>Lost</h2>
             <div class="lost-row">
-            <?php 
-            foreach($pets as $pet){
-                foreach($pet as $key)
-                {
-                    $print = $print ." <a href=''> <div class='lost-pet'></div></a>";
-                   
-                    
+                <?php
+                if (count($pets) == 0) {
+                    echo "<p> You haven't lost any pets! </p>";
+                } else {
+                    foreach ($pets as $pet) {
+                        foreach ($pet as $key) {
+                            $print = $print . " <a href=''> <div class='lost-pet'><img src='./public/img/pets/" . $key->getGallery() . "'></div></a>";
+                        }
+                    }
+                    echo $print;
                 }
-            }
-            echo $print;
-            ?>
+                
+                ?>
             </div>
         </div>
     </div>

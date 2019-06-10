@@ -646,7 +646,6 @@ img {
 }
 
 .lost-row .lost-pet {
-    padding: 1em;
     width: 100px;
     margin: auto;
     margin: 1em;
@@ -656,6 +655,12 @@ img {
     height: 100px;
     border-radius: 100px;
     background-color: grey;
+}
+
+.lost-pet img {
+    max-width: 100%;
+    border-radius: 100%;
+    max-height: 100%;
 }
 
 .lost-pet:hover {
