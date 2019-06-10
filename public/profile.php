@@ -12,109 +12,47 @@
 
 <body>
     <!-- Header -->
-    <?php include 'header.php' ?>
-    
+    <?php include 'header.php';
+    require '../control/pet.php';
+    if (!isset($_SESSION['SID']))
+        header('location: home'); 
+    else {
+        $pets = $db->getAnimals($_SESSION['UID']);
+    } ?>
+
     <div class="profile-page">
         <div class="left">
-            <img src="./public/img/avatars/<?php echo $user->getAvatar(); ?>">
-            <h2><?php echo $user->getLname() . " ". $user->getFname(); ?></h2>
+            <form action="./control/profile-controller.php" enctype="multipart/form-data" method="post" class="form">
+                <label for="hide_img"><img src="./public/img/avatars/<?php echo $user->getAvatar(); ?>" id="avatar"></label>
+                <input type="file" name="pic" id="hide_img" />
+            </form>
+            <h2><?php echo $user->getLname() . " " . $user->getFname(); ?></h2>
             <div class="selection">
                 <a href="tel:<?php echo $user->getPhone(); ?> "><i class="fas fa-phone "></i>call me</a>
             </div>
             <div class="selection ">
                 <a href="mailto:<?php echo $user->getEmail(); ?> "> <i class="fas fa-envelope "></i>email me</a>
             </div>
-            <button>Settings</button>
+            <script src="./public/js/img.js"></script>
         </div>
-
         <div class="right">
             <h2>Lost</h2>
             <div class="lost-row">
-                <a href="lostpet1.html">
-                    <div class="lost-pet">
-
-                    </div>
-                </a>
-                <a href="lostpet1.html">
-                    <div class="lost-pet">
-
-                    </div>
-                </a>
-                <a href="lostpet1.html">
-                    <div class="lost-pet">
-
-                    </div>
-                </a>
-                <a href="lostpet1.html">
-                    <div class="lost-pet">
-
-                    </div>
-                </a>
-                <a href="lostpet1.html">
-                    <div class="lost-pet">
-
-                    </div>
-                </a>
-            </div>
-            <h2>Found</h2>
-            <div class="lost-row">
-                <a href="lostpet1.html">
-                    <div class="lost-pet">
-                    </div>
-                </a>
-                <a href="lostpet1.html">
-                    <div class="lost-pet">
-                    </div>
-                </a>
-                <a href="lostpet1.html">
-                    <div class="lost-pet">
-                    </div>
-                </a>
-                <a href="lostpet1.html">
-                    <div class="lost-pet">
-                    </div>
-                </a>
-                <a href="lostpet1.html">
-                    <div class="lost-pet">
-                    </div>
-                </a>
-                <a href="lostpet1.html">
-                    <div class="lost-pet">
-                    </div>
-                </a>
-                <a href="lostpet1.html">
-                    <div class="lost-pet">
-                    </div>
-                </a>
-                <a href="lostpet1.html">
-                    <div class="lost-pet">
-                    </div>
-                </a>
-                <a href="lostpet1.html">
-                    <div class="lost-pet">
-                    </div>
-                </a>
-                <a href="lostpet1.html">
-                    <div class="lost-pet">
-                    </div>
-                </a>
-                <a href="lostpet1.html">
-                    <div class="lost-pet">
-                    </div>
-                </a>
-                <a href="lostpet1.html">
-                    <div class="lost-pet">
-                    </div>
-                </a>
-
-                <a href="lostpet1.html">
-                    <div class="lost-pet">
-
-                    </div>
-                </a>
+            <?php 
+            foreach($pets as $pet){
+                foreach($pet as $key)
+                {
+                    $print = $print ." <a href=''> <div class='lost-pet'></div></a>";
+                   
+                    
+                }
+            }
+            echo $print;
+            ?>
             </div>
         </div>
     </div>
+
     <?php include 'footer.php' ?>
 </body>
 

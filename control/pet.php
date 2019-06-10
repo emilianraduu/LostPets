@@ -9,7 +9,7 @@ class Pet
     private $details;
     private $reward;
 
-    function __construct($gallery,$location,$name,$species,$breed,$details,$reward)
+    function __construct($gallery, $location, $name, $species, $breed, $details, $reward)
     {
         $this->gallery = $gallery;
         $this->location = $location;

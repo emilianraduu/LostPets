@@ -201,7 +201,7 @@ footer .selection .fas {
     width: 10px;
     height: 10px;
     margin: 0 5px;
-    background: url("../img/default.jpg");
+    background: url("../img/avatars/default.jpg");
     background-size: contain, cover;
     border-radius: 100%;
     border: solid #00979c 1px;
@@ -222,13 +222,20 @@ form {
     align-content: center;
 }
 
-form input {
+form input,
+form select,
+form textarea,
+form radio {
     border-radius: 5px;
     border: 0;
     height: 25px;
     width: 100%;
     margin: 1em;
     box-sizing: border-box;
+}
+
+form textarea {
+    height: 100px;
 }
 
 .under label {
@@ -240,10 +247,10 @@ form input {
     width: 100px;
     height: 100px;
     justify-self: center;
-    background-size: cover;
-    background-image: url("../img/default.jpg");
+    background-size: contain;
     border-radius: 100%;
     margin-top: 30px;
+    border: 3px #ffbf00 solid;
     transition: 0.5s ease-in-out;
 }
 
@@ -257,6 +264,23 @@ form input {
 
 form label {
     margin: 3px;
+}
+
+.banner {
+    background-color: #E2DDDC;
+    text-align: center;
+    margin: 1em;
+    border-radius: 5px;
+}
+
+.banner p {
+    padding: 1em;
+    text-decoration: none;
+}
+
+.banner a {
+    text-decoration: none;
+    color: #006064;
 }
 
 .space .white-links {
@@ -366,6 +390,13 @@ button {
     display: flex;
 }
 
+#lost-map {
+    width: 300px;
+    height: 500px;
+    margin: auto;
+    margin-left: 100px;
+}
+
 .invbut {
     background-color: #00979c;
 }
@@ -426,7 +457,6 @@ button:hover {
     overflow: hidden;
 }
 
-
 .primary .top-btns {
     position: absolute;
     top: 0px;
@@ -436,8 +466,6 @@ button:hover {
     padding: 10px;
     border-radius: 10px;
 }
-
-
 
 .primary .bottom-btns {
     position: absolute;
@@ -455,12 +483,10 @@ i {
     display: inline-block;
 }
 
-
 .top-btns p,
 i {
     display: inline-block;
 }
-
 
 .top-btns p {
     margin: 0;
@@ -478,6 +504,7 @@ i {
     justify-content: space-between;
     flex-wrap: wrap;
 }
+
 .card {
     display: inline-block;
     cursor: pointer;
@@ -534,14 +561,13 @@ img {
 }
 
 .profile-page .left {
-    display: flex;
-    margin: auto auto;
+    display: block;
     flex-direction: column;
     padding: 2em;
     margin: 2em 4em;
     align-content: center;
-    max-height: 350px;
     max-width: 250px;
+    max-height: 250px;
     background-color: #E2DDDC;
     border-radius: 30px;
     justify-content: center;
@@ -574,16 +600,19 @@ img {
     margin-top: 3em;
 }
 
-.left img {
+#avatar {
     width: 100px;
-    padding: 1em 3em;
-    margin: auto;
     border-radius: 100%;
+    background-color: #E2DDDC;
+    border: 3px solid #ffbf00;
+    cursor: pointer;
+    transition: 0.2s all ease-in-out;
+    margin: auto auto;
     height: 100px;
 }
 
-.left img:hover {
-    border-radius: 100%;
+#avatar:hover {
+    transform: scale(1.1);
 }
 
 .change {
@@ -623,7 +652,7 @@ img {
     margin: 1em;
     display: flex;
     flex-direction: row;
-    transition: .3s all ease;
+    transition: 0.3s all ease;
     height: 100px;
     border-radius: 100px;
     background-color: grey;
@@ -651,14 +680,14 @@ img {
         flex-flow: column;
     }
     .profile-page {
-        display: block;
         justify-content: center;
+        display: block;
         align-content: center;
     }
     .profile-page .left {
         margin: auto;
-        margin-top: 2em;
-        padding: 3em 2em;
+        max-width: 300px;
+        width: 300px;
     }
     .right h2 {
         text-align: center;
@@ -735,7 +764,8 @@ img {
         height: 25px;
     }
     .links .selection a,
-    .links .selection .fa {
+    .links .selection .fa,
+    .links .selection .fas {
         color: white;
         font-size: 25px;
     }
@@ -743,7 +773,8 @@ img {
         font-size: 25px;
     }
     .links .selection:hover a,
-    .links .selection:hover .fa {
+    .links .selection:hover .fa,
+    .links .selection:hover .fas {
         color: #ffbf00;
     }
     .links .selection:hover {

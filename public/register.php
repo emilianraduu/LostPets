@@ -17,10 +17,10 @@
     header('location: ..');?>
 
     <div class="container cyan skewDown">
-        <div class="content skewUp space">
+        <div class="content skewUp">
             <form action="./control/register-controller.php"  enctype="multipart/form-data" method="post" class="form">
                 <div class="info">
-                    <label for="hide_img"><img id="avatar" class="avatar_choose"></label>
+                    <label for="hide_img"><img id="avatar" class="avatar_choose" src="./public/img/avatars/default.jpg"></label>
                     <input type="file" name="pic" id="hide_img" />
                     <div class="under">
                         <label for="fname">First name: </label>
