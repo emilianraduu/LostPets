@@ -11,7 +11,6 @@ $requestBodyAsString = json_decode($requestBodyAsString);
 preg_match('/^\/add\/(.+)\/coord\/(.+)\/(.+)$/', $endpoint, $matches);
 // header('Content-type: application/json');
 
-echo "<script> console.log('".$matches[3]."')</script>";
 
 if ($method == "POST") {
 

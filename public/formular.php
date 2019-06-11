@@ -31,6 +31,7 @@
                     <script src="../public/js/img.js"></script>
                 </div>
 
+                <input id="location" name="location" hidden/>
 
                 <p>Species:</p>
                 <select name="species" id="species" onchange="change">
@@ -59,7 +60,7 @@
         <div class="content">
             <div id="mapid" class="spaced"></div>
             <input id="sid" value="<?php echo $_SESSION['UID']?>" hidden>
-            <script src="./public/js/map.js"></script>
+            <script src="./public/js/for-map.js"></script>
         </div>
     </div>
     <?php include 'footer.php'; ?>

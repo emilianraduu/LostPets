@@ -645,7 +645,7 @@ img {
 
 .lost-row .lost-pet {
     width: 100px;
-    margin: auto;
+    /* margin: auto; */
     margin: 1em;
     display: flex;
     flex-direction: row;

@@ -16,16 +16,15 @@ if (isset($_SESSION['SID'])) {
         $name = mysqli_real_escape_string($db->getCon(), $_POST['name']);
         $species = mysqli_real_escape_string($db->getCon(), $_POST['species']);
         $breed = mysqli_real_escape_string($db->getCon(), $_POST['breeds']);
-        $location = "hello";
+        $location = mysqli_real_escape_string($db->getCon(), $_POST['location']);
         $details = mysqli_real_escape_string($db->getCon(), $_POST['details']);
         $reward = mysqli_real_escape_string($db->getCon(), $_POST['reward']);
-
+        
         $pet = new Pet($gallery, $location, $name, $species, $breed, $details, $reward);
         if ($db->insertPet($pet, $user)) {
-
-                header("location: ../home");
-            } else {
-                header("location: ../register/error");
+            header("location: ../home");
+        } else {
+            header("location: ../register/error");
         }
     }
 }

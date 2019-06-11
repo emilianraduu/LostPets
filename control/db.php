@@ -116,8 +116,7 @@ class Database
     $query->store_result();
     $pets = [];
     while ($query->fetch()) {
-      array_push($pets, $this->getPetById($id_pet));
-      // echo gettype($pets);
+      array_push($pets, $this->getPetById($id_pet), $id_pet);
     }
     return $pets;
   }

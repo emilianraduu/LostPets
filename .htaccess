@@ -11,6 +11,7 @@ RewriteRule ^register$ ./public/register.php [NC,L]
 RewriteRule ^verify$ ./public/verify.php [NC,L]
 RewriteRule ^lost$ ./public/lost.php [NC,L]
 RewriteRule ^add/.+$ ./control/api/api.verify.php [NC,L]
+RewriteRule ^upload$ ./control/profile-controller.php [NC,L]
 
 ErrorDocument 403 /forbidden.html
 ErrorDocument 404 /notfound.html

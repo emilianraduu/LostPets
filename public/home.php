@@ -18,7 +18,7 @@
     if (!isset($_SESSION['SID']))
         header('location: .'); ?>
     <!-- Motto -->
-
+    <input id="sessionId" hidden value="<?php echo $_SESSION['UID']?>">
     <!-- Lost pets panel -->
     <div class="container ">
         <div class="content">
@@ -130,6 +130,7 @@
                         </div>
                     </div>
                 </a>
+                <script src="./public/js/lost-pets.js"></script>
             </div>
         </div>
     </div>

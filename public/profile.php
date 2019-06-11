@@ -24,7 +24,7 @@
         <div class="left">
             <form action="./control/profile-controller.php" enctype="multipart/form-data" method="post" class="form">
                 <label for="hide_img"><img src="./public/img/avatars/<?php echo $user->getAvatar(); ?>" id="avatar"></label>
-                <input type="file" name="pic" id="hide_img" onchange="mainInfo(this.value);" />
+                <input type="file" name="pic" id="hide_img"  onchange="changeProfile();" />
             </form>
             <h2><?php echo $user->getLname() . " " . $user->getFname(); ?></h2>
             <div class="selection">
@@ -33,7 +33,7 @@
             <div class="selection ">
                 <a href="mailto:<?php echo $user->getEmail(); ?> "> <i class="fas fa-envelope "></i>email me</a>
             </div>
-            <script src="./public/js/img.js"></script>
+            <script src="./public/js/profile-img.js"></script>
         </div>
         <div class="right">
             <h2>Lost</h2>
@@ -42,9 +42,12 @@
                 if (count($pets) == 0) {
                     echo "<p> You haven't lost any pets! </p>";
                 } else {
+                    $i = 1;
                     foreach ($pets as $pet) {
+                        $temp = $pets[$i];
                         foreach ($pet as $key) {
-                            $print = $print . " <a href=''> <div class='lost-pet'><img src='./public/img/pets/" . $key->getGallery() . "'></div></a>";
+                            $print = $print . " <a href='./pet?" . $temp . "'> <div class='lost-pet'><img src='./public/img/pets/" . $key->getGallery() . "'></div></a>";
+                            $i = $i + 2;
                         }
                     }
                     echo $print;
