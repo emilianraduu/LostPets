@@ -24,7 +24,7 @@
         <div class="left">
             <form action="./control/profile-controller.php" enctype="multipart/form-data" method="post" class="form">
                 <label for="hide_img"><img src="./public/img/avatars/<?php echo $user->getAvatar(); ?>" id="avatar"></label>
-                <input type="file" name="pic" id="hide_img" />
+                <input type="file" name="pic" id="hide_img" onchange="mainInfo(this.value);" />
             </form>
             <h2><?php echo $user->getLname() . " " . $user->getFname(); ?></h2>
             <div class="selection">
@@ -49,7 +49,7 @@
                     }
                     echo $print;
                 }
-                
+
                 ?>
             </div>
         </div>

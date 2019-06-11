@@ -2,11 +2,13 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="./public/css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
     <title>LostPets</title>
 </head>
 
@@ -21,7 +23,7 @@
             <form action="./control/formular-controller.php" enctype="multipart/form-data" method="post">
                 <div class="info">
                     <label for="hide_img"><img id="avatar" <img id="avatar" class="avatar_choose" src=""></label>
-                    <input type="file" name="pic" id="hide_img" required/>
+                    <input type="file" name="pic" id="hide_img" required />
                     <div class="under">
                         <label for="name">Name: </label>
                         <input type="text" id="name" name="name" maxlength="20" required>
@@ -55,7 +57,9 @@
             </form>
         </div>
         <div class="content">
-            <iframe id="lost-map" src="https://www.openstreetmap.org/export/embed.html?bbox=27.319908142089847%2C47.0579608565377%2C27.814292907714847%2C47.23472275076704&amp;layer=mapnik "></iframe>
+            <div id="mapid" class="spaced"></div>
+            <input id="sid" value="<?php echo $_SESSION['UID']?>" hidden>
+            <script src="./public/js/map.js"></script>
         </div>
     </div>
     <?php include 'footer.php'; ?>

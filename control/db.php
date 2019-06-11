@@ -116,10 +116,34 @@ class Database
     $query->store_result();
     $pets = [];
     while ($query->fetch()) {
-      array_push($pets,$this->getPetById($id_pet));
+      array_push($pets, $this->getPetById($id_pet));
       // echo gettype($pets);
     }
     return $pets;
+  }
+
+  function updateLocation($obj)
+  {
+    $ok = 1;
+    $query1 = $this->getCon()->prepare("SELECT id_user FROM location WHERE id_user LIKE ?");
+    $query1->bind_param("s", $obj->id);
+    $query1->execute();
+    $query1->bind_result($id_user);
+    while ($query1->fetch()) {
+      if($id_user != null)
+        $ok = 0;
+    }
+
+    if ($ok == 1) {
+      $query = $this->getCon()->prepare("INSERT INTO location (id_user, lat, lng) VALUES ((SELECT id_user FROM user WHERE id_user LIKE ?), ?, ?)");
+      $query->bind_param("sss", $obj->id, $obj->lat, $obj->lng);
+      $query->execute();
+    }
+    if ($ok == 0){
+      $query = $this->getCon()->prepare("UPDATE location SET lat=?, lng=? WHERE id_user LIKE ?");
+      $query->bind_param("sss", $obj->lat, $obj->lng, $obj->id);
+      $query->execute();
+    }
   }
 
   function getPetById($id_pet)
