@@ -27,8 +27,8 @@ navigator.geolocation.getCurrentPosition(function(location) {
             .then(response => {
                 console.log(response);
             })
-            .catch(() => {
-                console.log("ntnt");
+            .catch(error => {
+                console.log(error);
             })
     }
 

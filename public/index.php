@@ -40,72 +40,8 @@
             <h2 class="first">EVERY DAY 10 DOGGOS</h2>
             <h2 class="second">ARE FOUND</h2>
             <!-- Last 3 lost pets -->
-            <div class="cards">
-                <a href="./animals/dog.html">
-                    <div class="card">
-                        <div class="primary">
-                            <img class="img-primary" src="./public/img/dog.png" alt="animal">
-                            <div class="top-btns">
-                                <i class="fa fa-map-marker"></i>
-                                <p>Popricani, Iasi</p>
-                            </div>
-                            <div class="bottom-btns">
-                                <i class="fa fa-calendar"></i>
-                                <p>17/03/2019</p>
-                            </div>
-                            <div class="user-things">
-                                <div class="photo-card">
-                                    <img src="./public/img/user-img1.jpg" alt="user img">
-                                </div>
-                                <p>Emilian</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="./animals/dog.html">
-                    <div class="card">
-                        <div class="primary">
-
-                            <img class="img-primary" src="./public/img/cryingcat.jpg" alt="animal">
-                            <div class="top-btns">
-                                <i class="fa fa-map-marker"></i>
-                                <p>Ciurea, Iasi</p>
-                            </div>
-                            <div class="bottom-btns">
-                                <i class="fa fa-calendar"></i>
-                                <p>17/03/2019</p>
-                            </div>
-                            <div class="user-things">
-                                <div class="photo-card">
-                                    <img src="./public/img/user-img2.jpg" alt="user img">
-                                </div>
-                                <p>Andrei</p>
-                            </div>
-                        </div>
-
-                    </div>
-                </a>
-                <a href="./animals/dog.html">
-                    <div class="card">
-                        <div class="primary">
-                            <img class="img-primary" src="./public/img/cat.png" alt="animal">
-                            <div class="top-btns">
-                                <i class="fa fa-map-marker"></i>
-                                <p>Alexandru, Iasi</p>
-                            </div>
-                            <div class="bottom-btns">
-                                <i class="fa fa-calendar"></i>
-                                <p>17/03/2019</p>
-                            </div>
-                            <div class="user-things">
-                                <div class="photo-card">
-                                    <img src="./public/img/user-img3.jpg" alt="user img">
-                                </div>
-                                <p>Cristi</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
+            <div class="cards" id="cards">
+                <script src="./public/js/main-pets.js"></script>
             </div>
             <h2>THERE IS A CHANCE YOU SEE ONE ON YOUR WAY TO WORK</h2>
         </div>
@@ -116,11 +52,11 @@
         <div class="content skewUp">
             <h2 class="for-map">ALL THE DOGGOS THAT WERE LOST NEAR YOU</h2>
             <div id="mapid"></div>
-            <input id="sid" value="<?php echo $_SESSION['UID']?>" hidden>
+            <input id="sid" value="<?php echo $_SESSION['UID'] ?>" hidden>
             <script src="./public/js/map.js"></script>
         </div>
     </div>
-   
+
     <!-- Footer -->
     <?php include 'footer.php'; ?>
 </body>

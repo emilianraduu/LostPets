@@ -46,7 +46,7 @@
                     foreach ($pets as $pet) {
                         $temp = $pets[$i];
                         foreach ($pet as $key) {
-                            $print = $print . " <a href='./pet?" . $temp . "'> <div class='lost-pet'><img src='./public/img/pets/" . $key->getGallery() . "'></div></a>";
+                            $print = $print . " <a href='./pet#" . $temp . "'> <div class='lost-pet'><img src='./public/img/pets/" . $key->getGallery() . "'></div></a>";
                             $i = $i + 2;
                         }
                     }

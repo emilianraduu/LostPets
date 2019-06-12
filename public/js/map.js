@@ -11,12 +11,19 @@ navigator.geolocation.getCurrentPosition(function(location) {
     }).addTo(mymap);
     newMarkerGroup = new L.LayerGroup();
 
+
     // mymap.on('click', addMarker);
 
-    var marker = L.marker(latlng).addTo(mymap);
+    // var marker = L.marker(latlng).addTo(mymap);
 
     var sessionValue = document.getElementById('sid').value;
 
+    locs.forEach(element => {
+        var res = element.split(" ");
+        // console.log(res[0]);
+        var i;
+        L.marker(res).addTo(mymap);
+    })
     if (sessionValue != '') {
         fetch('./add/' + sessionValue + '/coord/' + location.coords.latitude + '/' + location.coords.longitude, { method: "POST" })
             .then(response => {

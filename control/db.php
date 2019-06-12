@@ -1,4 +1,5 @@
 <?php
+
 class Database
 {
   private $address = '127.0.0.1';
@@ -107,6 +108,37 @@ class Database
   //     $i = $i+1;
   // }
 
+
+  function getAnimal($id)
+  {
+
+    $query = $this->getCon()->prepare("SELECT p.id_pet, p.gallery, p.location, p.name, p.species, p.breed, p.details, p.reward, u.mail, u.phone, u.fname, u.avatar, u.id_user FROM pet p JOIN owner o ON o.id_pet=p.id_pet JOIN user u ON u.id_user=o.id_user WHERE p.id_pet LIKE ?");
+
+    $query->bind_param("s", $id);
+
+    $query->execute();
+    $query->bind_result($id_pet, $gallery, $location, $name, $species, $breed, $details, $reward, $email, $phone, $lname, $avatar, $id);
+    $query->store_result();
+    $temp = [];
+    while ($query->fetch()) {
+      array_push($temp, [
+        "id" => $id_pet,
+        "gallery" => $gallery,
+        "location" => $location,
+        "name" => $name,
+        "species" => $species,
+        "breed" => $breed,
+        "details" => $details,
+        "reward" => $reward,
+        "mail" => $email,
+        "phone" => $phone,
+        "lname" => $lname,
+        "avatar" => $avatar,
+        "uid" => $id
+      ]);
+    }
+    return $temp;
+  }
   function getAnimals($user)
   {
     $query = $this->getCon()->prepare("SELECT id_pet FROM owner WHERE id_user LIKE ?");
@@ -120,6 +152,83 @@ class Database
     }
     return $pets;
   }
+  function getAllAnimals()
+  {
+    $query = $this->getCon()->prepare("SELECT * FROM pet");
+    $query->execute();
+    $query->bind_result($id_pet, $gallery, $location, $name, $species, $breed, $details, $reward);
+    $query->store_result();
+    $pets = [];
+
+    while ($query->fetch()) {
+
+      array_push($pets, [
+        "id" => $id_pet,
+        "gallery" => $gallery,
+        "location" => $location,
+        "name" => $name,
+        "species" => $species,
+        "breed" => $breed,
+        "details" => $details,
+        "reward" => $reward
+      ]);
+    }
+    return $pets;
+  }
+
+  function getNearPets($id)
+  {
+
+    $location = $this->getUserLocation($id);
+    $pets = $this->getAllAnimals();
+
+    $aroundPets = [];
+    foreach ($pets as $pet) {
+      $temp = explode(" ", $pet["location"]);
+      $lat = $temp[0];
+      $long = $temp[1];
+      $d = $this->distance($lat, $long, $location['lat'], $location['lng'], "K");
+      if ($d < 5)
+        array_push($aroundPets, $pet);
+    }
+    return $aroundPets;
+  }
+
+  function distance($lat1, $lon1, $lat2, $lon2, $unit)
+  {
+
+    $theta = $lon1 - $lon2;
+    $dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) +  cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));
+    $dist = acos($dist);
+    $dist = rad2deg($dist);
+    $miles = $dist * 60 * 1.1515;
+    $unit = strtoupper($unit);
+
+    if ($unit == "K") {
+      return ($miles * 1.609344);
+    } else if ($unit == "N") {
+      return ($miles * 0.8684);
+    } else {
+      return $miles;
+    }
+  }
+
+  function getUserLocation($id)
+  {
+    $query = $this->getCon()->prepare("SELECT lat,lng FROM location WHERE id_user LIKE ?");
+
+    $query->bind_param("s", $id);
+    $query->execute();
+    $query->bind_result($lat, $lng);
+    $query->store_result();
+    if ($query->fetch()) {
+      $obj = [
+        "lat" => $lat,
+        "lng" => $lng
+      ];
+    }
+    return $obj;
+  }
 
   function updateLocation($obj)
   {
@@ -129,7 +238,7 @@ class Database
     $query1->execute();
     $query1->bind_result($id_user);
     while ($query1->fetch()) {
-      if($id_user != null)
+      if ($id_user != null)
         $ok = 0;
     }
 
@@ -138,7 +247,7 @@ class Database
       $query->bind_param("sss", $obj->id, $obj->lat, $obj->lng);
       $query->execute();
     }
-    if ($ok == 0){
+    if ($ok  == 0) {
       $query = $this->getCon()->prepare("UPDATE location SET lat=?, lng=? WHERE id_user LIKE ?");
       $query->bind_param("sss", $obj->lat, $obj->lng, $obj->id);
       $query->execute();

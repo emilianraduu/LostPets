@@ -519,6 +519,10 @@ i {
     border-color: #ffbf00;
 }
 
+.user-things p {
+    color: white;
+}
+
 .user-things p,
 img {
     margin: 0;
@@ -538,10 +542,13 @@ img {
     border-radius: 100%;
 }
 
+.details {
+    padding: 2em;
+}
+
 .user-things p {
     box-sizing: border-box;
     padding: 3px;
-    padding-left: 10px;
 }
 
 .show {

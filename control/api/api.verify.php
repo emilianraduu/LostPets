@@ -11,7 +11,6 @@ $requestBodyAsString = json_decode($requestBodyAsString);
 preg_match('/^\/add\/(.+)\/coord\/(.+)\/(.+)$/', $endpoint, $matches);
 // header('Content-type: application/json');
 
-
 if ($method == "POST") {
 
     if ($matches[1] && $matches[2] && $matches[3]) {
@@ -20,10 +19,9 @@ if ($method == "POST") {
             'lat' => $matches[2],
             'lng' => $matches[3]
         ];
-       
+
         $db = new Database;
         $db->updateLocation($obj);
-
     }
 }
 ?>

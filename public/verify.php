@@ -13,6 +13,8 @@
 <body>
     <!-- Header -->
     <?php include 'header.php';
+    if(!isset($_SESSION['SID']))
+        header('location: .');
     $temp = $db->getUser($_SESSION['UID']);
     if ($db->verify($temp))
         header('location: home');

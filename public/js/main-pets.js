@@ -1,7 +1,6 @@
-let sid = document.getElementById('sid').value;
 var locs = [];
 let body = document.getElementsByClassName('cards');
-fetch('./get/' + sid, {
+fetch('./get/98', {
         method: 'GET'
     })
     .then(response => response.json())
@@ -10,7 +9,6 @@ fetch('./get/' + sid, {
             locs.push(element.location);
             var div = document.createElement('div');
             div.className = 'card';
-
             div.innerHTML = "<div class='primary'><a href='./pet#" + element.id + "'><img class='img-primary' src='./public/img/pets/" + element.gallery + "' alt=''><div class='user-things'> <p>" + element.name + "</p> </a></div>";
             document.getElementById('cards').appendChild(div);
         });
