@@ -41,7 +41,7 @@
             <h2 class="second">ARE FOUND</h2>
             <!-- Last 3 lost pets -->
             <div class="cards" id="cards">
-                <script src="./public/js/main-pets.js"></script>
+                
             </div>
             <h2>THERE IS A CHANCE YOU SEE ONE ON YOUR WAY TO WORK</h2>
         </div>
@@ -53,10 +53,10 @@
             <h2 class="for-map">ALL THE DOGGOS THAT WERE LOST NEAR YOU</h2>
             <div id="mapid"></div>
             <input id="sid" value="<?php echo $_SESSION['UID'] ?>" hidden>
-            <script src="./public/js/map.js"></script>
+            
         </div>
-    </div>
-
+</div>
+    <script src="./public/js/lost-pets.js"></script>
     <!-- Footer -->
     <?php include 'footer.php'; ?>
 </body>

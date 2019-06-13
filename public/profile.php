@@ -12,6 +12,7 @@
 
 <body>
     <!-- Header -->
+    <input id="currUser" value="" hidden />
     <?php include 'header.php';
     require '../control/pet.php';
     if (!isset($_SESSION['SID']))
@@ -19,44 +20,9 @@
     else {
         $pets = $db->getAnimals($_SESSION['UID']);
     } ?>
-
-    <div class="profile-page">
-        <div class="left">
-            <form action="./control/profile-controller.php" enctype="multipart/form-data" method="post" class="form">
-                <label for="hide_img"><img src="./public/img/avatars/<?php echo $user->getAvatar(); ?>" id="avatar"></label>
-                <input type="file" name="pic" id="hide_img"  onchange="changeProfile();" />
-            </form>
-            <h2><?php echo $user->getLname() . " " . $user->getFname(); ?></h2>
-            <div class="selection">
-                <a href="tel:<?php echo $user->getPhone(); ?> "><i class="fas fa-phone "></i>call me</a>
-            </div>
-            <div class="selection ">
-                <a href="mailto:<?php echo $user->getEmail(); ?> "> <i class="fas fa-envelope "></i>email me</a>
-            </div>
-            <script src="./public/js/profile-img.js"></script>
-        </div>
-        <div class="right">
-            <h2>Lost</h2>
-            <div class="lost-row">
-                <?php
-                if (count($pets) == 0) {
-                    echo "<p> You haven't lost any pets! </p>";
-                } else {
-                    $i = 1;
-                    foreach ($pets as $pet) {
-                        $temp = $pets[$i];
-                        foreach ($pet as $key) {
-                            $print = $print . " <a href='./pet#" . $temp . "'> <div class='lost-pet'><img src='./public/img/pets/" . $key->getGallery() . "'></div></a>";
-                            $i = $i + 2;
-                        }
-                    }
-                    echo $print;
-                }
-
-                ?>
-            </div>
-        </div>
+    <div class='profile-page' id="profile-page">
     </div>
+    <script src='./public/js/profile.js'></script>
 
     <?php include 'footer.php' ?>
 </body>

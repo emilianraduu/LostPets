@@ -127,7 +127,7 @@ footer .selection .fas {
 .container {
     display: flex;
     flex-grow: 1;
-    justify-content: center;
+    justify-content: space-evenly;
     padding: 4em 4em;
     margin: 2em 0;
     flex-flow: row;

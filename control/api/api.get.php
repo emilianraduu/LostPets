@@ -17,9 +17,14 @@ if ($method == 'GET') {
     echo json_encode($array);
 }
 
-if($method == 'POST'){
-    $db= new Database;
-    $data = $db->getAnimal($matches[1]);
-    echo json_encode($data);
-}
+// if($method == 'POST'){
+//     $db= new Database;
+//     $data = $db->getAnimal($matches[1]);
+//     echo json_encode($data);
+// }
+
+// if($method == 'PUT'){
+//     $db = new Database;
+//     $data = $db->getUser(matches[1])
+// }
 ?>

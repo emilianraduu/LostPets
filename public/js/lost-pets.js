@@ -40,7 +40,6 @@ function createCard(element) {
     div.className = 'card';
     div.setAttribute('id', element.id);
     loc = element.location.split(" ");
-    console.log(loc);
     petMarkers[element.id] = L.circle({ 'lat': loc[0], 'lng': loc[1] }, {
         color: 'red',
         fillColor: '#f03',
@@ -53,7 +52,7 @@ function createCard(element) {
 
 async function fetchPet() {
     // fetch
-    let query = await (fetch('./get/' + latlng.lat + '/' + latlng.lng, {
+    let query = await (fetch('./get/loc/' + latlng.lat + '/' + latlng.lng, {
         method: 'GET'
     }));
     // check fetch
@@ -112,7 +111,7 @@ function createMap() {
 
     mymap = L.map('mapid');
     getLoc();
-    mymap.dragging.disable();
+    // mymap.dragging.disable();
 
 
     // adresa + token

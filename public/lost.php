@@ -22,14 +22,14 @@
     <div class="container" id="container">
         <div class="content" id="left"> </div>
         <div class="content" id="center"></div>
-        <script src="./public/js/getAnimal.js"></script>
         <div class="content">
             <div id="mapid"></div>
         </div>
-        <script src="./public/js/map.pet.js"></script>
+
 
     </div>
-
+    <!-- <script src="./public/js/map.pet.js"></script> -->
+    <script src="./public/js/find-pet.js"></script>
 
     <!-- Footer -->
     <?php include 'footer.php'; ?>

@@ -45,6 +45,26 @@ class Database
     }
   }
 
+  function getJSONUser($id)
+  {
+    $query = $this->getCon()->prepare("SELECT mail,lname,fname,avatar,phone FROM user WHERE id_user LIKE ?");
+    $query->bind_param("s", $id);
+    $query->execute();
+    $query->bind_result($mail, $lname, $fname, $avatar, $phone);
+    $query->store_result();
+    if ($query->fetch()) {
+      $temp = [
+        "mail" => $mail,
+        "fname" => $fname,
+        "lname" => $lname,
+        "avatar" => $avatar,
+        "phone" => $phone
+      ];
+      return json_encode($temp);
+    } else {
+      return null;
+    }
+  }
   function getUser($id)
   {
     $query = $this->getCon()->prepare("SELECT * FROM user WHERE id_user LIKE ?");
