@@ -8,11 +8,12 @@ $requestHeaders = getallheaders();
 $requestBodyAsString = file_get_contents('php://input');
 $requestBodyAsString = json_decode($requestBodyAsString);
 
-preg_match('/^\/get\/(.+)$/', $endpoint, $matches);
+preg_match('/^\/get\/(.+)\/(.+)$/', $endpoint, $matches);
 header('Content-type: application/json');
 if ($method == 'GET') {
     $db = new Database;
-    $array = $db->getNearPets($matches[1]);
+    // echo $matches[1];
+    $array = $db->getNearPets($matches[1], $matches[2]);
     echo json_encode($array);
 }
 

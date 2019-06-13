@@ -1,6 +1,6 @@
 var type = window.location.hash.substr(1);
 var locs = [];
-fetch('./get/' + type, {
+fetch('./get/pet/' + type, {
         method: 'POST'
     })
     .then(response => response.json())

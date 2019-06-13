@@ -176,18 +176,17 @@ class Database
     return $pets;
   }
 
-  function getNearPets($id)
+  function getNearPets($lat, $lng)
   {
 
-    $location = $this->getUserLocation($id);
+    // $location = $this->getUserLocation($id);
     $pets = $this->getAllAnimals();
-
     $aroundPets = [];
     foreach ($pets as $pet) {
       $temp = explode(" ", $pet["location"]);
       $lat = $temp[0];
       $long = $temp[1];
-      $d = $this->distance($lat, $long, $location['lat'], $location['lng'], "K");
+      $d = $this->distance($lat, $long, $lat, $lng, "K");
       if ($d < 5)
         array_push($aroundPets, $pet);
     }

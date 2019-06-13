@@ -1,7 +1,13 @@
 navigator.geolocation.getCurrentPosition(function(location) {
     var latlng = new L.LatLng(location.coords.latitude, location.coords.longitude);
-    var mymap = L.map('mapid').setView(latlng, 13)
-
+    var mymap;
+    var obj = { lat: locs[0], lng: locs[1] };
+    console.log(locs[0]);
+    locs.forEach(element => {
+        var res = element.split(" ");
+        mymap = L.map('mapid').setView(res, 13)
+        L.marker(res).addTo(mymap);
+    })
     L.circle(latlng, {
         color: 'red',
         fillColor: '#f03',
@@ -17,9 +23,9 @@ navigator.geolocation.getCurrentPosition(function(location) {
     newMarkerGroup = new L.LayerGroup();
 
     var sessionValue = document.getElementById('sid').value;
+
     locs.forEach(element => {
         var res = element.split(" ");
-        var i;
         L.marker(res).addTo(mymap);
     })
     if (sessionValue != '') {

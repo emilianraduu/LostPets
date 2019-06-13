@@ -18,25 +18,24 @@
     if (!isset($_SESSION['SID']))
         header('location: .'); ?>
     <input id="sid" value="<?php echo $_SESSION['UID'] ?>" hidden>
+
     <!-- Lost pets panel -->
     <div class="container ">
-        <div class="content">
-            <div class="cards" id="cards">
-                <script src="./public/js/lost-pets.js"></script>
-            </div>
+        <div class="content" id ="cards-cont">
+            <div class="cards" id="cards">  </div>
+            
         </div>
     </div>
 
     <!-- Map -->
     <div class="container orange skewDown">
         <div class="content skewUp">
-            <h2 class="for-map">ALL THE DOGGOS THAT ARE LOST NEAR YOU</h2>
+            <h2 class="for-map">ALL THESE PETS ARE LOST NEAR YOU</h2>
             <div id="mapid"></div>
-
-            <script src="./public/js/map.js"></script>
         </div>
     </div>
 
+    <script src="./public/js/lost-pets.js"></script>
 
     <!-- Footer -->
     <?php include 'footer.php'; ?>

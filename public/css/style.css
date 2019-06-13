@@ -202,7 +202,7 @@ footer .selection .fas {
     height: 10px;
     margin: 0 5px;
     background: url("../img/avatars/default.jpg");
-    background-size: 100%;
+    background-size: cover !important;
     border-radius: 100%;
     border: solid #00979c 1px;
 }
@@ -248,6 +248,8 @@ form textarea {
     height: 100px;
     justify-self: center;
     background-size: contain;
+    object-fit: cover;
+    object-position: center;
     border-radius: 100%;
     margin-top: 30px;
     border: 3px #ffbf00 solid;
@@ -523,6 +525,11 @@ i {
     color: white;
 }
 
+.user-things img {
+    object-fit: contain;
+    object-position: center;
+}
+
 .user-things p,
 img {
     margin: 0;
@@ -666,7 +673,9 @@ img {
 .lost-pet img {
     max-width: 100%;
     border-radius: 100%;
-    max-height: 100%;
+    object-fit: cover;
+    object-position: center;
+    /* max-height: 100%; */
 }
 
 .lost-pet:hover {

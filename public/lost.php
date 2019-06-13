@@ -26,7 +26,7 @@
         <div class="content">
             <div id="mapid"></div>
         </div>
-        <script src="./public/js/map.js"></script>
+        <script src="./public/js/map.pet.js"></script>
 
     </div>
 

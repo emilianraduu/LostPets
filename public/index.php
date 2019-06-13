@@ -37,7 +37,7 @@
     <!-- Lost pets panel -->
     <div class="container cyan skewUp ">
         <div class="content skewDown">
-            <h2 class="first">EVERY DAY 10 DOGGOS</h2>
+            <h2 class="first">EVERY DAY 10 PETS</h2>
             <h2 class="second">ARE FOUND</h2>
             <!-- Last 3 lost pets -->
             <div class="cards" id="cards">
