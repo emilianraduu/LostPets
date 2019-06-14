@@ -17,6 +17,9 @@ class User
         $this->avatar = $avatar;
         $this->phone = $phone;
     }
+    function setAvatar($avatar){
+        $this->avatar = $avatar;
+    }
 
     function getEmail()
     {
@@ -42,6 +45,13 @@ class User
     {
         return $this->phone;
     }
-
+    function generateRandomString($length = 10) {
+        return substr(str_shuffle(str_repeat($x='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length/strlen($x)) )),1,$length);
+    }
+    function startSession($db){
+        session_start();
+        $sessionID = $this->generateRandomString();
+        $_SESSION['SID'] = $sessionID;
+        $_SESSION['UID'] = $db->getId($this);
+    }
 }
-?>

@@ -16,17 +16,29 @@ if (isset($_POST['email'])) {
     $avatar = uploadPhoto();
 
     $user = new User($email, $password, $fname, $lname, $avatar, $phone);
-    
+
     if ($db->register($user)) {
         $id = $db->getId($user);
-        echo gettype($id);
-        $db->unactivated($id);
-        header("location: ../home");
+        $code = $db->unactivated($id);
+        sendEmail($code, $user);
+        $user->startSession($db);
+        header("location: ../verify");
     } else {
         header("location: ../register/error");
     }
 }
 
+function sendEmail($code, $user)
+{
+    $to      = $user->getEmail();
+    $subject = '[Register Code] Lost Pets';
+    $message = $code;
+    $headers = 'From: emiradu98@icloud.com' . "\r\n" .
+        'Reply-To: emiradu98@icloud.com' . "\r\n" .
+        'X-Mailer: PHP/' . phpversion();
+
+    mail($to, $subject, $message, $headers);
+}
 function uploadPhoto()
 {
     $uploaddir = '../public/img/avatars/';
@@ -39,4 +51,3 @@ function uploadPhoto()
         return "default.jpg";
     }
 }
-?>

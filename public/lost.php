@@ -1,74 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="./public/css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
     <title>LostPets</title>
-    <style>
-        .lost {
-            box-sizing: border-box;
-        }
-
-        .flexbox {
-            display: -webkit-flex;
-            display: flex;
-        }
-
-        .article {
-            -webkit-flex: 3;
-            -ms-flex: 3;
-        }
-    
-    </style>
 </head>
+
 <body>
-    <?php include 'header.php'; ?>
-
-    <div class="container cyan skewDown">
-        <div class="content skewUp">
-        <section class="flexbox">
-        <div>
-            <div class="cards">
-            <a href="./animals/dog.html">
-                    <div class="card">
-                        <div class="primary">
-
-                            <img class="img-primary" src="./public/img/cryingcat.jpg" alt="animal">
-                            <div class="top-btns">
-                                <i class="fa fa-map-marker"></i>
-                                <p>Ciurea, Iasi</p>
-                            </div>
-                            <div class="bottom-btns">
-                                <button id="lost_star"><i class="fas fa-star"></i></button>
-                            </div>
-                            <div class="user-things">
-                                <button id="lost_expand"><i class="fas fa-expand"></i></button>
-                            </div>
-                        </div>
-
-                    </div>
-                </a>
-            </div>
+    <!-- Header -->
+    <?php include 'header.php';
+    if (!isset($_SESSION['SID']))
+        header('location: .'); ?>
+    <input id="sid" value="<?php echo $_SESSION['UID'] ?>" hidden>
+    <!-- Lost pets panel -->
+    <div class="container" id="container">
+        <div class="content" id="left"> </div>
+        <div class="content" id="center"></div>
+        <div class="content">
+            <div id="mapid"></div>
         </div>
-        <article class="article">
-                <p>Rex</p><br>
-                <p>Labrador</p>
-                <p>Detalii:</p>
-                <p>somethinge jkngesgj engsekgse kgsemg ksengks egne s gensg sefejfnefnnfe fjefjefiej</p>
-                <p>Contact:</p>
-                <p><i class="fas fa-phone"></i>0753-364-672</p>
-                <p><i class="fas fa-envelope"></i>andrei7piuco@gmail.com</p>
-                <p><img src="public/img/user-img2.jpg" alt="avatar" width="42" height="42">Andrei Piuco</p>
-            
-        </article>
-        <iframe id="map" src="https://www.openstreetmap.org/export/embed.html?bbox=27.319908142089847%2C47.0579608565377%2C27.814292907714847%2C47.23472275076704&amp;layer=mapnik "></iframe>
-        </section>
-        </div>
+
+
     </div>
+    <!-- <script src="./public/js/map.pet.js"></script> -->
+    <script src="./public/js/find-pet.js"></script>
+
+    <!-- Footer -->
     <?php include 'footer.php'; ?>
-    
 </body>
+
 </html>
