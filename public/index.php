@@ -37,11 +37,10 @@
     <!-- Lost pets panel -->
     <div class="container cyan skewUp ">
         <div class="content skewDown">
-            <h2 class="first">EVERY DAY 10 PETS</h2>
-            <h2 class="second">ARE FOUND</h2>
-            <!-- Last 3 lost pets -->
+            <h2 class="first">THESE PETS WERE LOST</h2>
+            <h2 class="second">RECENTLY</h2>
+            <!-- Around lost pets -->
             <div class="cards" id="cards">
-                
             </div>
             <h2>THERE IS A CHANCE YOU SEE ONE ON YOUR WAY TO WORK</h2>
         </div>
@@ -50,7 +49,7 @@
     <!-- Map -->
     <div class="container orange skewDown">
         <div class="content skewUp">
-            <h2 class="for-map">ALL THE DOGGOS THAT WERE LOST NEAR YOU</h2>
+            <h2 class="for-map">YOU CAN FIND A PET AROUND HERE</h2>
             <div id="mapid"></div>
             <input id="sid" value="<?php echo $_SESSION['UID'] ?>" hidden>
             

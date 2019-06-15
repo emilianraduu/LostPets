@@ -28,7 +28,6 @@
                         <label for="name">Name: </label>
                         <input type="text" id="name" name="name" maxlength="20" required>
                     </div>
-                    <script src="../public/js/img.js"></script>
                 </div>
 
                 <input id="location" name="location" hidden/>
@@ -42,7 +41,6 @@
 
                 <p>Breed:</p>
                 <select id="breeds" name="breeds">
-                    <script src="./public/js/breeds.js"></script>
                 </select>
                 <p>Reward: </p>
                 <select name="reward" id="reward">
@@ -60,9 +58,11 @@
         <div class="content">
             <div id="mapid" class="spaced"></div>
             <input id="sid" value="<?php echo $_SESSION['UID']?>" hidden>
-            <script src="./public/js/for-map.js"></script>
         </div>
     </div>
+    
+    <script src="./public/js/breeds.js"></script>
+    <script src="../public/js/img.js"></script>
     <?php include 'footer.php'; ?>
 </body>
 

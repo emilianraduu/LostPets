@@ -25,10 +25,7 @@
         <div class="content">
             <div id="mapid"></div>
         </div>
-
-
     </div>
-    <!-- <script src="./public/js/map.pet.js"></script> -->
     <script src="./public/js/find-pet.js"></script>
 
     <!-- Footer -->

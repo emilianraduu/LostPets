@@ -13,13 +13,14 @@
 <body>
     <!-- Header -->
     <?php include 'header.php';
-    if(!isset($_SESSION['SID']))
+    if (!isset($_SESSION['SID']))
         header('location: .');
     $temp = $db->getUser($_SESSION['UID']);
     if ($db->verify($temp))
         header('location: home');
-         ?>
+    ?>
 
+    <!-- VERIFY -->
     <div class="container cyan skewDown">
         <div class="content skewUp">
             <form action="./control/verify-controller.php" enctype="multipart/form-data" method="post" class="form">
@@ -31,6 +32,8 @@
             </form>
         </div>
     </div>
+
+    <!-- FOOTER -->
     <?php include 'footer.php' ?>
 </body>
 

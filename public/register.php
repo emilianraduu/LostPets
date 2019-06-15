@@ -12,13 +12,13 @@
 
 <body>
     <!-- Header -->
-    <?php include 'header.php'; 
-    if(isset($_SESSION['SID']))
-    header('location: ..');?>
-
+    <?php include 'header.php';
+    if (isset($_SESSION['SID']))
+        header('location: ..'); ?>
+    <!-- Register -->
     <div class="container cyan skewDown">
         <div class="content skewUp">
-            <form action="./control/register-controller.php"  enctype="multipart/form-data" method="post" class="form">
+            <form action="./control/register-controller.php" enctype="multipart/form-data" method="post" class="form">
                 <div class="info">
                     <label for="hide_img"><img id="avatar" class="avatar_choose" src="./public/img/avatars/default.jpg"></label>
                     <input type="file" name="pic" id="hide_img" />
@@ -39,14 +39,17 @@
                 <label for="phone">Phone: </label>
                 <input type="tel" id="phone" name="phone" required oninvalid="this.setCustomValidity('Please enter a phone number')" oninput="setCustomValidity('')">
 
-                
+
                 <button type="submit" name="subReg">Register</button>
                 <div class="selection white-links">
                     <a href="login">Already have an account?</a></div>
             </form>
-            <script src = "./public/js/img.js"></script>
+
         </div>
     </div>
+
+    <script src="./public/js/img.js"></script>
+    <!-- FOOTER -->
     <?php include 'footer.php' ?>
 </body>
 

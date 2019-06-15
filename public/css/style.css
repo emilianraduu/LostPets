@@ -657,7 +657,26 @@ img {
     justify-content: flex-end;
 }
 
+
+/* 
 .lost-row .lost-pet {
+    width: 100px;
+    /* margin: auto; */
+
+
+/* margin: 1em;
+    display: flex;
+    flex-direction: row;
+    transition: 0.3s all ease;
+    height: 100px;
+    border-radius: 100px;
+    border: #006064 3px solid;
+    background-color: grey; */
+
+
+/* }  */
+
+.lost-pet a {
     width: 100px;
     /* margin: auto; */
     margin: 1em;
@@ -678,7 +697,7 @@ img {
     /* max-height: 100%; */
 }
 
-.lost-pet:hover {
+.lost-pet a:hover {
     transform: scale(1.2, 1.2);
 }
 

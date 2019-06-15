@@ -27,9 +27,6 @@
 
                 <button class="invbut" type="submit">Login</button>
             </form>
-            <div class="selection white-links">
-                <a href="forgot">Forgot your password?</a>
-            </div>
 
             <div class="selection white-links">
                 <a href="register">Don't have an account?</a>

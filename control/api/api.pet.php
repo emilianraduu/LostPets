@@ -17,4 +17,9 @@ if($method == 'GET'){
     echo json_encode($data);
     
 }
+if($method == 'POST'){
+    $db= new Database;
+    $data = $db->getAnimals($matches[1]);
+    echo json_encode($data);
+}
 ?>

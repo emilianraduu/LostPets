@@ -1,5 +1,5 @@
 document.getElementById('hide_img').onchange = function(evt) {
-    var tgt = evt.target || window.event.srcElement,
+    let tgt = evt.target || window.event.srcElement,
         files = tgt.files;
     if (FileReader && files && files.length) {
         var fr = new FileReader();
