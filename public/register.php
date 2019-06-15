@@ -44,9 +44,12 @@
                 <div class="selection white-links">
                     <a href="login">Already have an account?</a></div>
             </form>
-            <script src="./public/js/img.js"></script>
+
         </div>
     </div>
+
+    <script src="./public/js/img.js"></script>
+    <!-- FOOTER -->
     <?php include 'footer.php' ?>
 </body>
 

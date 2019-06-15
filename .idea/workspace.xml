@@ -1,130 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c580ba89-7aa0-44a8-a5a3-1241156fd615" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/htdocs.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/control/api/api.pet.php" beforeDir="false" afterPath="$PROJECT_DIR$/control/api/api.pet.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/control/api/createKey.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/control/api/json/key.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/control/api/json/list.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/control/api/pet.api.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/control/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/control/db.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/api_controller.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/apicurl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/buttons.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/buttons.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/control/api/api.controller.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/control/api/api.verify.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/control/api/json/key.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/control/api/json/list.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/control/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/docs/Schema.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/docs/database/database.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/docs/database/erd diagram.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/docs/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/docs/usecase/UseCase 1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/docs/usecase/UseCase 2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/docs/usecase/UseCase 3.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/docs/usecase/UseCase 4.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/docs/usecase/UseCase 5.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/docs/usecase/UseCase 6.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/docs/usecase/lostpets_usecase_diagram.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/forbidden.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/getepisodes.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/model/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/public/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/public/img/cat.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/public/img/cryingcat.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/public/img/dog.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/public/img/illu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/public/img/logo-black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/public/img/logo-blue.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/public/img/logo-orange.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/public/img/logo-white.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/public/img/user-img1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/public/img/user-img2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/public/img/user-img3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/public/init-firebase.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/public/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/public/old_version/admin/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/public/old_version/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/public/old_version/forgot.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/public/old_version/img/cat.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/public/old_version/img/cryingcat.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/public/old_version/img/dog.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/public/old_version/img/illu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/public/old_version/img/logo-black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/public/old_version/img/logo-blue.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/public/old_version/img/logo-orange.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/public/old_version/img/logo-white.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/public/old_version/img/user-img1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/public/old_version/img/user-img2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/public/old_version/img/user-img3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/public/old_version/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/public/old_version/logged/dog.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/public/old_version/logged/find.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/public/old_version/logged/formular.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/public/old_version/logged/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/public/old_version/logged/profile.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/public/old_version/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/public/old_version/register.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/public/profile.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/readme copy.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/xampp/try.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/formular.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/formular.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/cat.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/cryingcat.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/dog.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/user-img1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/user-img2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/user-img3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/breeds.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/breeds.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/find-pet.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/find-pet.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/for-map.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/img.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/img.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/lost-pets.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/lost-pets.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/main-pets.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/map.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/map.pet.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/lost.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/lost.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/old_version/admin/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/old_version/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/old_version/forgot.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/old_version/img/cat.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/old_version/img/cryingcat.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/old_version/img/dog.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/old_version/img/illu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/old_version/img/logo-black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/old_version/img/logo-blue.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/old_version/img/logo-orange.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/old_version/img/logo-white.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/old_version/img/user-img1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/old_version/img/user-img2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/old_version/img/user-img3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/old_version/index copy.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/old_version/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/old_version/logged/dog.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/old_version/logged/find.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/old_version/logged/formular.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/old_version/logged/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/old_version/logged/profile.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/old_version/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/old_version/register.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/verify.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/verify.php" afterDir="false" />
-    </list>
+    <list default="true" id="c580ba89-7aa0-44a8-a5a3-1241156fd615" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -321,12 +198,12 @@
       <option name="presentableId" value="Default" />
       <updated>1560602712789</updated>
       <workItem from="1560602716185" duration="104000" />
-      <workItem from="1560602828947" duration="2307000" />
+      <workItem from="1560602828947" duration="2412000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2411000" />
+    <option name="totallyTimeSpent" value="2516000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="827" extended-state="0" />

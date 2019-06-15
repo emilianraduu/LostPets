@@ -12,7 +12,7 @@ let existingElements = {};
 let petMarkers = [];
 let container = document.getElementById('cards');
 
-let init = () =>{
+let init = () => {
     createMap();
     getLoc();
     fetchPet();
@@ -75,7 +75,6 @@ async function fetchPet() {
             for (let i = 0; i < container.children.length; i++) {
                 if (!existingElements[container.children[i].id]) {
                     existingElements[container.children[i].id] = true;
-                    console.log(existingElements);
                 }
                 let found = result.find((element) => {
                     return container.children[i].id == element.id;

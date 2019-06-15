@@ -30,9 +30,7 @@ async function getPet(id) {
     let row = document.createElement('div');
     row.setAttribute('class', 'lost-row');
     right.append(row);
-    console.log(result);
     result.forEach(element => {
-        console.log(element);
         let lostpet = document.createElement('div');
         lostpet.setAttribute('id', element.id);
         lostpet.setAttribute('class', 'lost-pet');
