@@ -19,7 +19,7 @@ if (isset($_SESSION['SID'])) {
     $init = $init . "
     <style> .profile-img { background: url(./public/img/avatars/" . $user->getAvatar() . "); </style>
     <div class='selection'>
-                        <a href='./profile'>
+                        <a href='./profile#".$_SESSION['UID']."'>
                             <div class='profile-img'></div> " . $user->getLname() . " " . $user->getFname() . "
                         </a>   
                     </div>";
@@ -58,4 +58,3 @@ echo $init;
 ?>
 
 <script src="./public/js/mobile.js"></script>
-<!-- <script src="./public/js/profile.js"></script> -->

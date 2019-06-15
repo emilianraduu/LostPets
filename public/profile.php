@@ -17,13 +17,10 @@
     require '../control/pet.php';
     if (!isset($_SESSION['SID']))
         header('location: home');
-    else {
-        $pets = $db->getAnimals($_SESSION['UID']);
-    } ?>
+    ?>
     <div class='profile-page' id="profile-page">
     </div>
     <script src='./public/js/profile.js'></script>
-
     <?php include 'footer.php' ?>
 </body>
 

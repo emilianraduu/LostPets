@@ -168,9 +168,29 @@ class Database
     $query->store_result();
     $pets = [];
     while ($query->fetch()) {
-      array_push($pets, $this->getPetById($id_pet), $id_pet);
+      array_push($pets, $this->getPetById($id_pet));
     }
     return $pets;
+  }
+  function getPetById($id_pet)
+  {
+    $query = $this->getCon()->prepare("SELECT * FROM pet WHERE id_pet LIKE ?");
+    $query->bind_param("s", $id_pet);
+    $query->execute();
+    $pets = [];
+    $query->bind_result($id_pet, $gallery, $location, $name, $species, $breed, $details, $reward);
+    if ($query->fetch()) {
+      $temp = [
+        "id" => $id_pet,
+        "gallery" => $gallery, 
+        "location" => $location, 
+        "name" => $name, 
+        "species" => $species, 
+        "breed" => $breed, 
+        "details" => $details, 
+        "reward" => $reward];
+    }
+    return $temp;
   }
   function getAllAnimals()
   {
@@ -207,7 +227,7 @@ class Database
       $lat = $temp[0];
       $long = $temp[1];
       $d = $this->distance($lat, $long, $lat, $lng, "K");
-      if ($d < 5)
+      if ($d < 10)
         array_push($aroundPets, $pet);
     }
     return $aroundPets;
@@ -273,19 +293,7 @@ class Database
     }
   }
 
-  function getPetById($id_pet)
-  {
-    $query = $this->getCon()->prepare("SELECT * FROM pet WHERE id_pet LIKE ?");
-    $query->bind_param("s", $id_pet);
-    $query->execute();
-    $pets = [];
-    $query->bind_result($id_pet, $gallery, $location, $name, $species, $breed, $details, $reward);
-    if ($query->fetch()) {
-      $temp = new Pet($gallery, $location, $name, $species, $breed, $details, $reward);
-      array_push($pets, $temp);
-    }
-    return $pets;
-  }
+
 
   function verify($user = null, $code = 0)
   {
