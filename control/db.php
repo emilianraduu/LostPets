@@ -2,7 +2,7 @@
 
 class Database
 {
-  private $address = '127.0.0.1';
+  private $address = 'localhost';
   private $user = 'lostpets_account';
   private $password = 'pass';
   private $database = 'lost_pets';
@@ -240,7 +240,7 @@ class Database
       $lat = $temp[0];
       $long = $temp[1];
       $d = $this->distance($lat, $long, $lat, $lng, "K");
-      if ($d < 10)
+      if ($d < 2)
         array_push($aroundPets, $pet);
     }
     return $aroundPets;
