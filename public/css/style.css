@@ -127,7 +127,7 @@ footer .selection .fas {
 .container {
     display: flex;
     flex-grow: 1;
-    justify-content: space-evenly;
+    justify-content: space-around;
     padding: 4em 4em;
     margin: 2em 0;
     flex-flow: row;
@@ -324,7 +324,10 @@ form label {
 #mapid {
     height: 500px;
     min-width: 300px;
+    border-radius: 15px;
     margin: auto;
+    z-index: 1;
+    margin: 10px;
 }
 
 .spaced {
@@ -352,6 +355,11 @@ footer p {
 footer .content {
     display: flex;
     align-items: center;
+}
+
+#center {
+    display: flex;
+    flex-flow: row;
 }
 
 footer .content .fab,
@@ -550,7 +558,125 @@ img {
 }
 
 .details {
-    padding: 2em;
+    text-align: left;
+    margin: 10px;
+}
+
+.details .precision {
+    font-size: 13px;
+    max-width: 300px;
+}
+
+.details .selections {
+    display: flex;
+    /* background: blue; */
+}
+
+.details .flex-end {
+    display: flex;
+    align-items: flex-end;
+}
+
+.details .under {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-content: center;
+    margin: 0;
+}
+
+.details .name {
+    font-size: 30px;
+    color: #006064;
+    margin: 0;
+}
+
+.details .name-label {
+    margin: 0;
+    color: #007377;
+    font-size: 10px;
+}
+
+.details .details-label {
+    font-size: 10px;
+    margin: 0;
+}
+
+#drop-content {
+    z-index: 99;
+    -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
+    background-color: #E2DDDC;
+    position: absolute;
+    max-height: 200px;
+    max-width: 300px;
+    overflow: hidden;
+    overflow-y: auto;
+    border-radius: 12px;
+}
+
+#drop-content a {
+    display: block;
+    z-index: inherit;
+    background: #007377;
+    color: black;
+    margin: 10px;
+    border-radius: 12px;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    text-decoration: none;
+    padding: 10px 36px;
+    margin-top: 2px;
+}
+
+.details .profile-pet {
+    text-decoration: none;
+    color: #007377;
+    display: flex;
+    margin: 0;
+}
+
+.profile-pet h2 {
+    font-size: 12px;
+    display: flex;
+    margin: 0;
+    margin-left: 3px;
+    align-self: center;
+}
+
+.profile-pet img {
+    max-width: 20px;
+    max-height: 20px;
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: center;
+    align-self: center;
+    border: 1px solid #e2b01a;
+}
+
+.details .details-cont {
+    margin: 0px;
+    font-size: 15px;
+}
+
+.details .reward {
+    font-size: 12px;
+    margin: 0;
+}
+
+.details .species {
+    font-size: 12px;
+    color: #007377;
+    margin: 0;
+}
+
+.details .breed {
+    font-size: 16px;
+    color: #007377;
+    text-transform: capitalize;
+    margin: 0;
 }
 
 .user-things p {
@@ -717,6 +843,14 @@ img {
 @media only screen and (max-width: 600px) {
     .content {
         flex-flow: column;
+    }
+    #center {
+        display: flex;
+        flex-flow: column;
+    }
+    #drop-content {
+        width: 100%;
+        position: relative;
     }
     .spaced {
         margin-left: 0 !important;

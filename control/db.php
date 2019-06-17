@@ -195,13 +195,14 @@ class Database
     if ($query->fetch()) {
       $temp = [
         "id" => $id_pet,
-        "gallery" => $gallery, 
-        "location" => $location, 
-        "name" => $name, 
-        "species" => $species, 
-        "breed" => $breed, 
-        "details" => $details, 
-        "reward" => $reward];
+        "gallery" => $gallery,
+        "location" => $location,
+        "name" => $name,
+        "species" => $species,
+        "breed" => $breed,
+        "details" => $details,
+        "reward" => $reward
+      ];
     }
     return $temp;
   }
@@ -240,10 +241,25 @@ class Database
       $lat = $temp[0];
       $long = $temp[1];
       $d = $this->distance($lat, $long, $lat, $lng, "K");
+<<<<<<< HEAD
       if ($d < 2)
         array_push($aroundPets, $pet);
+=======
+      if (!$this->found($pet['id'])) {
+        if ($d < 10) {
+          array_push($aroundPets, $pet);
+        }
+      }
+>>>>>>> 1a3b8a604d7ca5f9c36c0e7712dc30728b5350aa
     }
     return $aroundPets;
+  }
+
+  function found($id){
+    $query = $this->getCon()->prepare("SELECT found FROM found WHERE id_pet like ?");
+    $query->bind_param("s", $id);
+    $query->execute();
+    return false;
   }
 
   function distance($lat1, $lon1, $lat2, $lon2, $unit)
