@@ -17,9 +17,31 @@ if (isset($_SESSION['SID'])) {
     $db = new Database;
     $user = $db->getUser($_SESSION['UID']);
     $init = $init . "
+    <div class='selection'><a onclick='show_hide()'><i class='fa fa-bell' aria-hidden='true'></i>notifications</a></div>
+        <div id='drop-content' style='display:none;'>
+            <a href='#' class='dropdown-item'>Un animal a fost pierdut in jurul tau!</a>
+            <a href='#' class='dropdown-item'>Un animal a fost pierdut in jurul tau!</a>
+            <a href='#' class='dropdown-item'>Un animal a fost pierdut in jurul tau!</a>
+            <a href='#' class='dropdown-item'>Un animal a fost pierdut in jurul tau!</a>
+            <a href='#' class='dropdown-item'>Un animal a fost pierdut in jurul tau!</a>
+            <a href='#' class='dropdown-item'>Un animal a fost pierdut in jurul tau!</a>
+            <a href='#' class='dropdown-item'>Un animal a fost pierdut in jurul tau!</a>
+            <a href='#' class='dropdown-item'>Un animal a fost pierdut in jurul tau!</a>
+            <a href='#' class='dropdown-item'>Un animal a fost pierdut in jurul tau!</a>
+            <a href='#' class='dropdown-item'>Un animal a fost pierdut in jurul tau!</a>
+            <a href='#' class='dropdown-item'>Un animal a fost pierdut in jurul tau!</a>
+            <a href='#' class='dropdown-item2'>Un animal a fost gasit de catre Radu!</a>
+            <a href='#' class='dropdown-item2'>Un animal a fost gasit de catre Radu!</a>
+            <a href='#' class='dropdown-item2'>Un animal a fost gasit de catre Radu!</a>
+            <a href='#' class='dropdown-item2'>Un animal a fost gasit de catre Radu!</a>
+            <a href='#' class='dropdown-item2'>Un animal a fost gasit de catre Radu!</a>
+            <a href='#' class='dropdown-item2'>Un animal a fost gasit de catre Radu!</a>
+            <a href='#' class='dropdown-item2'>Un animal a fost gasit de catre Radu!</a>
+        </div>";
+    $init = $init . "
     <style> .profile-img { background: url(./public/img/avatars/" . $user->getAvatar() . "); </style>
     <div class='selection'>
-                        <a href='./profile#".$_SESSION['UID']."'>
+                        <a href='./profile#" . $_SESSION['UID'] . "'>
                             <div class='profile-img'></div> " . $user->getLname() . " " . $user->getFname() . "
                         </a>   
                     </div>";

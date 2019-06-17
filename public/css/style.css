@@ -326,6 +326,7 @@ form label {
     min-width: 300px;
     border-radius: 15px;
     margin: auto;
+    z-index: 1;
     margin: 10px;
 }
 
@@ -601,6 +602,35 @@ img {
     margin: 0;
 }
 
+#drop-content {
+    z-index: 99;
+    -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
+    background-color: #E2DDDC;
+    position: absolute;
+    max-height: 200px;
+    max-width: 300px;
+    overflow: hidden;
+    overflow-y: auto;
+    border-radius: 12px;
+}
+
+#drop-content a {
+    display: block;
+    z-index: inherit;
+    background: #007377;
+    color: black;
+    margin: 10px;
+    border-radius: 12px;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    text-decoration: none;
+    padding: 10px 36px;
+    margin-top: 2px;
+}
+
 .details .profile-pet {
     text-decoration: none;
     color: #007377;
@@ -817,6 +847,10 @@ img {
     #center {
         display: flex;
         flex-flow: column;
+    }
+    #drop-content {
+        width: 100%;
+        position: relative;
     }
     .spaced {
         margin-left: 0 !important;
