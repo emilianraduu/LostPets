@@ -20,10 +20,10 @@
     <input id="sid" value="<?php echo $_SESSION['UID'] ?>" hidden>
     <!-- Lost pets panel -->
     <div class="container" id="container">
-        <div class="content" id="left"> </div>
+        <!-- <div class="content" id="left"> </div> -->
         <div class="content" id="center"></div>
         <div class="content">
-            <div id="mapid"></div>
+            <div id="mapid" height="400px"></div>
         </div>
     </div>
     <script src="./public/js/find-pet.js"></script>

@@ -30,7 +30,7 @@
                     </div>
                 </div>
 
-                <input id="location" name="location" hidden/>
+                <input id="location" name="location" hidden required/>
 
                 <p>Species:</p>
                 <select name="species" id="species" onchange="change">
@@ -49,7 +49,7 @@
                 </select>
 
                 <label for="details">Details: </label>
-                <textarea id="details" name="details" maxlength="300"></textarea>
+                <textarea id="details" name="details" maxlength="300" required></textarea>
 
                 <button type="submit">I lost my pet!</button>
 
