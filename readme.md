@@ -15,9 +15,9 @@ Anunțurile vor fi afisate în ordine cronologica, fiind figurate pe baza unor s
 
 2. Adminul site-ului acceseaza pagina de login administrativ, ii apare pagina de monitorizare a aplicatiei web de unde genereaza statistici in format pdf a numarului de animale pierdute si recuperate in Nicolina.
 
-3. Userul acceseaza pagina de profil pentru a modifica detalii precum poza de profil, adresa de email si pentru a vizualiza animalele pe care le-a gasit sau pe care le-a pierdut.
+3. Userul acceseaza pagina de profil pentru a vizualiza animalele pe care le-a gasit sau pe care le-a pierdut.
 
-4. Userul acceseaza sectiunea de notificari, apasa pe “[Pet name] has been found thanks to your contribution!”. De aici user-ul este redirectionat catre pagina animalului pe care l-a gasit pentru a-si lua recompensa in cazul in care exista.
+4. Userul acceseaza sectiunea de notificari, apasa pe “A pet has appeared near you”. De aici user-ul este redirectionat catre pagina animalului pentru a ajuta la gasirea animalului.
 
 5. Userul acceseaza pagina de introducere a unui animal pe care l-a pierdut. Dupa ce introduce toate informatiile necesare este redirectionat pe o pagina noua creata pentru animalul introdus. Cativa alti useri updateaza locatia animalului, iar un altul il gaseste.
 
@@ -63,11 +63,11 @@ Diagrama bazei de date se afla la adresa:
 
 ### APIs
 
-1. Firebase API
-SDK-ul Firebase este preluat prin introducerea in meta-ul HTML-ului a CDN-ului
+1. LostPets API
+Documentatia este disponibila in 
 
 ```
-<script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+./control/api
 ```
 1. Pentru a se realiza conectarea cu baza de date se va folosi:
 ```

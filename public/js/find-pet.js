@@ -1,10 +1,13 @@
 let type = window.location.hash.substr(1);
+let sessionValue = document.getElementById('sid').value;
 let locs = {};
 let marker;
 let circle = {};
 let latlng;
 let petMarker;
+
 let petlocation;
+
 let init = () => {
     getPet(type);
     createMap();
@@ -14,6 +17,7 @@ let init = () => {
 }
 
 init();
+
 
 function getElementLocation(location) {
     let array = location.split(" ");
@@ -33,28 +37,56 @@ let createCircle = () => {
     }).addTo(mymap);
     mymap.setView(locs);
 }
+let createCircleWithCoord = (coord) => {
+    circle = L.circle({ 'lat': coord[0], 'lng': coord[1] }, {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5,
+        radius: 400
+    }).addTo(mymap);
+    mymap.setView(locs);
+}
 
 async function getPet(id) {
     let query = await (fetch('./get/pet/' + id, {
         method: 'GET'
     }));
     let pets = await query.json();
+
     pets.forEach(pet => {
         // Marcam pe harta
         locs = getElementLocation(pet.location);
         createCircle();
-
         // Div pt animal
         let card = document.createElement('div');
         card.className = 'card';
+        console.log(pet.name);
         card.innerHTML = "<div class='primary'><a href='./pet#" + pet.id + "'><img class='img-primary' src='./public/img/pets/" + pet.gallery + "' alt=''><div class='user-things'> <p>" + pet.name + "</p> </a></div>";
         document.getElementById('center').appendChild(card);
         let informations = document.createElement('div');
-        console.log(pet);
-        informations.innerHTML = "<div class='details'><h2 class='name-label'> Name: </h2> <h2 class='name'> " + pet.name + "</h2><div class='under'> <h2 class='breed'>" + pet.breed + "</h2><h2 class='species'>" + pet.species + "</h2></div> <h2 class='reward'>Reward:" + pet.reward + "</h2> <h2 class='details-label'> Details: </h2> <h2 class='details-cont'>" + pet.details + "</h2> <h2 class='precision'>If you saw this pet please select the spot on the map and press the button below or call/email the owner letting them know.</h2><form action='lost-controller.php'><input type='submit' value='submit'></input></form> <div class='selections'><div class='selection'><a href='tel:" + pet.phone + "'><i class='fa fa-phone' aria-hidden='true'></i> call me</div></a><div class='selection'><a href='mailto:" + pet.mail + "'><i class='fa fa-envelope' aria-hidden='true'></i> mail me</div></a></div><div class='flex-end'> <a class='profile-pet' href='./profile#" + pet.uid + "'><img src='./public/img/avatars/" + pet.avatar + "'><h2>" + pet.lname + "<h2></a></div></div></div>";
+        let founds = document.createElement('div');
+        informations.innerHTML = "<div class='details'><h2 class='name-label'> Name: </h2> <h2 class='name'> " + pet.name + "</h2><div class='under'> <h2 class='breed'>" + pet.breed + "</h2><h2 class='species'>" + pet.species + "</h2></div> <h2 class='reward'>Reward:" + pet.reward + "</h2> <h2 class='details-label'> Details: </h2> <h2 class='details-cont'>" + pet.details + "</h2> <h2 class='precision'>If you saw this pet please select the spot on the map and press the button below or call/email the owner letting them know.</h2><form action='./control/lost-controller.php' enctype='multipart/form-data' method='post'><input type='text' value='' hidden id='location' name='location' required ></input><input type='text' value='" + pet.uid + "' id='id_user' name='id_user' required hidden></input><input type='text' id='id_pet' value='" + pet.id + "' name='id_pet' required hidden></input><button type='submit'>I saw it!</button></form> <div class='selections'><div class='selection'><a href='tel:" + pet.phone + "'><i class='fa fa-phone' aria-hidden='true'></i> call me</div></a><div class='selection'><a href='mailto:" + pet.mail + "'><i class='fa fa-envelope' aria-hidden='true'></i> mail me</div></a></div><div class='flex-end'> <a class='profile-pet' href='./profile#" + pet.uid + "'><img src='./public/img/avatars/" + pet.avatar + "'><h2>" + pet.lname + "<h2></a></div></div></div>";
         document.getElementById('center').appendChild(informations);
+        pet.users.forEach(user => {
+
+            founds.setAttribute('id', 'founds');
+            let found = document.createElement('div');
+            found.className = 'found';
+            found.setAttribute('id', user.id);
+            let coord = user.location.split(' ');
+            console.log(user);
+            createCircleWithCoord(coord);
+            found.innerHTML = "<a href='./profile#" + user.id + "'><img src='./public/img/avatars/" + user.avatar + "'><p>" + user.lname + " " + user.fname + " saw it</p></a> ";
+            (sessionValue == user.id) ? found.innerHTML = found.innerHTML + "<form action='./control/find-controller.php' enctype='multipart/form-data' method='post'><input name='id' hidden value='" + user.id + "'/><input name='locationsend' hidden value='" + user.location + "'/><input name='id' hidden value='" + user.id + "'/><input name='pet' hidden value='" + pet.id + "'/><input type='submit' value='Found'/></form>": '';
+            founds.appendChild(found);
+
+        })
+        informations.appendChild(founds);
+        document.getElementById('center').appendChild(informations);
+
     });
 }
+
 
 // Verificam locatia actuala comparativ cu locatia de acum 2 secunde
 function isEquivalent(temp, latlong) {
@@ -89,15 +121,21 @@ function createMap() {
     newMarkerGroup = new L.LayerGroup();
     mymap.on('click', function(e) {
         if (petMarker) {
+            let newLocation = document.getElementById('location');
             mymap.removeLayer(petMarker);
+            newLocation.value = e.latlng['lat'] + ' ' + e.latlng['lng'];
+            console.log(e.latlng);
             petMarker = new L.marker(e.latlng).addTo(mymap);
             // petlocation.value = e.latlng['lat'] + ' ' + e.latlng['lng'];
         } else {
-
+            let newLocation = document.getElementById('location');
+            console.log(e.latlng['lat']);
             petMarker = new L.marker(e.latlng).addTo(mymap);
+            newLocation.value = e.latlng['lat'] + ' ' + e.latlng['lng'];
+            // newLocation.value = getElementLocation(e.latlng);
             // petlocation.value = e.latlng['lat'] + ' ' + e.latlng['lng'];
         }
-        console.log(petlocation.value);
+        // console.log(petlocation.value);
     });
     // mymap.dragging.disable();
     // mymap.setView(latlng);
