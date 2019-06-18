@@ -17,7 +17,7 @@ RewriteRule ^add/.+$ ./control/api/api.verify.php [NC,L]
 RewriteRule ^get/loc/.+$ ./control/api/api.get.php [NC,L]
 RewriteRule ^get/profile/.+$ ./control/api/get-profile.php [NC,L]
 RewriteRule ^get/pet/.+$ ./control/api/api.pet.php [NC,L]
-RewriteRule ^get/notif/.+$ ./control/api/api.notif.php [NC,L]
+RewriteRule ^get/notifications/.+$ ./control/api/api.notif.php [NC,L]
 
 ErrorDocument 403 /forbidden.html
 ErrorDocument 404 /notfound.html

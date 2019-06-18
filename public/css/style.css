@@ -241,6 +241,19 @@ form textarea {
 .under label {
     display: block;
 }
+#notifs {
+    position: relative;
+}
+.bulina {
+    content: '';
+    width: 10px;
+    height: 10px;
+    top:0;
+    right:0;
+    position: absolute;
+    background: red;
+    border-radius: 100%;
+}
 
 .avatar_choose {
     cursor: pointer;
@@ -655,8 +668,13 @@ img {
     border-radius: 100%;
 }
 
-#drop-content a {
-    display: block;
+#drop-content form{
+    flex-flow: initial;
+}
+#drop-content form input {
+    cursor: pointer;
+    object-fit: contain;
+    align-self: center;
     z-index: inherit;
     background: #007377;
     color: black;
@@ -666,8 +684,8 @@ img {
     font-weight: bold;
     font-size: 12px;
     text-decoration: none;
-    padding: 10px 36px;
-    margin-top: 2px;
+    /* padding: 10px 36px;
+    margin-top: 2px; */
 }
 
 .details .profile-pet {

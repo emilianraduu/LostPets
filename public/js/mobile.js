@@ -1,18 +1,19 @@
 let menuBtn = document.getElementById('mobile');
 let rmBtn = document.getElementById('rmBtn');
 let menu = document.querySelector('.links');
+let notifs = document.getElementById('notifs');
+let caughtNotifs = [];
 let init1 = () => {
     createMap();
+    fetchNotif();
     setInterval(() => {
-        getLoc()
+        fetchNotif()
     }, 3000);
 }
+let notifications = document.getElementById('drop-content');
 
-<<<<<<< HEAD
 
-=======
 init1();
->>>>>>> 8c0588be61862372ce470cc4a766346013dbe8f3
 menuBtn.addEventListener('click', () => {
     menu.classList.add('show');
 });
@@ -34,7 +35,7 @@ function createMap() {
 
     // initializare mapa
     mymap = L.map('mapid_hide');
-    getLoc();
+
     // mymap.dragging.disable();
 
     // adresa + token
@@ -47,23 +48,6 @@ function createMap() {
 
     mymap.setView([0, 0], 13);
     newMarkerGroup = new L.LayerGroup();
-}
-
-function getLoc() {
-    navigator.geolocation.getCurrentPosition(function(location) {
-        temp = latlng;
-        latlng = new L.LatLng(location.coords.latitude, location.coords.longitude);
-        mymap.setView(latlng);
-        if (!marker) {
-            marker = L.marker(latlng).addTo(mymap);
-        } else {
-            mymap.removeLayer(marker);
-            marker = L.marker(latlng).addTo(mymap);
-        }
-        if (isEquivalent(temp, latlng)) {
-            fetchNotif();
-        }
-    });
 }
 
 function isEquivalent(temp, latlong) {
@@ -83,13 +67,23 @@ function isEquivalent(temp, latlong) {
 
 async function fetchNotif() {
     // fetch
-    console.log(sessionValue);
-    let query = await (fetch('./get/notif/' + sessionValue, {
+
+    let query = await (fetch('./get/notifications/' + sessionValue, {
         method: 'GET'
     }));
+    let results = await query.json();
+    let bullet = document.createElement('div');
+    results.map((result) => {
+
+        bullet.innerHTML = "<div class='bulina'/>";
+
+        if(!caughtNotifs.includes(result['id_pet'])){
+            notifs.appendChild(bullet);
+            caughtNotifs.push(result['id_pet']);
+            notifications.innerHTML = notifications.innerHTML + "<form action='./control/notification-controller.php' enctype='multipart/form-data' method='post' class='dropdown-item'><input name='id_user' value='"+result.id_user +"' hidden/><input name='id_pet' value='" + result.id_pet + "'  hidden /><input type='submit' value='" + result["name"] + " a fost vazut!'/></form>";
+        }
+        
+    })
+    
 
 }
-
-
-let notifications = document.getElementById('drop-content');
-notifications.innerHTML = "<a href='#' class='dropdown-item'>Un animal a fost pierdut in jurul tau!</a>";

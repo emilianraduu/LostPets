@@ -3,6 +3,7 @@ let sessionValue = document.getElementById('sid').value;
 let locs = {};
 let marker;
 let circle = {};
+let owner;
 let latlng;
 let petMarker;
 
@@ -61,7 +62,6 @@ async function getPet(id) {
         // Div pt animal
         let card = document.createElement('div');
         card.className = 'card';
-        console.log(pet.name);
         card.innerHTML = "<div class='primary'><a href='./pet#" + pet.id + "'><img class='img-primary' src='./public/img/pets/" + pet.gallery + "' alt=''><div class='user-things'> <p>" + pet.name + "</p> </a></div>";
         document.getElementById('center').appendChild(card);
         let informations = document.createElement('div');
@@ -75,13 +75,13 @@ async function getPet(id) {
             let found = document.createElement('div');
             found.className = 'found';
             found.setAttribute('id', user.id);
+            owner = user.id;
             console.log(pets);
             let coord = user.location.split(' ');
             createCircleWithCoord(coord);
             found.innerHTML = "<a href='./profile#" + user.id + "'><img src='./public/img/avatars/" + user.avatar + "'><p>" + user.lname + " " + user.fname + " saw it</p></a> ";
             if (user.found == 0) {
-                console.log(user.id);
-                (sessionValue == pets[0].uid) ? found.innerHTML = found.innerHTML + "<form action='./control/find-controller.php' enctype='multipart/form-data' method='post'><input name='id' hidden value='" + user.id + "'/><input name='locationsend' hidden value='" + user.location + "'/><input name='id' hidden value='" + user.id + "'/><input name='pet' hidden value='" + pet.id + "'/><input type='submit' value='Found'/></form>": '';
+                (sessionValue == pets[0].uid) ? found.innerHTML = found.innerHTML + "<form action='./control/find-controller.php' enctype='multipart/form-data' method='post'><input name='id' hidden value='" + user.id + "'/><input name='locationsend' hidden value='" + user.location + "'/><input name='id' hidden value='" + user.id + "'/><input type='text' value='"+owner+"' hidden id='owner' name='owner' required ><input name='pet' hidden value='" + pet.id + "'/><input type='submit' value='Found'/></form>": '';
 
             }
             if (user.found == 1) {
@@ -90,9 +90,8 @@ async function getPet(id) {
             founds.appendChild(found);
 
         })
-        if (ok) informations.innerHTML = informations.innerHTML + "<form action='./control/lost-controller.php' enctype='multipart/form-data' method='post'><input type='text' value='' hidden id='location' name='location' required ></input><input type='text' value='" + sessionValue + "' id='id_user' name='id_user' required hidden></input><input type='text' id='id_pet' value='" + pet.id + "' name='id_pet' required hidden></input><button type='submit'>I saw it!</button></form> <div class='selections'>";
+        if (ok) informations.innerHTML = informations.innerHTML + "<form action='./control/lost-controller.php' enctype='multipart/form-data' method='post'><input type='text' value='' hidden id='location' name='location' required ></input></input><input type='text' value='" + sessionValue + "' id='id_user' name='id_user' required hidden></input><input type='text' value='"+owner+"' hidden id='owner' name='owner' required ><input type='text' id='id_pet' value='" + pet.id + "' name='id_pet' required hidden></input><button type='submit'>I saw it!</button></form> <div class='selections'>";
         informations.innerHTML = informations.innerHTML + "<div class='selection'><a href='tel:" + pet.phone + "'><i class='fa fa-phone' aria-hidden='true'></i> call me</div></a><div class='selection'><a href='mailto:" + pet.mail + "'><i class='fa fa-envelope' aria-hidden='true'></i> mail me</div></a></div><div class='flex-end'></div></div></div>";
-        console.log(ok);
         document.getElementById('center').appendChild(informations);
         informations.appendChild(founds);
         document.getElementById('center').appendChild(informations);
@@ -137,12 +136,12 @@ function createMap() {
             let newLocation = document.getElementById('location');
             mymap.removeLayer(petMarker);
             newLocation.value = e.latlng['lat'] + ' ' + e.latlng['lng'];
-            console.log(e.latlng);
+
             petMarker = new L.marker(e.latlng).addTo(mymap);
             // petlocation.value = e.latlng['lat'] + ' ' + e.latlng['lng'];
         } else {
             let newLocation = document.getElementById('location');
-            console.log(e.latlng['lat']);
+
             petMarker = new L.marker(e.latlng).addTo(mymap);
             newLocation.value = e.latlng['lat'] + ' ' + e.latlng['lng'];
             // newLocation.value = getElementLocation(e.latlng);
