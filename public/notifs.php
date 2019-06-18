@@ -19,21 +19,7 @@
         .button{
             padding: 10px 40px;
         }
-        #drop-content {
-            position:absolute;
-            z-index: 1;
-            max-height:200px;
-            overflow:hidden;
-            overflow-y:auto;
-        }
-        #drop-content a{
-            display:block;
-            background: #dfdfdf;
-            color:black;
-            text-decoration:none;
-            padding: 10px 36px;
-            margin-top: 2px;
-        }
+        
     </style>
 </head>
 <body>
@@ -60,14 +46,7 @@
     </div>
 
     <script>
-        function show_hide(){
-            var click = document.getElementById("drop-content");
-            if (click.style.display === "none") {
-                click.style.display = "block";
-            } else {
-                click.style.display = "none";
-            }
-        }
+        
     </script>
 </body>
 </html>

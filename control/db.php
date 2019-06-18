@@ -1,8 +1,7 @@
 <?php
-
 class Database
 {
-  private $address = 'localhost';
+  private $address = '127.0.0.1';
   private $user = 'lostpets_account';
   private $password = 'pass';
   private $database = 'lost_pets';
@@ -33,7 +32,7 @@ class Database
   function formular($pet)
   {
     $query = $this->getCon()->prepare("INSERT INTO pet (id_pet, gallery, location, name, species, breed, details, reward) VALUES(DEFAULT,?,?,?,?,?,?,?)");
-    $query->bind_param("sssssss", $pet->getGallery(), $pet->getLocation(),$pet->getName(),$pet->getSpecies(),$pet->getBreed(),$pet->getDetails(),$pet->getReward());
+    $query->bind_param("sssssss", $pet->getGallery(), $pet->getLocation(), $pet->getName(), $pet->getSpecies(), $pet->getBreed(), $pet->getDetails(), $pet->getReward());
     if ($query->execute()) {
       $query->close();
       return true;
@@ -124,6 +123,40 @@ class Database
       $query1 = $this->getCon()->prepare("INSERT INTO owner (id_user, id_pet) VALUES ((SELECT id_user FROM user WHERE mail LIKE ?), (SELECT id_pet FROM pet WHERE gallery LIKE ?))");
       $query1->bind_param("ss", $user->getEmail(), $pet->getGallery());
       $query1->execute();
+
+      $query2 = $this->getCon()->prepare("SELECT id_pet FROM pet WHERE gallery LIKE ?");
+      $query2->bind_param("s", $pet->getGallery());
+      $query2->execute();
+      $query2->bind_result($id_pet);
+      $query2->store_result();
+      if ($query2->fetch()) {
+        $query3 = $this->getCon()->prepare("SELECT id_user FROM user WHERE mail LIKE ?");
+        $query3->bind_param("s", $user->getEmail());
+        $query3->execute();
+        $query3->bind_result($id_user);
+        $query3->store_result();
+        if ($query3->fetch()) {
+          $this->foundPet($id_user, $id_pet, $pet->getLocation());
+        }
+      }
+      // return true;
+      // } else return false;
+    }
+  }
+
+  function foundPet($id_user, $id_pet, $location)
+  {
+    $query = $this->getCon()->prepare("INSERT INTO found (id_user, id_pet, location, found) VALUES (?,?,?,DEFAULT)");
+    $query->bind_param("sss", $id_user, $id_pet, $location);
+    if ($query->execute()) {
+      return true;
+    } else return false;
+  }
+  function updateFoundPet($id_user, $id_pet, $location)
+  {
+    $query = $this->getCon()->prepare("UPDATE found SET found=1 WHERE id_user LIKE ? and id_pet LIKE ? and location like ?");
+    $query->bind_param("sss", $id_user, $id_pet, $location);
+    if ($query->execute()) {
       return true;
     } else return false;
   }
@@ -167,10 +200,33 @@ class Database
         "phone" => $phone,
         "lname" => $lname,
         "avatar" => $avatar,
-        "uid" => $id
+        "uid" => $id,
+        "users" => $this->getFounds($id_pet)
       ]);
+      // $a = $this->getFounds($id_pet);
+      // echo $a;
+
     }
     return $temp;
+  }
+  function getFounds($id)
+  {
+    $query = $this->getCon()->prepare("SELECT f.id_user, found,location,avatar,fname,lname FROM found f JOIN user u ON u.id_user=f.id_user WHERE id_pet LIKE ?");
+    $query->bind_param("s", $id);
+    $query->execute();
+    $query->bind_result($id_user, $found, $location, $avatar, $fname, $lname);
+    $array = [];
+    while ($query->fetch()) {
+      array_push($array, [
+        "id" => $id_user,
+        "location" => $location,
+        "found" => $found,
+        "avatar" => $avatar,
+        "fname" => $fname,
+        "lname" => $lname
+      ]);
+    }
+    return $array;
   }
   function getAnimals($user)
   {
@@ -181,7 +237,23 @@ class Database
     $query->store_result();
     $pets = [];
     while ($query->fetch()) {
-      array_push($pets, $this->getPetById($id_pet));
+      // if ($this->found($id_pet) != null) {
+      array_push($pets, [$this->getPetById($id_pet), $this->getFoundAnimals($user)]);
+      // }
+    }
+    return $pets;
+  }
+  function getFoundAnimals($id_user)
+  {
+    $query = $this->getCon()->prepare("SELECT f.id_pet,gallery FROM found f JOIN pet p ON p.id_pet=f.id_pet WHERE f.id_user LIKE ? AND found=1");
+    $query->bind_param("s", $id_user);
+    $query->execute();
+    $pets = [];
+    $query->bind_result($id_pet, $gallery);
+    while ($query->fetch()) {
+      // if ($this->found($id_pet) != null) {
+      array_push($pets, [$id_pet, $gallery]);
+      // }
     }
     return $pets;
   }
@@ -232,7 +304,6 @@ class Database
 
   function getNearPets($lat, $lng)
   {
-
     // $location = $this->getUserLocation($id);
     $pets = $this->getAllAnimals();
     $aroundPets = [];
@@ -241,25 +312,67 @@ class Database
       $lat = $temp[0];
       $long = $temp[1];
       $d = $this->distance($lat, $long, $lat, $lng, "K");
-<<<<<<< HEAD
-      if ($d < 2)
-        array_push($aroundPets, $pet);
-=======
-      if (!$this->found($pet['id'])) {
-        if ($d < 10) {
+
+      if ($this->found1($pet['id']) != null) {
+        if ($d < 100) {
           array_push($aroundPets, $pet);
         }
       }
->>>>>>> 1a3b8a604d7ca5f9c36c0e7712dc30728b5350aa
     }
     return $aroundPets;
   }
 
-  function found($id){
+  function isFound($id_pet)
+  {
     $query = $this->getCon()->prepare("SELECT found FROM found WHERE id_pet like ?");
+    $query->bind_param("s", $id_pet);
+    $query->execute();
+    $query->bind_result($found);
+    $query->store_result();
+    while ($query->fetch()) {
+      if ($found == 1) {
+        return false;
+      }
+    }
+    return true;
+  }
+  function found1($id)
+  {
+    $foundPeople = [];
+    $query = $this->getCon()->prepare("SELECT id_user,location,found FROM found WHERE id_pet like ?");
     $query->bind_param("s", $id);
     $query->execute();
-    return false;
+    $query->bind_result($id_user, $location, $found);
+    $query->store_result();
+    while ($query->fetch()) {
+      if ($this->isFound($id)) {
+        array_push($foundPeople, [
+          "id" => $id_user,
+          "location" => $location,
+          "found" => $found
+        ]);
+      }
+    }
+    return $foundPeople;
+  }
+  function found($id)
+  {
+    $foundPeople = [];
+    $query = $this->getCon()->prepare("SELECT id_user,location,found FROM found WHERE id_pet like ?");
+    $query->bind_param("s", $id);
+    $query->execute();
+    $query->bind_result($id_user, $location, $found);
+    $query->store_result();
+    while ($query->fetch()) {
+      if ($found == 1) {
+        array_push($foundPeople, [
+          "id" => $id_user,
+          "location" => $location,
+          "found" => $found
+        ]);
+      }
+    }
+    return $foundPeople;
   }
 
   function distance($lat1, $lon1, $lat2, $lon2, $unit)
@@ -322,14 +435,31 @@ class Database
     }
   }
 
-
+  function queryStatistics($isFound){
+    $query = $this->getCon()->prepare("SELECT p.species, p.breed,count(*) FROM pet p JOIN found f ON f.id_pet=p.id_pet WHERE found = ? GROUP BY p.breed,p.species");
+    $query->bind_param('s', $isFound);
+    $query->execute();
+    $results = [];
+    $result = $query->get_result();
+    while($row = $result->fetch_object()){
+      $results[] = $row;
+    }
+    return $results;
+  }
+  function getStatistics(){
+    $pets = [];
+    $pets[]=["lost" => $this->queryStatistics(0)];
+    $pets[]=["found" => $this->queryStatistics(1)];
+    
+    return $pets;
+  }
 
   function verify($user = null, $code = 0)
   {
     if ($user == null) {
       return false;
     }
-    $query = $this->getCon()->prepare("SELECT * FROM verify WHERE id_user LIKE ?");
+    $query = $this->getCon()->prepare("SELECT id_user, activate_code, activated FROM verify WHERE id_user LIKE ?");
     $query->bind_param("i", $this->getId($user));
     $query->execute();
     $query->bind_result($id_user, $activate_code, $activated);

@@ -21,10 +21,11 @@ if (isset($_SESSION['SID'])) {
         $reward = mysqli_real_escape_string($db->getCon(), $_POST['reward']);
         
         $pet = new Pet($gallery, $location, $name, $species, $breed, $details, $reward);
+        // $db->insertPet($pet, $user);
         if ($db->insertPet($pet, $user)) {
             header("location: ../home");
         } else {
-            header("location: ../register/error");
+            header("location: ../home");
         }
     }
 }
