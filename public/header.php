@@ -2,7 +2,7 @@
 require '../control/db.php';
 require '../control/user.php';
 session_start();
-$init = "<header>
+$init = "<header><div id='mapid_hide'></div>
             <div class='logo'>
                 <a href='.'>
                     <h2>LostPets</h2>
@@ -19,24 +19,6 @@ if (isset($_SESSION['SID'])) {
     $init = $init . "
     <div class='selection'><a onclick='show_hide()'><i class='fa fa-bell' aria-hidden='true'></i>notifications</a></div>
         <div id='drop-content' style='display:none;'>
-            <a href='#' class='dropdown-item'>Un animal a fost pierdut in jurul tau!</a>
-            <a href='#' class='dropdown-item'>Un animal a fost pierdut in jurul tau!</a>
-            <a href='#' class='dropdown-item'>Un animal a fost pierdut in jurul tau!</a>
-            <a href='#' class='dropdown-item'>Un animal a fost pierdut in jurul tau!</a>
-            <a href='#' class='dropdown-item'>Un animal a fost pierdut in jurul tau!</a>
-            <a href='#' class='dropdown-item'>Un animal a fost pierdut in jurul tau!</a>
-            <a href='#' class='dropdown-item'>Un animal a fost pierdut in jurul tau!</a>
-            <a href='#' class='dropdown-item'>Un animal a fost pierdut in jurul tau!</a>
-            <a href='#' class='dropdown-item'>Un animal a fost pierdut in jurul tau!</a>
-            <a href='#' class='dropdown-item'>Un animal a fost pierdut in jurul tau!</a>
-            <a href='#' class='dropdown-item'>Un animal a fost pierdut in jurul tau!</a>
-            <a href='#' class='dropdown-item2'>Un animal a fost gasit de catre Radu!</a>
-            <a href='#' class='dropdown-item2'>Un animal a fost gasit de catre Radu!</a>
-            <a href='#' class='dropdown-item2'>Un animal a fost gasit de catre Radu!</a>
-            <a href='#' class='dropdown-item2'>Un animal a fost gasit de catre Radu!</a>
-            <a href='#' class='dropdown-item2'>Un animal a fost gasit de catre Radu!</a>
-            <a href='#' class='dropdown-item2'>Un animal a fost gasit de catre Radu!</a>
-            <a href='#' class='dropdown-item2'>Un animal a fost gasit de catre Radu!</a>
         </div>";
     $init = $init . "
     <style> .profile-img { background: url(./public/img/avatars/" . $user->getAvatar() . "); </style>
