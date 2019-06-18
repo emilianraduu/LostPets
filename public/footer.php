@@ -29,7 +29,7 @@
         </li>
         <li>
             <div class="selection">
-                <a href="faqs.html "> <i class="fas fa-info "></i>FAQS</a>
+            <a href="./statistics ">Statistics</a>
             </div>
             <div class="selection">
                 <a href=" "> <i class="fas fa-book "></i> Terms and conditions</a>

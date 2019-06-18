@@ -11,6 +11,7 @@ RewriteRule ^verify$ ./public/verify.php [NC,L]
 RewriteRule ^lost$ ./public/lost.php [NC,L]
 RewriteRule ^upload$ ./control/profile-controller.php [NC,L]
 RewriteRule ^pet$ ./public/lost.php [NC,L]
+RewriteRule ^statistics$ ./public/statistics.php [NC,L]
 
 RewriteRule ^add/.+$ ./control/api/api.verify.php [NC,L]
 RewriteRule ^get/loc/.+$ ./control/api/api.get.php [NC,L]

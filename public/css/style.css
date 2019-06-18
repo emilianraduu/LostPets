@@ -767,6 +767,15 @@ img {
 .left .invbut {
     margin-top: 3em;
 }
+.statistics {
+    display:flex;
+    width: 100%;
+    padding: 0;
+    background: #E2DDDC;
+}
+.content .flex button{
+    display: block;
+}
 
 #avatar {
     width: 100px;
@@ -774,6 +783,7 @@ img {
     background-color: #E2DDDC;
     border: 3px solid #ffbf00;
     cursor: pointer;
+    object-fit: cover;
     transition: 0.2s all ease-in-out;
     margin: auto auto;
     height: 100px;

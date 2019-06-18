@@ -314,7 +314,7 @@ class Database
       $d = $this->distance($lat, $long, $lat, $lng, "K");
 
       if ($this->found1($pet['id']) != null) {
-        if ($d < 10) {
+        if ($d < 100) {
           array_push($aroundPets, $pet);
         }
       }
@@ -435,14 +435,31 @@ class Database
     }
   }
 
-
+  function queryStatistics($isFound){
+    $query = $this->getCon()->prepare("SELECT p.species, p.breed,count(*) FROM pet p JOIN found f ON f.id_pet=p.id_pet WHERE found = ? GROUP BY p.breed,p.species");
+    $query->bind_param('s', $isFound);
+    $query->execute();
+    $results = [];
+    $result = $query->get_result();
+    while($row = $result->fetch_object()){
+      $results[] = $row;
+    }
+    return $results;
+  }
+  function getStatistics(){
+    $pets = [];
+    $pets[]=["lost" => $this->queryStatistics(0)];
+    $pets[]=["found" => $this->queryStatistics(1)];
+    
+    return $pets;
+  }
 
   function verify($user = null, $code = 0)
   {
     if ($user == null) {
       return false;
     }
-    $query = $this->getCon()->prepare("SELECT * FROM verify WHERE id_user LIKE ?");
+    $query = $this->getCon()->prepare("SELECT id_user, activate_code, activated FROM verify WHERE id_user LIKE ?");
     $query->bind_param("i", $this->getId($user));
     $query->execute();
     $query->bind_result($id_user, $activate_code, $activated);
