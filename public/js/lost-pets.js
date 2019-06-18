@@ -61,7 +61,6 @@ async function fetchPet() {
     }));
     // check fetch
     let result = await query.json();
-    console.log(result);
     if (result) {
         // daca nu exista animale le luam pe toate din jur
         if (container.children.length == 0) {
