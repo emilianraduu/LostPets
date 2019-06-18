@@ -211,15 +211,16 @@ class Database
   }
   function getFounds($id)
   {
-    $query = $this->getCon()->prepare("SELECT f.id_user,location,avatar,fname,lname FROM found f JOIN user u ON u.id_user=f.id_user WHERE id_pet LIKE ?");
+    $query = $this->getCon()->prepare("SELECT f.id_user, found,location,avatar,fname,lname FROM found f JOIN user u ON u.id_user=f.id_user WHERE id_pet LIKE ?");
     $query->bind_param("s", $id);
     $query->execute();
-    $query->bind_result($id_user, $location, $avatar, $fname, $lname);
+    $query->bind_result($id_user, $found, $location, $avatar, $fname, $lname);
     $array = [];
     while ($query->fetch()) {
       array_push($array, [
         "id" => $id_user,
         "location" => $location,
+        "found" => $found,
         "avatar" => $avatar,
         "fname" => $fname,
         "lname" => $lname
@@ -237,7 +238,21 @@ class Database
     $pets = [];
     while ($query->fetch()) {
       // if ($this->found($id_pet) != null) {
-        array_push($pets, [$this->getPetById($id_pet),$this->found($id_pet)]);
+      array_push($pets, [$this->getPetById($id_pet), $this->getFoundAnimals($user)]);
+      // }
+    }
+    return $pets;
+  }
+  function getFoundAnimals($id_user)
+  {
+    $query = $this->getCon()->prepare("SELECT f.id_pet,gallery FROM found f JOIN pet p ON p.id_pet=f.id_pet WHERE f.id_user LIKE ? AND found=1");
+    $query->bind_param("s", $id_user);
+    $query->execute();
+    $pets = [];
+    $query->bind_result($id_pet, $gallery);
+    while ($query->fetch()) {
+      // if ($this->found($id_pet) != null) {
+      array_push($pets, [$id_pet, $gallery]);
       // }
     }
     return $pets;
@@ -307,6 +322,20 @@ class Database
     return $aroundPets;
   }
 
+  function isFound($id_pet)
+  {
+    $query = $this->getCon()->prepare("SELECT found FROM found WHERE id_pet like ?");
+    $query->bind_param("s", $id_pet);
+    $query->execute();
+    $query->bind_result($found);
+    $query->store_result();
+    while ($query->fetch()) {
+      if ($found == 1) {
+        return false;
+      }
+    }
+    return true;
+  }
   function found1($id)
   {
     $foundPeople = [];
@@ -316,7 +345,7 @@ class Database
     $query->bind_result($id_user, $location, $found);
     $query->store_result();
     while ($query->fetch()) {
-      if ($found==0) {
+      if ($this->isFound($id)) {
         array_push($foundPeople, [
           "id" => $id_user,
           "location" => $location,
@@ -335,7 +364,7 @@ class Database
     $query->bind_result($id_user, $location, $found);
     $query->store_result();
     while ($query->fetch()) {
-      if ($found) {
+      if ($found == 1) {
         array_push($foundPeople, [
           "id" => $id_user,
           "location" => $location,

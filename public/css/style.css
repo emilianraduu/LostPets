@@ -618,7 +618,7 @@ img {
 
 .found {
     display: flex;
-    padding: 3px;
+    padding: 5px 10px;
     background: #E2DDDC;
     border-radius: 10px;
     margin: 10px;

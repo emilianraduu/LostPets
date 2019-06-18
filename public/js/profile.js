@@ -26,26 +26,46 @@ async function getPet(id) {
     let right = document.createElement('div');
     right.setAttribute('class', 'right');
     right.innerHTML = "<h2>Lost</h2>";
-    let found = document.createElement('div');
+    let foundDiv = document.createElement('div');
+    let foundrow = document.createElement('div');
+    foundDiv.innerHTML = "<h2>Found</h2>"
+    foundrow.className = 'lost-row';
     body.append(right);
     let row = document.createElement('div');
     row.setAttribute('class', 'lost-row');
     right.append(row);
-
+    // console.log(result);
+    right.append(foundDiv);
     result.forEach(element => {
         // console.log(element);
         let lostpet = document.createElement('div');
         lostpet.setAttribute('id', element[0].id);
         lostpet.setAttribute('class', 'lost-pet');
-        element[1].forEach(found => {
-            console.log(found);
 
-            // lostpet.innerHTML = "<a href='./pet#" + element[0].id + "'><img src='./public/img/pets/" + element[0].gallery + "'></a>"
-
-        })
         lostpet.innerHTML = "<a href='./pet#" + element[0].id + "'><img src='./public/img/pets/" + element[0].gallery + "'></a>"
-
+        right.append(foundDiv);
+        foundDiv.append(foundrow);
         row.append(lostpet);
     });
+    console.log(result);
+    result[0][1].forEach((element, index) => {
+        // console.log(element[1])
+        let petfound = document.createElement('div');
+        // console.log(element);
+        // if (temp != found) {
+
+        // console.log(found);
+
+        // petfound.setAttribute('id', element[0].id);
+        petfound.className = 'lost-pet';
+        petfound.innerHTML = "<a href='./pet#" + element[0] + "'><img src='./public/img/pets/" + element[1] + "'></a>"
+            // lostpet.innerHTML = "<a href='./pet#" + element[0].id + "'><img src='./public/img/pets/" + element[0].gallery + "'></a>"
+
+        // }
+
+        foundrow.append(petfound);
+
+
+    })
 
 }

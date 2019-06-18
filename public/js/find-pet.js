@@ -55,6 +55,7 @@ async function getPet(id) {
 
     pets.forEach(pet => {
         // Marcam pe harta
+        let ok = true;
         locs = getElementLocation(pet.location);
         createCircle();
         // Div pt animal
@@ -65,22 +66,34 @@ async function getPet(id) {
         document.getElementById('center').appendChild(card);
         let informations = document.createElement('div');
         let founds = document.createElement('div');
-        informations.innerHTML = "<div class='details'><h2 class='name-label'> Name: </h2> <h2 class='name'> " + pet.name + "</h2><div class='under'> <h2 class='breed'>" + pet.breed + "</h2><h2 class='species'>" + pet.species + "</h2></div> <h2 class='reward'>Reward:" + pet.reward + "</h2> <h2 class='details-label'> Details: </h2> <h2 class='details-cont'>" + pet.details + "</h2> <h2 class='precision'>If you saw this pet please select the spot on the map and press the button below or call/email the owner letting them know.</h2><form action='./control/lost-controller.php' enctype='multipart/form-data' method='post'><input type='text' value='' hidden id='location' name='location' required ></input><input type='text' value='" + pet.uid + "' id='id_user' name='id_user' required hidden></input><input type='text' id='id_pet' value='" + pet.id + "' name='id_pet' required hidden></input><button type='submit'>I saw it!</button></form> <div class='selections'><div class='selection'><a href='tel:" + pet.phone + "'><i class='fa fa-phone' aria-hidden='true'></i> call me</div></a><div class='selection'><a href='mailto:" + pet.mail + "'><i class='fa fa-envelope' aria-hidden='true'></i> mail me</div></a></div><div class='flex-end'> <a class='profile-pet' href='./profile#" + pet.uid + "'><img src='./public/img/avatars/" + pet.avatar + "'><h2>" + pet.lname + "<h2></a></div></div></div>";
-        document.getElementById('center').appendChild(informations);
+        informations.innerHTML = "<div class='details'><h2 class='name-label'> Name: </h2> <h2 class='name'> " + pet.name + "</h2><div class='under'> <h2 class='breed'>" + pet.breed + "</h2><h2 class='species'>" + pet.species + "</h2></div> <h2 class='reward'>Reward:" + pet.reward + "</h2> <h2 class='details-label'> Details: </h2> <h2 class='details-cont'>" + pet.details + "</h2> <h2 class='precision'>If you saw this pet please select the spot on the map and press the button below or call/email the owner letting them know.</h2>"
+
+        // console.log(pet.users);
         pet.users.forEach(user => {
 
             founds.setAttribute('id', 'founds');
             let found = document.createElement('div');
             found.className = 'found';
             found.setAttribute('id', user.id);
+            console.log(pets);
             let coord = user.location.split(' ');
-            console.log(user);
             createCircleWithCoord(coord);
             found.innerHTML = "<a href='./profile#" + user.id + "'><img src='./public/img/avatars/" + user.avatar + "'><p>" + user.lname + " " + user.fname + " saw it</p></a> ";
-            (sessionValue == user.id) ? found.innerHTML = found.innerHTML + "<form action='./control/find-controller.php' enctype='multipart/form-data' method='post'><input name='id' hidden value='" + user.id + "'/><input name='locationsend' hidden value='" + user.location + "'/><input name='id' hidden value='" + user.id + "'/><input name='pet' hidden value='" + pet.id + "'/><input type='submit' value='Found'/></form>": '';
+            if (user.found == 0) {
+                console.log(user.id);
+                (sessionValue == pets[0].uid) ? found.innerHTML = found.innerHTML + "<form action='./control/find-controller.php' enctype='multipart/form-data' method='post'><input name='id' hidden value='" + user.id + "'/><input name='locationsend' hidden value='" + user.location + "'/><input name='id' hidden value='" + user.id + "'/><input name='pet' hidden value='" + pet.id + "'/><input type='submit' value='Found'/></form>": '';
+
+            }
+            if (user.found == 1) {
+                ok = false;
+            }
             founds.appendChild(found);
 
         })
+        if (ok) informations.innerHTML = informations.innerHTML + "<form action='./control/lost-controller.php' enctype='multipart/form-data' method='post'><input type='text' value='' hidden id='location' name='location' required ></input><input type='text' value='" + sessionValue + "' id='id_user' name='id_user' required hidden></input><input type='text' id='id_pet' value='" + pet.id + "' name='id_pet' required hidden></input><button type='submit'>I saw it!</button></form> <div class='selections'>";
+        informations.innerHTML = informations.innerHTML + "<div class='selection'><a href='tel:" + pet.phone + "'><i class='fa fa-phone' aria-hidden='true'></i> call me</div></a><div class='selection'><a href='mailto:" + pet.mail + "'><i class='fa fa-envelope' aria-hidden='true'></i> mail me</div></a></div><div class='flex-end'></div></div></div>";
+        console.log(ok);
+        document.getElementById('center').appendChild(informations);
         informations.appendChild(founds);
         document.getElementById('center').appendChild(informations);
 
