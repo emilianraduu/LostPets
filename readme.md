@@ -58,16 +58,31 @@ Diagrama bazei de date se afla la adresa:
 
 ### APIs
 
-LostPets API
-Documentatia este disponibila in 
+1. LostPets API
+API-ul creat de noi pentru a ne servi in preluarea si prelucrarea datelor. Parsarea datelor se face dupa standardele OpenAPI prin intermediul JSON-urilor. In cadrul API-ului am declarat urmatoarele rute ce satisfac urmatoarele obiective:
 
 ```
-./control/api
+RewriteRule ^get/loc/.+$ ./control/api/api.get.php [NC,L]
 ```
+Pentru a prelua animalele de la o anumita locatie actuala a utilizatorului vom apera ruta cu argumentele /get/loc/{latitudine}/{longitudine}.
+Acest fetch se va face de fiecare data cand locatia utilizatorului se modifica. API-ul furnizeaza un obiect ce contine informatiile necesare afisarii animalelor pe pagina principala a aplicatiei. Metoda de apelare este GET.
 
-Alte API-uri folosite:
+```
+RewriteRule ^get/profile/.+$ ./control/api/get-profile.php [NC,L]
+```
+Pentru a putea accesa fiecare profil in parte avem nevoie de o rutare a acestora. Partea de profil a API-ului returneaza din baza de date un fisier ce contine toate informatiile si animalele unui utilizator pentru a putea fi folosite de aplicatia noastra. Drept argument se va da id-ul utilizatorului sub forma /get/profile/{id} si metoda este GET.
 
-1. DogCEO:
+```
+RewriteRule ^get/pet/.+$ ./control/api/api.pet.php [NC,L]
+```
+De asemenea, pentru a putea accesa informatiile unui animal despre care nu avem contextul unui utilizator/owner, aparea API-ului la aceasta ruta va avea acelasi efect ca la /get/profile/ doar ca in cazul unui animal. Apelul se va face prin /get/pet/{id} si metoda este GET.
+
+```
+RewriteRule ^get/notifications/.+$ ./control/api/api.notif.php [NC,L]
+```
+Fetch-ul asyncron constant ce se face la modificarea locatiei utilizatorului va apela si partea de notificari a API-ului ce va returna un fisier cu informatiile necesare afisarii unei notificari.
+
+2. DogCEO:
 Functioneaza pe baza de fetch-uri la adresa:
 ```
 fetch('https://dog.ceo/api/breeds/list/all')
@@ -83,7 +98,7 @@ Acest API nu necesita nici o cheie si respecta standardul OpenAPI, fiind foarte 
 ```
 Raspunsul primit prin GET este unul de tip JSON iar in interiorul obiectului avem campul message al carui valoare este rasa pe care o appendeaza la optiuni.
 
-2. TheCatAPI
+3. TheCatAPI
 Asemanator API-ului anterior, functioneaza tot pe baza de fetch-uri:
 ```
 fetch('https://api.thecatapi.com/v1/breeds')
@@ -91,8 +106,21 @@ fetch('https://api.thecatapi.com/v1/breeds')
 Este diferit, insa, prin faptul ca necesita o autentificare pentru a putea primi rezultatele.
 Folosirea acestor API-uri faciliteaza extinderea in viitor pentru a adauga alte rase de animale de companie, insa ajuta si la generarea de statistici deoarece o sa fie standardizate si centralizare pe acelasi tip de rasa si specie, utilizatorul neavand optiunea de a scrie propria rasa de animal pierdut.
 
-3. Leaflet
-Leaflet reprezinta o librarie de harti open-source ce aduce developerilor optiuni de creare a unei harti pe care se pot adauga markere, cu care se poate lua locatia unui utilizator si cu care 
+4. Leaflet
+Leaflet reprezinta o librarie de harti open-source ce aduce developerilor optiuni de creare a unei harti pe care se pot adauga markere, cu care se poate lua locatia unui utilizator si cu care se pot pozitiona elemente si seta optiuni necesare functionarii aplicatiei.
+Pentru functionarea librariei leaflet trebuie introduse urmatoarele linii in head:
+```
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+```
+Acum in interiorul fisierelor javascript vor putea fi construite si prelucrate hartile din libraria Leaflet:
+```
+mymap = L.map('mapid');
+```
+Astfel, locatia utilizatorilor este luata constant si se furnizeaza animalele din raza lor pe baza LostPetsAPI.
+```
+latlng = new L.LatLng(location.coords.latitude, location.coords.longitude);
+```
 
 ### Autentificare persistenta
 
