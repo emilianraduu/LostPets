@@ -314,7 +314,7 @@ class Database
       $d = $this->distance($lat, $long, $lat, $lng, "K");
 
       if ($this->found1($pet['id']) != null) {
-        if ($d < 100) {
+        if ($d < 10) {
           array_push($aroundPets, $pet);
         }
       }

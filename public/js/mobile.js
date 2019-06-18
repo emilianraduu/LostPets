@@ -18,3 +18,6 @@ function show_hide() {
         click.style.display = "none";
     }
 }
+
+let notifications = document.getElementById('drop-content');
+notifications.innerHTML = "<a href='#' class='dropdown-item'>Un animal a fost pierdut in jurul tau!</a>";
