@@ -1,6 +1,6 @@
 # Lost Pets Architecture
 
-Proiect la materia Tehnologii Web ce consta intr-o aplicatie web pentru persoanele care si-au pierdut animalul de companie.
+Proiect la materia Tehnologii Web ce consta intr-o aplicatie web menita pentru persoanele care si-au pierdut animalul de companie si pentru personale dornice sa ajute in gasirea acestora.
 
 ## Enunt proiect
 
@@ -28,7 +28,6 @@ Locatia diagramelor UseCase:
 ./docs/usecase
 ```
 (todo: de modificat diagramele usecase)
-
 ### Baza de date
 
 Baza de date va functiona pe baza join-urilor si relatiilor intre doua entitati(tabele) normalizate, anume user si pet.
@@ -138,7 +137,7 @@ Diagramele MVC se gasesc la locatia:
 
 ## Documentatie
 
-* [Leaflet](http://leafletjs.comd)
+* [Leaflet](http://leafletjs.com)
 * [ECMAScript 6](http://es6-features.org/#Constants)
 * [DogCEO](https://dog.ceo)
 * [TheCatAPI](https://thecatapi.com)
