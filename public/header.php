@@ -2,7 +2,7 @@
 require '../control/db.php';
 require '../control/user.php';
 session_start();
-$init = "<header>
+$init = "<header><div id='mapid_hide'></div>
             <div class='logo'>
                 <a href='.'>
                     <h2>LostPets</h2>

@@ -330,6 +330,15 @@ form label {
     margin: 10px;
 }
 
+#mapid_hide {
+    max-width: 0px;
+    display: none;
+    /* border-radius: 15px; */
+    /* margin: auto; */
+    z-index: 1;
+    /* margin: 10px; */
+}
+
 .spaced {
     margin-left: 100px !important;
 }
@@ -767,13 +776,15 @@ img {
 .left .invbut {
     margin-top: 3em;
 }
+
 .statistics {
-    display:flex;
+    display: flex;
     width: 100%;
     padding: 0;
     background: #E2DDDC;
 }
-.content .flex button{
+
+.content .flex button {
     display: block;
 }
 

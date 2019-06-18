@@ -12,6 +12,7 @@ let existingElements = {};
 let petMarkers = [];
 let container = document.getElementById('cards');
 
+
 let init = () => {
     createMap();
     getLoc();
